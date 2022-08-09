@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./css/AboutUs.css">
+      <link rel="stylesheet" href="./css/login.css">
+      <link rel="stylesheet" href="./css/logintwo.css">
+      <title>로그인 | 조선호텔앤리조트</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://www.w3schools.com/lib/w3.js"></script>
+      <script src="./js/headerfooter.js"></script>
+
+</head>
+<body>
+      <div class="wrapper">
+            <header w3-include-html="header.html"></header>
+            <div w3-include-html="header_scroll.html"></div>
+            <form id="form" name="form">
+                  <!-- 타이틀 -->
+                  <div id="container" class="container login">
+                  <div class="topArea">
+                        <div class="topInner">
+                              <h2 class="titDep1">Sign In</h2>
+                              <p class="pageGuide">머무는 모든 순간이 특별해집니다.</p>
+                        </div>
+                  </div>
+                        <!-- 메인 -->
+                  <div class="inner">
+                        <ul class="tabType01 tabType02">
+                              <li class="on">
+                                    <a href="#">
+                                    아이디 로그인
+                                    <!-- 아이디 로그인 -->
+                                    </a>
+                              </li>
+                              <li>
+                                    <a href="./noMbrLogin.html">
+                                    비회원 예약확인
+                                    <!-- 비회원 로그인 -->
+                                    </a>
+                              </li>                        
+                        </ul>
+                        <!-- 아이디 로그인 -->
+                        <div id="tab01" class="tabCont" style="display: block;">
+                        <h3 class="hidden">
+                              아이디 로그인
+                        </h3>
+                        <div class="loginBox">
+                              <div class="membersLogin">
+                                    <p class="loginFrm">
+                                          <!-- 필수입력서식에 미입력 발생 시, error 클래스 추가 alterMessage 노출, 포커스가 가면 error 클래스 제거 -->
+                                    <span class="alertMessage" style="display: none;">
+                                          아이디를 입력해주세요.
+                                    </span>
+                                    <label class="hidden" for="frm_userid">아이디</label>
+                                    <input type="text" id="frm_userid" placeholder="아이디" aria-required="true">
+                                    <!-- 아이디 -->
+                                    </p>
+                                    <p class="loginFrm">
+                                          <span class="alertMessage">
+                                          비밀번호를 입력해주세요
+                                          </span>
+                                          <lable class="hidden" for="frm_userpw">비밀번호</lable>
+                                          <!-- 비밀번호 -->
+                                          <input type="password" id="frm_userpw" placeholder="비밀번호" aria-required="true" >
+                                          <!-- 비밀번호 -->
+                                    </p>
+                                    <!-- 아이디 저장 -->
+                                    <span class="frm">
+                                          <input type="checkbox" id="idSaveCheck">
+                                          <label for="idSaveCheck">
+                                                아이디 저장
+                                          </label>
+                                    </span>
+                                    <!-- 로그인 버튼 -->
+                                    <button type="button" class="btnSC btnL active btnFull" onclick="">
+                                    로그인
+                                    </button>
+                                    <!-- 로그인 버튼 아래 -->
+                                    <p class="loginGuide">
+                                          CLUB JOSUN 회원이 되시면 더 많은 혜택이 있습니다.
+                                    </p>
+                                    <div class="loginLink">
+                                          <a href="./joinIntro.html" class="btnS icoArr">
+                                                회원가입
+                                          </a>
+                                          <a href="./idFind.html" class="btnS icoArr">
+                                                아이디 / 비밀번호 찾기
+                                          </a>
+                                          <a href="#" class="btnS icoArr">
+                                                계정활성화
+                                          </a>
+                                    </div>
+                                    </div>
+                              <div class="snsLogin">
+                                    <a href="#" class="google">
+                                          구글 로그인
+                                    </a>
+                                    <a href="#" class="facebook">
+                                          페이스북 로그인
+                                    </a>
+                                    <a href="#" class="naver">
+                                          네이버 로그인
+                                    </a>
+                                    <a href="#" class="kakao">
+                                          카카오 로그인
+                                    </a>
+                                    <a href="#" class="apple">
+                                          애플 로그인
+                                    </a>
+                              </div>
+                        </div>
+                  </div>
+                  <ul class="txtGuide">
+                        <li>
+                              이용자 비밀번호 5회 연속 오류시 계정이 잠기게 됩니다.
+                        </li>
+                        <li>
+                              오프라인 회원의 경우 온라인 회원가입 후 계정연동 가능합니다..
+                        </li>
+                        <li>
+                              메리어트 호텔에서 예약하신 경우, 메리어트 사이트에서만 예약 확인이 가능합니다.
+                        </li>
+                        <li>
+                              카카오페이 간편가입 및 신세계 면세점 동시가입 회원은 '계정활성화' 버튼을 통해 서비스 이용이 가능합니다.
+                        </li>
+                  </ul>
+
+                  </div>
+            </form>
+      </div>
+
+</div>
+<footer w3-include-html="footer.html"></footer>
+
+</body>
+<script>
+w3.includeHTML();
+function en_on() {
+      $(".en").toggle();
+      }
+</script>
+</html>  

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity</title>
+    <link rel="stylesheet" href="./css/activity.css" />
+    <link rel="stylesheet" href="./css/headerfooter.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/activityList.js"></script>
+  </head>
+  <body>
+    <header w3-include-html="header.html"></header>
+    <div w3-include-html="header_scroll.html"></div>
+    ,
+    <div class="wrapper">
+      <!-- activity contents start -->
+      <div class="container">
+        <!-- activity top area start -->
+        <div class="topArea">
+          <div class="topInner">
+            <h2 class="title">GRAN JOE</h2>
+            <p class="pageGuide">
+              놓칠 수 없는 여행의 백미, 액티비티. 그랜드 조선 제주의 액티비티
+              전담팀이 준비한
+              <br />
+              다양한 액티비티 프로그램을 통해 제주에서만 느낄 수 있는 색다른
+              즐거움을 경험하세요.
+            </p>
+          </div>
+        </div>
+        <!-- activity top area end -->
+        <div class="contentsArea">
+          <div class="inner" id="inner">
+            <ul class="sortBtnArea">
+              <li>
+                <a
+                  class="sortBtn sortBtnOn"
+                  onclick="inputLists(allList); sortBtn(0)"
+                >
+                  ALL
+                </a>
+              </li>
+              <li>
+                <a
+                  class="sortBtn"
+                  onclick="inputLists(timeTableList); sortBtn(1)"
+                >
+                  TIME TABLE
+                </a>
+              </li>
+              <li>
+                <a
+                  class="sortBtn"
+                  onclick="inputLists(josonJuniorForKidList); sortBtn(2)"
+                >
+                  JOSUN JUNIOR FOR KIDS
+                </a>
+              </li>
+              <li>
+                <a class="sortBtn" onclick="inputLists(adultList); sortBtn(3)">
+                  ADULT
+                </a>
+              </li>
+            </ul>
+            <!-- activityLists start (back에서 불러올 부분) -->
+            <ul class="activityLists" id="activityLists">
+              <!-- activityList 예시 -->
+              <li class="josunJuniorForKids">
+                <div class="thum">
+                  <img
+                    src="./images/josonJuniorForKids11.jpg"
+                    alt="activity_picture"
+                  />
+                  <div class="hoverContents">
+                    <div class="btnContents">
+                      <a href="./activity_detail.html" class="btn"
+                        >자세히 보기</a
+                      >
+                      <a onclick="onlineReservation()" class="btn"
+                        >온라인 예약</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="txtContents">
+                  <div class="sort">
+                    <p>JOSON JUNIOR FOR KIDS</p>
+                  </div>
+                  <div class="title">
+                    <p>조선 주니어 에코백 만들기</p>
+                  </div>
+                  <div class="date">
+                    <p>2022.04.01 - 2022.05.31</p>
+                  </div>
+                </div>
+              </li>
+              <!-- activityList end -->
+            </ul>
+            <!-- activityLists start end -->
+          </div>
+          <div class="bottomArea" id="bottomArea">
+            <!-- <a class="btnMore" onclick="clickMore()">MORE</a> -->
+          </div>
+        </div>
+      </div>
+      <!-- activity contents end -->
+      <footer w3-include-html="footer.html"></footer>
+    </div>
+  </body>
+  <script src="./js/headerfooter.js"></script>
+  <script>
+    w3.includeHTML();
+  </script>
+  <script src="./js/activity.js"></script>
+  <script>
+    window.onload = function () {
+      inputLists(allList);
+    };
+  </script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>join Intro</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://www.w3schools.com/lib/w3.js"></script>
+      <script src="./js/headerfooter.js"></script>
+      <script src="./js/button.js"></script>
+      <link rel="stylesheet" href="./css/AboutUs.css">
+      <link rel="stylesheet" href="./css/login.css">
+      <link rel="stylesheet" href="./css/join.css">
+
+</head>
+<body>
+      <div class="wrapper">
+            <header w3-include-html="header.html"></header>
+            <div w3-include-html="header_scroll.html"></div>
+            <div id="container" class="container join">
+			<h1 class="hidden">회원가입</h1>
+			<div class="topArea">
+				<div class="topInner">
+                              <!-- 제목 -->
+					<h2 class="titDep1">Join Now</h2>
+					<p class="pageGuide">조선호텔앤리조트에 오신 것을 환영합니다.</p>
+					<div class="stepWrap">
+						<ol>
+							<li class="on">
+                                                <span class="hidden">현재단계</span>
+                                                <em>본인 인증</em>
+                                          </li>
+							<li>
+                                                <em>약관동의 및 회원정보 입력</em>
+                                          </li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<div class="inner">
+                        <!-- 내용 -->
+				<div class="txtBox">
+					<!-- ID 로그인 본인인증 -->
+					<p class="txtBoxTitle">
+                                    회원가입을 하시려면 휴대폰 본인 인증이 필요합니다.
+                              </p>
+					<p class="pageGuide">
+                                    휴대폰 본인 인증은 회원 본인 명의의 휴대폰 번호를 통해서만 인증이 가능합니다.
+                                    <br>
+                                    회원님의 개인정보와 일치하지 않는 명의의 휴대폰 번호로는 본인 인증이 불가합니다
+                              </p>
+					<div class="btnArea">
+						<button type="button" id="join_auth" class="btnSC btnL active" onclick="location.href='./joinAgree.html'">
+                                          휴대폰 본인 인증
+                                    </button>
+					</div>
+				</div>
+			</div>
+		</div>
+            <div class="footer">
+                  <!-- footer -->
+            </div>
+      </div>
+      <footer w3-include-html="footer.html"></footer>
+
+</body>
+<script>
+      w3.includeHTML();
+      function en_on() {
+      $(".en").toggle();
+      }
+</script>
+</html>

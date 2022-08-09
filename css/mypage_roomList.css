@@ -1,0 +1,93 @@
+.roomList_tit {
+  font: 500 30px gothamB, notokrR;
+  margin: 90px 0 15px;
+}
+.tabWrap {
+  display: table;
+  position: relative;
+  width: 100%;
+}
+.tabWrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 53%;
+  border-bottom: 1px solid #000;
+}
+.tabWrap li {
+  display: table-cell;
+  width: 234px;
+}
+.tabWrap li:nth-child(1) {
+  border: 1px solid #000;
+  border-bottom: 0;
+}
+.tabWrap li:nth-child(2) {
+  border: 1px solid #aaa;
+  border-bottom: 1px solid #000;
+}
+.tabWrap li a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  color: #666;
+  text-align: center;
+  font-size: 20px;
+  font-family: gothamL, notokrL;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+.label_check {
+  padding-left: 35px;
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  padding-left: 35px;
+  font-family: gothamL, notokrL;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.label_check::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 26px;
+  height: 26px;
+  background: url(../images/mypage_roomList/main_allcheck.png) no-repeat;
+  background-position-y: -13px;
+  background-position-x: var(--mypage-btn-position);
+}
+.main_Allcheck {
+  position: relative;
+  margin: 33px 0 0;
+}
+.allcheck_btn {
+  position: absolute;
+  right: 0;
+  border: none;
+  background: none;
+  font-family: notokrL, gothamL, playfair;
+  font-size: 14px;
+}
+.allcheck_btn::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #000;
+}
+.roomList_main_content {
+  text-align: center;
+  padding: 180px 0;
+}
+.roomList_main_content::before {
+  content: "";
+  display: block;
+  background: url(../images/mypage_roomList/mypage_main_center.gif) no-repeat 0
+    0;
+  width: 3px;
+  height: 45px;
+  margin: 30px auto;
+}

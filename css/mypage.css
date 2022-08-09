@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "NotoKrL";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Noto Sans Light"), local("NotoSans-Light"),
+    url(../fonts/NotoSans-Light.eot);
+  src: url(../fonts/NotoSans-Light.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Light.woff2) format("woff2"),
+    url(../fonts/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrR";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+    url(../fonts/NotoSans-Regular.eot);
+  src: url(../fonts/NotoSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Regular.woff2) format("woff2"),
+    url(../fonts/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrM";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+    url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Medium.woff2) format("woff2"),
+    url(../fonts/NotoSans-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "gothamL";
+  src: local(※), url("../fonts/Gotham-Light.otf") format("opentype"),
+    url("../fonts/GothamLight.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: gothamB;
+  font-weight: normal;
+  src: url("../fonts/GothamBook.ttf") format("truetype");
+}
+@font-face {
+  font-family: gothamM;
+  font-weight: normal;
+  src: url("../fonts/GothamMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: playfair;
+  font-weight: normal;
+  src: url("../fonts/PlayfairDisplaySC-Regular.otf") format("opentype");
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+ul,
+ol {
+  list-style: none;
+}
+body {
+  margin: 0;
+}
+.topArea {
+  width: 1400px;
+  margin: 0 auto;
+}
+.topInner {
+  padding: 97px 0 90px;
+}
+.titDep1 {
+  font: 500 60px playfair;
+  font-feature-settings: "lnum", "pnum";
+}
+.pageGuide {
+  margin-top: 18px;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.inner {
+  position: relative;
+  width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 180px;
+}
+.leftSidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  padding: 52px 35px 44px;
+  background: #f9f9f9;
+}
+.myContents {
+  position: relative;
+  min-height: 900px;
+  margin-left: 400px;
+}
+.leftSidebar .name {
+  margin-bottom: 21px;
+  font: 500 32px/1 notokrR;
+  letter-spacing: -0.025em;
+}
+.leftSidebar p.name {
+  margin-bottom: 21px;
+  font: 500 32px/1 notokrR;
+  letter-spacing: -0.025em;
+}
+.leftSidebar .info a {
+  display: block;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+.leftSidebar .info a .tit {
+  display: inline-block;
+  width: 72px;
+  color: #000;
+  font: 400 18px/1.5 gothamL, notokrL;
+}
+.leftSidebar .list li {
+  font: 500 22px/1 notokrR;
+  letter-spacing: -0.025em;
+  margin: 40px 0;
+  line-height: 1.8;
+}
+.leftSidebar .list li a {
+  font: 400 18px/38px gothamL, notokrL;
+  letter-spacing: -0.01em;
+}
+a {
+  text-decoration: none;
+}
+.myAccountBox {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding: 33px 0 34px;
+  border: 1px solid #000;
+}
+.myAccountBox dl {
+  display: table-cell;
+  padding: 0 39px 0 37px;
+}
+.myInfo {
+  margin-bottom: 40px;
+}

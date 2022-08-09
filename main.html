@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script type="text/javascript" src="./lib/slick/slick.min.js"></script> 
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./lib/slick/slick.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="shortcut icon" href="./images/deluxe_img/favicon.ico" />
+    <!-- daterangepicker 순서 주의!! -->
+    <link rel="stylesheet" type="text/css" href="./lib/daterangepicker-master/daterangepicker.css" />
+    <script type="text/javascript" src="./lib/daterangepicker-master/moment.min.js"></script>
+    <script type="text/javascript" src="./lib/daterangepicker-master/daterangepicker.js"></script>
+    <script type="text/javascript" src="./lib/daterangepicker-master/moment-with-locales.js"></script> 
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  </head>
+  <body>
+    <div id="wrap">
+      <header w3-include-html="header_main.html"></header>
+      <div id="container">
+        <!-- Home 부분 -->
+        <div id="goto-1" class="Home_area content">
+          <video
+            id="mainvideo"
+            src="./video/GrandJosun.mp4"
+            muted
+            autoplay
+          ></video>
+          <div class="res_bar">
+            <!-- select bar -->
+            <div class="selectWrap selectArea area-custom-select ">
+              <div class="select custom-select1" tabindex="0">  
+                <span class="custom-select-text1">ROOM</span>
+              </div>
+              <ul
+                class="custom-select-list1 option" style="display: none">
+                <!-- li의 value와 option의 value를 동일하게 해야 li 선택시 select도 같이 선택 됨 -->
+                <li value="ROOM" class="custom-select-option1">
+                  <a>ROOM</a>
+                </li>
+                <li value="DINING" class="custom-select-option1">
+                  <a>DINING</a>
+                </li>
+                <li value="MEMBERSHIP" class="custom-select-option1">
+                  <a>MEMBERSHIP</a>
+                </li>
+              </ul>
+              <select
+                name="select"
+                id="select"
+                class="select-origin1"
+                hidden
+              >
+                <option value="ROOM"  selected="selected">ROOM</option>
+                <option value="DINING">DINING</option>
+                <option value="MEMBERSHIP">MEMBERSHIP</option>
+              </select>
+            </div>
+            <!-- select date -->
+            <div class="selectDate">
+              <form id="mainResveForm" method="post">
+                <!-- select room -->
+                <div class="selectRoom" role="area">
+                  <!-- check in/out -->
+                  <div class="chkInout" onclick="openCalendar();">
+                    <a href="#">
+                      <strong class="tit">CHECK IN / OUT</strong>
+                      <input
+                        type="text"
+                        class="startDay"
+                        placeholder="YYYY-MM-DD"
+                        name="dates"
+                        readonly
+                      />
+                      <p class="Day"></p>
+                    </a>
+                  </div>  
+                  <!-- 객실,인원 선택 -->
+                  <div class="roomWrap" onclick="openRoomSelect();">
+                    <a href="#none">
+                      <dl>
+                        <dt>ROOM</dt>
+                        <dd id="roomCntText">1</dd>
+                        <dt>ADULT</dt>
+                        <dd id="adultCntText">2</dd>
+                        <dt>CHILDREN</dt>
+                        <dd id="childCntText">0</dd>
+                      </dl>
+                    </a>
+                  </div>
+                  <!-- 클릭 시 하단 mainRoom 펼쳐짐 -->
+                  <div class="mainRoom clearCont">
+                    <!-- clearCont는 한번에 펼쳐지는효과 주려한것같음 -->
+                    <div class="roomContainer">
+                      <div class="roomWrap2">
+                        <!-- 왼쪽 인원, 객실 선택 부분  -->
+                        <div class="roomSel on">
+                          <div class="roomInner">
+                            <strong class="roomTit">객실1</strong>
+                            <div
+                                class="numPeople"
+                                data-target="adult"
+                              >
+                              <input type='button'
+                                    class='btnDown btnDown-1'
+                                    onclick='count1("minus")'
+                                    />성인
+                              <div id='result-1'>0</div>
+                              <input type='button'
+                              class="btnUp btnUp-1"
+                                    onclick='count1("plus")'/>
+                            </div>
+                            <div
+                                class="numPeople"
+                                data-target="children"
+                              >
+                              <input type='button'
+                              class="btnDown btnDown-2"
+                                    onclick='count2("minus")'
+                                  />어린이
+                              <div id='result-2'>0</div>
+                              <input type='button'
+                              class="btnUp btnUp-2"
+                                    onclick='count2("plus")'
+                                    />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="roomSel">
+                          <!-- 객실 추가 시 클래스 on 추가 -->
+                          <div class="roomInner">
+                            <strong class="roomTit">객실2</strong>
+                            <div
+                                class="numPeople"
+                                data-target="adult"
+                              >
+                              <input type='button'
+                              class="btnDown btnDown-3"
+                                    onclick='count3("minus")'
+                                    />성인
+                              <div id='result-3'>0</div>
+                              <input type='button'
+                              class="btnUp btnUp-3"
+                                    onclick='count3("plus")'
+                                    />
+                            </div>
+                            <div
+                                class="numPeople"
+                                data-target="children"
+                              >
+                              <input type='button'
+                              class="btnDown btnDown-4"
+                                    onclick='count4("minus")'
+                                    />어린이
+                              <div id='result-4'>0</div>
+                              <input type='button'
+                              class="btnUp btnUp-4"
+                                    onclick='count4("plus")'
+                                />
+                            </div>
+                            
+                          </div>
+                        </div>
+
+                        <div class="roomSel">
+                          <div class="roomInner">
+                            <strong class="roomTit">객실3</strong>
+                            <div
+                                class="numPeople"
+                                data-target="adult"
+                              >
+                              <input type='button'
+                              class="btnDown btnDown-5"
+                                    onclick='count5("minus")'
+                                    />성인
+                              <div id='result-5'>0</div>
+                              <input type='button'
+                              class="btnUp btnUp-5"
+                                    onclick='count5("plus")'
+                                    />
+                            </div>
+                            <div
+                                class="numPeople"
+                                data-target="children"
+                              >
+                              <input type='button'
+                              class="btnDown btnDown-6"
+                                    onclick='count6("minus")'
+                                    />어린이
+                              <div id='result-6'>0</div>
+                              <input type='button'
+                              class="btnUp btnUp-6"
+                                    onclick='count6("plus")'
+                                    />
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <!-- //roomWrap -->
+                        <ul class="txtGuide">
+                          <!-- 오른쪽 글씨 부분 -->
+                          <li>최대 3개 객실 예약 가능</li>
+                          <li>어린이 기준 : 37개월 ~ 만 12세</li>
+                        </ul>
+                      </div>
+                      <button type="button" class="btnClose" >닫기</button>
+                    </div>
+                    <!-- //mainRoom 끝 -->
+                  </div>
+
+                  <!-- search -->
+                  <a href="./res_room0.html" class="btnSearch">SEARCH</a>
+                </div>
+              </form>
+              <!-- 프로모션 코드 -->
+
+              <div class="promCode" >
+                <button type="button" class="btnSC btnPromo" onclick="openPromotion();">
+                  + 프로모션 코드
+                </button>
+              </div>
+
+
+               <div class="promInt" style="white-space: nowrap">
+                <div class="selectArea area-custom-select promSel" style="display: none">
+                  <div class="select custom-select2" tabindex="0">  
+                    <span class="custom-select-text2">Code Type</span>
+                  </div>
+                  <ul
+                    class="custom-select-list2 option"
+                    style="display: none">
+                    <!-- li의 value와 option의 value를 동일하게 해야 li 선택시 select도 같이 선택 됨 -->
+                    <li value="COMPANY" class="custom-select-option2">
+                      <a>COMPANY</a>
+                    </li>
+                    <li value="PROMOTION" class="custom-select-option2">
+                      <a>PROMOTION</a>
+                    </li>
+                  </ul>
+                  <select
+                    data-msg="Code Type"
+                    id="promoType"
+                    hidden 
+                  >
+                    <option value="" hidden="" selected="">Code Type</option>
+                    <option value="COMPANY">COMPANY</option>
+                    <option value="PROMOTION">PROMOTION</option>
+                  </select>
+                </div>
+                <!-- <div class="prom_right"> -->
+                <input
+                type="text"
+                id="promoCode"
+                placeholder="프로모션 코드 입력"
+                title="프로모션 코드 입력"
+                onkeyup="this.value=this.value.replace(/[^a-z]/gi, '').toUpperCase();"
+                style="display: none"
+                />
+                <button type="button" class="btnLine" onclick="closePromotion();" style="display: none">확인</button>
+                <!-- </div> -->
+              </div>
+              <!-- ROOM 선택 일 경우 끝 -->
+            </div>
+          </div>
+          <div class="video_btn_area">
+            <button type="button" id="btn-play"></button>
+            <button type="button" id="btn-sound"></button>
+          </div>
+        </div>
+        <!-- Room 부분 -->
+        <div id="goto-2" class="room_area content">
+          <!-- 롤링 이미지 목록 -->
+          <div id="room_slide" class="viewRoomList swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_01.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_02.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_03.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_04.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_05.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_07.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_08.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_12.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_13.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_10.jpg" alt="" />
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/main_img/img_main02_11.jpg" alt="" />
+              </li>
+            </ul>
+          </div>
+          <!-- 롤링 버튼 -->
+          <div class="roll_btn_Area">
+            <ul class="rolling_btn">
+              <li>
+                <button type="button" id="left_swipe"></button>
+                <!-- <img src="./images/btn_swipe_10x18.png" alt="<" /> -->
+              </li>
+              <li>
+                <button type="button" id="img_play_btn"></button>
+              </li>
+              <li>
+                <button type="button" id="right_swipe"></button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- room 설명 -->
+          <div class="room__">
+            <div class="room_txt">
+              <h3>Invite Nature To Your Journey</h3>
+              <h5>
+                에메랄드 빛 바다와 천혜의 자연이 만들어내는 특별한 여행을 위한
+                공간
+              </h5>
+              <h6>GRAND JOSUN JEJU /<br />GRAND JOSUN HILL SUITE</h6>
+              <div class="arrow_btn">
+                <a href="./rooms.html"></a>
+              </div>
+            </div>
+            <div class="room_event">
+              <a href="./package.html">
+                <p>SEASONAL PROMOTION</p>
+                <p class="txt">SUMMER VOYAGE</p>
+                <p class="date">2022.05.13 - 2022.08.31</p>
+                <img src="./images/main_img/22_SummerVoyage.jpg" />
+              </a> 
+            </div>
+          </div>
+        </div>
+        <!-- Dining 부분 -->
+        <div id="goto-3" class="dining_area content">
+          <div class="dining_txt_area">
+            <div class="dining_txt">
+              <h3>Enriched<br />Gourmet<br />Greeting</h3>
+              <h5>다채로운 미식의 세계로의 초대</h5>
+              <h6>BUFFET / LOUNGE&BAR / ROOFTOP</h6>
+              <a href="#" class="arrow_btn"></a>          
+            </div>
+          </div>
+        </div>
+        <!-- Facility 부분 -->
+        <div id="goto-4" class="facility_area content">
+          <div class="facility_cast">
+            <div class="facility_txt">
+              <h3>Iconic Facilities</h3>
+              <h6>POOL / GX ROOM / KIDS CLUB</h6>
+              <a href="#" class="arrow_btn"></a>
+            </div>
+            
+            <!-- TODO: 아코디언 -->
+            <link rel="stylesheet" href="./test/index.css" />
+            
+            <div class="facility_img">
+              <ul class="facility_type">
+                <li class="pool">
+                  <div id="pool_" class="img_hover">
+                    <img src="./images/main_img/img_facility01_01.jpg" />
+                    <h5 class="img_explain">GRAND JOSUN HILL SUITE</h5>
+                    <h6 class="img_explain">HEAVENLY POOL</h6>
+                  </div>
+                </li>
+                <li id="gx_room">
+                  <div id="gx_" class="img_hover">
+                    <img src="./images/main_img/img_facility01_02.jpg" />
+                    <h5 class="img_explain">GRAND JOSUN HILL SUITE</h5>
+                    <h6 class="img_explain">GX ROOM</h6>
+                  </div>
+                </li>
+                <li class="kids_club">
+                  <div id="kidsclub_" class="img_hover">
+                    <img src="./images/main_img/img_facility01_03.jpg" />
+                    <h5 class="img_explain">GRAND JOSUN JEJU</h5>
+                    <h6 class="img_explain">KIDS CLUB</h6>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- activity 부분 -->
+        <div id="goto-5" class="activity_area content">
+          <div class="white_area"></div>
+          <div class="activity_txt">
+            <h3>Get Active</h3>
+            <h5>몸과 마음에 활력을 더해 줄 다채로운 액티비티</h5>
+            <h6>JOSUN JUNIOR / GRAN JOE</h6>
+            <a href="./activity.html" class="arrow_btn"></a>
+          </div>
+          <div class="activity_box">
+            <h4>ON GOING</h4>
+          </div>
+        </div>
+        <!-- membership 부분 -->
+        <div id="goto-6" class="membership_area content">
+          <div class="membership_txt">
+            <div class="text_area">
+              <h3>Club Josun</h3>
+              <h6>JOSUN HOTELS & RESORTS MEMBERSHIP PROGRAM</h6>
+              <h5>
+                조선호텔앤리조트의 멤버십 프로그램 클럽조선은 품격있는
+                라이프스타일과 특별한 경험을 제안합니다.<br />클럽조선 회원이
+                되셔서 다채로운 혜택과 최상의 서비스를 누려보세요.
+              </h5>
+              <a href="" class="membership_btn">VIEW MORE & JOIN</a>
+            </div>
+          </div>
+        </div>
+        <!-- meeting 부분 -->
+        <div id="goto-7" class="meeting_area content">
+          <div class="white_area"></div>
+          <div class="meeting_txt">
+            <h3>The Perfect Venue For Your Special Event</h3>
+            <p>
+              인생의 특별한 순간을 위한 이벤트와 컨퍼런스를<br />그랜드 조선
+              제주에서 준비해보세요.
+            </p>
+            <a href="" class="meeting_btn">미팅 자세히보기</a>
+          </div>
+        </div>  
+        <div class="content">
+          <footer w3-include-html="footer.html"></footer>
+        </div>
+      </div>
+
+      <div class="side_bar" onclick="showLayer_menu();">
+        <a href="#" class="side_img"></a>
+        <h4 class="open">OPEN</h4>
+        <h4 class="offers_">OFFERS</h4>
+      </div>
+      
+      <div id="fade" class="black_background"></div>
+      <div class="sub_menu_area">
+        <div id="sub_menu" style="white-space: nowrap">
+          <a href="#/" onclick="close_menu();">X</a>
+          <div class="sub_menu_margin">
+            <div class="sub_menu_left">
+              <a href="#" class="gotoOffers">GO-TO OFFERS</a>
+
+              <div class="sub_menu_package">
+                <h3 class="sub_menu_title">FEATURED PACKAGES</h3>
+                <div class="swipeWrap">
+                  <ul class="swipItems packageImages">
+                    <li class="item">
+                      <div class="thum_p">
+                        <img src="./images/main_img/peak.jpg"/>
+                        <span class="hoverCont_p" tabindex>
+                          <a href="./package.html" class="btn">자세히 보기</a>
+                        </span>
+                      </div>
+                      <strong>[시즌한정] LET'S PEAK (2박전용)</strong>
+                      <p>피크타임 2인 1회 + 라운지앤바 수박빙수 1회 [특전] BABE SUMMER HOLIDAY BAG 증정</p>
+                      <span>2022.05.27 - 2022.08.31</span>
+                    </li>
+                    <li class="item">
+                      <div class="thum_p">
+                        <img src="./images/main_img/dine.jpg"/>
+                        <span class="hoverCont_p" tabindex>
+                          <a href="./package.html" class="btn">자세히 보기</a>
+                        </span>
+                      </div>
+                      <strong>[Flash Sale] DINE & DREAM</strong>
+                      <p>★ 박 당 15만원 할인 프로모션 ★ (- 6/6까지) 힐 스위트 2박 + 그랑제이 Access 2인 + 루브리카 런치 2인<br>[선착순 100객실] 프리미엄 커플 파자마 SET 증정</p>
+                      <span>2022.05.31 - 2022.06.06</span>
+                    </li>
+                    <li class="item">
+                      <div class="thum_p">
+                        <img src="./images/main_img/voyage.jpg"/>
+                        <span class="hoverCont_p" tabindex>
+                          <a href="./package.html" class="btn">자세히 보기</a>
+                        </span>
+                      </div>
+                      <strong>[시즌한정] SUMMER VOYAGE</strong>
+                      <p>조식 2인 + 잇투오 풀사이드 스낵세트 + 카바나 2시간 1회 [2박 이상 투숙 시] 라운지앤바 수박빙수 1회</p> 
+                      <span>2022.05.12 - 2022.08.31</span> 
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sub_menu_membership">
+                <h3 class="sub_menu_title">MEMBERSHIP</h3>
+                <p class="txt_mem">
+                  조선호텔앤리조트의 멤버십 프로그램 클럽조선은 품격있는 라이프스타일과<br>특별한 경험을 제안합니다.<br>
+                  클럽조선 회원이 되셔서 다채로운 혜택과 최상의 서비스를 누려보세요.
+                  <a href="./login.html" class="joinBtn">가입하기</a>
+                </p>
+              </div>
+            </div>
+            <div class="sub_menu_right">
+              <div class="sub_menu_events">
+                <h3 class="sub_menu_title">EVENTS TO REMEMBER</h3>
+                <div class="events_first">
+                  <div class="thum">
+                    <img src="./images/main_img/events1.jpg">
+                    <span class="hoverCont" tabindex>
+                      <a href="#" class="btn">자세히 보기</a>
+                    </span>
+                  </div>
+                  <div>
+                    <strong>Josun Deli Banana Cake</strong>
+                    <p>조선델리에서 선사하는 바나나 케이크로 입안 가득<br>달콤함을 느껴보세요.</p>
+                    <span>2022.05.01 - 2022.06.30<span>
+                  </div>
+                </div>
+                <div class="events_second">
+                  <div class="thum">
+                    <img src="./images/main_img/events2.jpg">
+                    <span class="hoverCont" tabindex>
+                      <a href="#" class="btn">자세히 보기</a>
+                    </span>
+                  </div>
+                  <div>
+                    <strong>Shaved Ice with Watermelon</strong>
+                    <p>푸른 빛의 제주 여름, 라운지앤바에서 시원한 여름<br>빙수를 선보입니다.</p>
+                    <span>2022.06.01 - 2022.08.31</span>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div id="close_offers" onclick="close_menu();">
+          <a href="#" class="side_img"></a>
+          <h4 class="open">CLOSE</h4>
+          <h4 class="offers_">OFFERS</h4>
+        </div>
+      </div>
+      
+      </div>
+
+      <div class="side_bar_left">
+        <ul>
+          <li id="home_link" class="indicator-item current" loc="0">
+            <a class="page-navigator "href="#" onclick="gotoPage(1)">HOME</a>
+          </li>
+          <li id="rooms_link" class="indicator-item" loc="1">
+            <a class="page-navigator" href="#goto-2" onclick="gotoPage(2)">ROOMS</a>
+          </li>
+          <li id="dining_link" class="indicator-item" loc="2">
+            <a class="page-navigator" href="#goto-3" onclick="gotoPage(3)">DINING</a>
+          </li>
+          <li id="facility_link" class="indicator-item" loc="3">
+            <a class="page-navigator" href="#goto-4" onclick="gotoPage(4)">FACILITY</a>
+          </li>
+          <li id="activity_link" class="indicator-item" loc="4">
+            <a class="page-navigator" href="#goto-5" onclick="gotoPage(5)">ACTIVITY</a>
+          </li>
+          <li id="membership_link" class="indicator-item" loc="5">
+            <a class="page-navigator" href="#goto-6" onclick="gotoPage(6)">MEMBERSHIP</a>
+          </li>
+          <li id="meeting_link" class="indicator-item" loc="6">
+            <a class="page-navigator" href="#goto-7" onclick="gotoPage(7)">MEETING</a>
+          </li> 
+        </ul>
+      </div>
+    </div>
+  </div>
+    <script type="text/javascript" src="./lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./lib/slick/slick.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="./js/headerfooter.js"></script>
+    <script src="./js/main.js"></script>
+
+    <script>
+      var video = document.getElementById("mainvideo");
+      var play = document.getElementById("btn-play");
+      var sound = document.getElementById("btn-sound");
+      var img_play = document.getElementById("img_play_btn");
+      play.addEventListener("click", playVideo);
+      sound.addEventListener("click", playSound);
+      // img_play.addEventListener("click", swipeimg);
+
+      function playVideo() {
+        //video.pause();
+        if (video.paused) {
+          //재생버튼
+          play.style.backgroundPosition = "-27px 0";
+          video.play();
+        } else {
+          //멈춤버튼
+          video.pause();
+          play.style.backgroundPosition = "0 0";
+        }
+      }
+      function playSound() {
+        if (video.muted) {
+          video.muted = false; //음소거 해제
+          sound.style.backgroundPosition = "0 -32px";
+        } else {
+          video.muted = true; //음소거
+          sound.style.backgroundPosition = "-44px -32px";
+        }
+      }
+      //rooms 스와이퍼 기능 구현
+      $(document).ready(function () {
+        var sw = true;
+        $(".swiper-wrapper").slick({
+          infinite: true, //무한 반복 옵션
+          //slidesToShow: 1, // 한 화면에 보여질 컨텐츠 개수
+          //slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수
+          speed: 100, // 다음 버튼 누르고 다음 화면 뜨는데까지 걸리는 시간(ms)
+          arrows: true, // 옆으로 이동하는 화살표 표시 여부
+          dots: false, // 스크롤바 아래 점으로 페이지네이션 여부
+          autoplay: true, // 자동 스크롤 사용 여부
+          autoplaySpeed: 3000, // 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
+          pauseOnHover: false, // 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
+          vertical: false, // 세로 방향 슬라이드 옵션
+          prevArrow: $("#left_swipe"),
+          nextArrow: $("#right_swipe"), // 다음 화살표 모양 설정
+          draggable: false, //드래그 가능 여부
+          initialSlide: 1,
+        });
+        //스와이퍼 버튼 재생,정지 버튼
+        $("#img_play_btn").click(function () {
+          if (sw == true) {
+            $(this).addClass("on");
+            $(".swiper-wrapper").slick("slickPause");
+            img_play.style.backgroundPosition = "0px 0";
+          } else {
+            $(this).removeClass("on");
+            $(".swiper-wrapper").slick("slickPlay");
+            img_play.style.backgroundPosition = "-12px 0";
+          }
+          sw = !sw;
+        }); 
+      });
+
+      $(".packageImages").slick({
+      dots: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      infinite: true,
+    });
+
+//전체효과
+$(function () {
+  // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: "onLeave",
+      duration: "200%", // this works just fine with duration 0 as well
+      // However with large numbers (>20) of pinned sections display errors can occur so every section should be unpinned once it's covered by the next section.
+      // Normally 100% would work for this, but here 200% is used, as Panel 3 is shown for more than 100% of scrollheight due to the pause.
+    },
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("div.content");
+
+  // create scene for every slide
+  for (var i = 0; i < 7; i++) {
+
+    new ScrollMagic.Scene({
+      triggerElement: slides[i],
+    })
+      .setPin(slides[i], { pushFollowers: false})
+      // .addIndicators() // add indicators (requires plugin)
+      .addTo(controller);
+  }
+
+});
+
+// 다른 방법
+// document.getElementById("gx").onmouseover = function () {
+//   mouseOver();
+// };
+// document.getElementById("gx").onmouseout = function () {
+//   mouseOut();
+// };
+
+// function mouseOver() {
+//   document.getElementById("gx").addClass("hover_img");
+// }
+
+// function mouseOut() {
+//   // document.getElementById("gx").style.transform = "translate(-300px, 0)";
+//   document.getElementById("gx").addClass("hover_img");
+// }
+
+//제이쿼리
+$(function () { 
+  $("#gx_")
+  .mouseover(function () {
+    $("#gx_").animate({ right: "-350px" }, 500);
+    $("#kidsclub_").animate({ right: "-600px" }, 500);
+  })
+  
+  $("#pool_")
+  .mouseover(function () {
+    $("#gx_").animate({ right: "-700px" }, 500);
+    $("#kidsclub_").animate({ right: "-600px" }, 500);
+  })
+
+  $("#kidsclub_")
+  .mouseover(function () {
+    $("#kidsclub_").animate({ right: "-300px" }, 500);
+    $("#gx_").animate({ right: "-350px" }, 500);
+  })
+});
+$(".startDay").click(function () {
+  $(".res_bar").addClass("top73");
+  $(".res_bar").removeClass("top58");
+});
+
+
+// $(".prev").click(function () {
+//   $(".res_bar").addClass("top73");
+//   $(".res_bar").removeClass("top58");
+// });
+// $(".next").click(function () {
+//   $(".res_bar").addClass("top73");
+//   $(".res_bar").removeClass("top58");
+// });
+
+
+//달력, 인원 선택시 res_bar 위치 조절, 펼쳐지기 조절
+  var body = document.querySelector("body");
+  body.addEventListener("click", clickBodyEvent1);
+
+function clickBodyEvent1(event) {
+  var target = event.target;
+  console.log(target);
+  //달력 input
+  var startDay = event.currentTarget.querySelector(".startDay");
+
+  var thTags = event.currentTarget.querySelector(".left").querySelectorAll("th");
+  var trTags = event.currentTarget.querySelector(".left").querySelectorAll("tr");
+  var thTags_r = event.currentTarget.querySelector(".right").querySelectorAll("th");
+  var trTags_r = event.currentTarget.querySelector(".right").querySelectorAll("tr");
+  var tdTags = event.currentTarget.querySelector(".left").querySelectorAll("td");
+  var tdTags_r = event.currentTarget.querySelector(".right").querySelectorAll("td");
+  var tableTags = event.currentTarget.querySelector(".daterangepicker").querySelectorAll("table");
+  // var spanTags = event.currentTarget.querySelector(".daterangepicker").querySelectorAll("span");
+  // var divTags = event.currentTarget.querySelector(".daterangepicker").querySelectorAll("div");
+
+  //res_bar
+  var resbar = event.currentTarget.querySelector(".res_bar");
+
+  // 인원 선택 함수
+  var roomWrap = event.currentTarget.querySelector(".roomWrap");
+  var mainRoom = event.currentTarget.querySelector(".mainRoom");  
+  var btnClose = event.currentTarget.querySelector(".btnClose");  
+  // var roomContainer = event.currentTarget.querySelector(".roomContainer").querySelectorAll("section");
+  var dlTags = event.currentTarget.querySelector(".roomWrap").querySelectorAll("dl");
+  var ddTags = event.currentTarget.querySelector(".roomWrap").querySelectorAll("dd");
+  var dtTags = event.currentTarget.querySelector(".roomWrap").querySelectorAll("dt");
+  var rc_divTags = event.currentTarget.querySelector(".roomContainer").querySelectorAll("div");
+
+  var rc_strongTags = event.currentTarget.querySelector(".roomContainer").querySelectorAll("strong");
+  var rc_inputTags = event.currentTarget.querySelector(".roomContainer").querySelectorAll("input");
+  var rc_ulTags = event.currentTarget.querySelector(".roomContainer").querySelectorAll("ul");
+  var rc_liTags = event.currentTarget.querySelector(".roomContainer").querySelectorAll("li");
+
+  console.log('target: ', target);
+//res_bar에서 달력 영역, 인원 영역 클릭 시 res_bar내려가게 함
+  if (target == body||target == roomWrap) {
+  // console.log("하이1")
+
+    resbar.classList.add("top73");
+    resbar.classList.remove("top58");
+}
+if (target == btnClose){
+  // console.log("하이1/2")
+  mainRoom.style.height = "0px";
+  mainRoom.style.padding = "0px";
+  resbar.classList.add("top58");
+  resbar.classList.remove("top73");
+}
+
+//res_bar에서 달력 영역, 인원 영역이 아닌 곳 클릭 시
+ if (target != startDay && target != body && target != roomWrap ) {
+  //  console.log("하이2")
+  if (target == event.currentTarget.querySelector(".daterangepicker")) return;
+  // if (target == event.currentTarget.querySelector(".available")) return;
+  if (target == event.currentTarget.querySelector(".calendar-table")) return;
+  if (target == event.currentTarget.querySelector(".right")) return;
+  if (target == event.currentTarget.querySelector(".left")) return;
+  if (target == event.currentTarget.querySelector(".prev")) return;
+  if (target == event.currentTarget.querySelector(".next")) return;
+
+
+    for(var i=0; i<thTags.length; i++) {
+         if( thTags[i] == target ) return ;
+     }
+     for(var i=0; i< trTags.length; i++) {
+         if(  trTags[i] == target ) return ;
+     }
+    for(var i=0; i<thTags_r.length; i++) {
+         if( thTags_r[i] == target ) return ;
+     }
+     for(var i=0; i< trTags_r.length; i++) {
+         if(  trTags_r[i] == target ) return ;
+     }
+     for(var i=0; i< tdTags.length; i++) {
+         if(  tdTags[i] == target ) return ;
+     }
+    for(var i=0; i<tdTags_r.length; i++) {
+         if( tdTags_r[i] == target ) return ;
+     }
+     for(var i=0; i<tableTags.length; i++) {
+         if( tableTags[i] == target ) return ;
+     }
+    //  for(var i=0; i< spanTags.length; i++) {
+    //      if(  spanTags[i] == target ) return ;
+    //  }
+    //  for(var i=0; i< divTags.length; i++) {
+    //      if(  divTags[i] == target ) return ;
+    //  }
+
+      // 1. mainRoom 영역 이면 pass
+    if (target == event.currentTarget.querySelector(".mainRoom")) return;
+    if (target == event.currentTarget.querySelector(".roomContainer")) return;
+
+    // 2. roomWrap 영역 내 dl이면 pass
+     for(var i=0; i<dlTags.length; i++) {
+         if( dlTags[i] == target ) return ;
+     }
+    // 3. roomWrap 영역 내 dd이면 pass
+     for(var i=0; i<ddTags.length; i++) {
+         if( ddTags[i] == target ) return ;
+     }
+     // 4. roomWrap 영역 내 dt이면 pass
+     for(var i=0; i<dtTags.length; i++) {
+         if( dtTags[i] == target ) return ;
+     }
+    // 5. roomContainer 영역 내 div면 pass
+    for(var i=0; i<rc_divTags.length; i++) {
+         if( rc_divTags[i] == target ) return ;
+     }
+     // 6. roomContainer 영역 내 strong이면 pass
+     for(var i=0; i<rc_strongTags.length; i++) {
+         if( rc_strongTags[i] == target ) return ;
+     }
+
+     // 7. roomContainer 영역 내 input이면 pass
+     for(var i=0; i<rc_inputTags.length; i++) {
+         if( rc_inputTags[i] == target ) return ;
+     }
+     // 8. roomContainer 영역 내 ul이면 pass
+     for(var i=0; i<rc_ulTags.length; i++) {
+         if( rc_ulTags[i] == target ) return ;
+     }
+     // 9. roomContainer 영역 내 li면 pass
+     for(var i=0; i<rc_liTags.length; i++) {
+         if( rc_liTags[i] == target ) return ;
+     }
+
+
+    // 10. res_bar 영역이면 pass
+    if (target == event.currentTarget.querySelector(".res_bar")) return;
+
+    // var cal = $(event.target).parents(".drp-calendar");
+    // if (cal.hasClass("left")){
+    // }
+       
+    mainRoom.style.height = "0px";
+    mainRoom.style.padding = "0px";
+    resbar.classList.add("top58");
+    resbar.classList.remove("top73");
+    console.log("달력 바깥");
+  }
+}
+    </script>
+  </body>
+  <script>
+    w3.includeHTML();
+  </script>
+
+</html>

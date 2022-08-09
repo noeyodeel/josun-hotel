@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "NotoKrL";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Noto Sans Light"), local("NotoSans-Light"),
+    url(../fonts/NotoSans-Light.eot);
+  src: url(../fonts/NotoSans-Light.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Light.woff2) format("woff2"),
+    url(../fonts/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrR";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+    url(../fonts/NotoSans-Regular.eot);
+  src: url(../fonts/NotoSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Regular.woff2) format("woff2"),
+    url(../fonts/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrM";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+    url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Medium.woff2) format("woff2"),
+    url(../fonts/NotoSans-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "gothamL";
+  src: local(※), url("../fonts/Gotham-Light.otf") format("opentype"),
+    url("../fonts/GothamLight.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: gothamB;
+  font-weight: normal;
+  src: url("../fonts/GothamBook.ttf") format("truetype");
+}
+@font-face {
+  font-family: gothamM;
+  font-weight: normal;
+  src: url("../fonts/GothamMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: playfair;
+  font-weight: normal;
+  src: url("../fonts/PlayfairDisplaySC-Regular.otf") format("opentype");
+}
+
+/* html,
+body {
+  height: 100%;
+} */
+/* body { */
+/* color: #000; */
+/* font-family: notokrL, gothamL, playfair; */
+/* font-weight: 400; */
+/* font-size: 18px; */
+/* line-height: 1.8; */
+/* } */
+.box1:nth-child(odd) {
+  background: #164438;
+  position: relative;
+}
+/* .box1:nth-child(odd)::after {
+  content: "";
+  display: block;
+  width: 380px;
+  height: 1000px;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+} */
+.box1:nth-child(even) {
+  background: #e5cfc7;
+  position: relative;
+}
+/* .box1:nth-child(even) .infoCont {
+  padding-left: 100px;
+} */
+/* .box1:nth-child(even)::after {
+  content: "";
+  display: block;
+  width: 380px;
+  height: 1000px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+} */
+.box1:nth-child(even) .category span {
+  color: #99726b;
+}
+.box1:nth-child(even) .tit,
+.box1:nth-child(even) .txt {
+  color: black;
+}
+body {
+  margin: 0;
+  /* line-height: 1.8; */
+}
+li {
+  list-style: none;
+  /* float: left; */
+}
+a {
+  text-decoration: none;
+}
+.Cont01 {
+  width: 100%;
+  height: 860px;
+}
+.Cont01_1 {
+  width: 100%;
+  height: 600px;
+  background: white;
+}
+.Cont01 > .inner {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 90px 0 0;
+}
+.rooms {
+  margin: 0;
+  /* font: 500 60px playfair; */
+  font-feature-settings: "lnum", "pnum";
+}
+.rooms_content {
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 0;
+  letter-spacing: -0.01em;
+}
+.topInner {
+  padding: 97px 0 82px;
+  width: 1400px;
+  margin: 0 auto;
+}
+.topInner .rooms {
+  font: 500 60px playfair;
+  padding-left: 0;
+}
+.rooms_list {
+  height: 40px;
+  padding-left: 0;
+  margin: 0 auto 39px;
+  width: 1400px;
+}
+.rooms_list > li {
+  float: left;
+}
+.rooms_list > li > a {
+  font-size: 20px;
+  color: #ccc;
+}
+.category > span {
+  color: #7db2a6;
+}
+.txtCont > .tit {
+  font-size: 54px;
+  color: #fff;
+  margin: 10px 0 0;
+  display: block;
+  font-family: playfair;
+  font-weight: 500;
+  font-feature-settings: "lnum", "pnum";
+}
+.txtCont > .txt {
+  font-size: 18px;
+  color: #fff;
+  margin: 12px 0 0;
+}
+.infoCont > .btn {
+  margin: 43px 0 70px;
+}
+.see_btn {
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  min-width: 162px;
+  height: 48px;
+  padding: 0 25px;
+  line-height: 48px;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  margin-right: 8px;
+}
+.box1:nth-child(even) .btn .see_btn {
+  border: 1px solid black;
+  color: black;
+}
+.love_inner {
+  height: 48px;
+  width: 50px;
+  display: inline-block;
+  border: 1px solid white;
+  line-height: 48px;
+  color: white;
+  box-sizing: border-box;
+  vertical-align: top;
+  position: relative;
+  cursor: pointer;
+}
+.box1:nth-child(even) .love_inner {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.love_inner::before {
+  content: "";
+  background: url(../images/rooms_img/ico_bookmark.png) no-repeat;
+  background-position: var(--main-bg-position);
+  width: 24px;
+  height: 100%;
+  position: absolute;
+  left: 12px;
+}
+.box1:nth-child(even) .love_inner::before {
+  background-position: var(--main-bg-position2);
+}
+/* .love_inner:hover::before {
+  background: url(../images/rooms_img/ico_bookmark.png) no-repeat -72px 12px;
+} */
+/* .box1:nth-child(even) .love_inner::before {
+  background: url(../images/rooms_img/ico_bookmark.png) no-repeat 0px 12px;
+} */
+.rooms_list li + li::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  margin: 0 20px;
+  background: #ccc;
+}
+.btnSwipe {
+  background: url(../images/rooms_img/btn.png);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.deluxe_01 {
+  position: relative;
+}
+.btnPrev {
+  top: 0;
+  left: 0;
+  left: 40px;
+}
+.deluxe_01 > .btnNext {
+  right: 40px;
+  background-position: -40px 0;
+}
+.btnSwipe {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  border: none;
+}
+.deluxe_01 > .subTxt {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  color: #fff;
+}

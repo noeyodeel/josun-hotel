@@ -1,0 +1,652 @@
+@font-face {
+  font-family: "NotoKrL";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Noto Sans Light"), local("NotoSans-Light"),
+    url(../fonts/NotoSans-Light.eot);
+  src: url(../fonts/NotoSans-Light.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Light.woff2) format("woff2"),
+    url(../fonts/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrR";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+    url(../fonts/NotoSans-Regular.eot);
+  src: url(../fonts/NotoSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Regular.woff2) format("woff2"),
+    url(../fonts/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrM";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+    url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Medium.woff2) format("woff2"),
+    url(../fonts/NotoSans-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "gothamL";
+  src: local(※), url("../fonts/Gotham-Light.otf") format("opentype"),
+    url("../fonts/GothamLight.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: gothamB;
+  font-weight: normal;
+  src: url("../fonts/GothamBook.ttf") format("truetype");
+}
+@font-face {
+  font-family: gothamM;
+  font-weight: normal;
+  src: url("../fonts/GothamMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: playfair;
+  font-weight: normal;
+  src: url("../fonts/PlayfairDisplaySC-Regular.otf") format("opentype");
+}
+div,
+a,
+p,
+span {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-style: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+  list-style: none;
+}
+a,
+button {
+  cursor: pointer;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  line-height: 1.8;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+}
+.topView {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/josonJuniorForKids02DetailTopView.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.topView > .textArea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+.topView > .textArea > .sort {
+  letter-spacing: 3px;
+  font-family: gothamL, notokrL;
+}
+.topView > .textArea > .title {
+  letter-spacing: -1px;
+  font: 400 80px playfair, notokrR;
+}
+.topView > .textArea > .contentGuide {
+  margin-top: 35px;
+  font-size: 20px;
+  font-family: gothamL, notokrL;
+}
+.topView > .btn {
+  width: 65px;
+  height: 45px;
+  position: absolute;
+  left: 50%;
+  bottom: 75px;
+  background: url("../images/btn_view_more.png");
+  background-repeat: no-repeat;
+}
+.topView > .btn > p {
+  font-size: 0;
+  font-weight: 0;
+  width: 0;
+  height: 0;
+}
+.reservationArea {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 90px;
+  background-color: #f9f9f9;
+  z-index: 10;
+}
+.reservationArea > .inner {
+  width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 30px 0;
+  position: relative;
+}
+.reservationArea > .inner > .reservationText {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-weight: 500;
+  font-size: 22px;
+  font-family: gothamM, notokrM;
+}
+.reservationArea > .inner > .btnArea {
+  position: absolute;
+  right: 200px;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+}
+.reservationArea > .inner > .btnArea > a {
+  width: 190px;
+  height: 60px;
+  margin: 0 10px;
+  padding: 0 25px;
+  display: inline-block;
+  border: solid 1px #ccc;
+  letter-spacing: -0.01em;
+  font-size: 17px;
+  line-height: 58px;
+  font-family: gothamL, notokrL;
+}
+.reservationArea > .inner > .btnArea > .shareBtn > span {
+  padding-left: 34px;
+  position: relative;
+}
+.reservationArea > .inner > .btnArea > .shareBtn > span::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/ico_btns.png");
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0, -50%);
+}
+.reservationArea > .inner > .btnArea > .reservationBtn {
+  border-color: #000;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.reservationArea > .inner > .btnArea > .reservationBtn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: #000;
+}
+.reservationArea > .inner > .btnArea > .reservationBtn::before {
+  content: "";
+  width: 130%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  z-index: -1;
+  background-color: #fff;
+  transform: skewX(-16deg);
+  transition: 0.5s ease-in-out;
+}
+.reservationArea > .inner > .btnArea > .reservationBtn:hover {
+  color: black;
+}
+.reservationArea > .inner > .btnArea > .reservationBtn:hover:before {
+  left: -10%;
+}
+/* eservationArea fix effect start */
+.fixed {
+  position: fixed;
+  top: 78px;
+}
+.marginForFixed {
+  margin-top: 210px !important;
+}
+/* eservationArea fix effect end */
+.contentArea {
+  width: 1400px;
+  margin: 0 auto;
+}
+.contentArea > .contentInfo {
+  margin-bottom: 92px;
+}
+.contentArea > .contentInfo > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.contentArea > .contentInfo > ul > li {
+  width: 33.33%;
+}
+.contentArea > .contentInfo > ul > li:nth-child(n + 4) {
+  margin-top: 59.98px;
+}
+.contentArea > .contentInfo > ul > li dt {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-family: gothamM, notokrM;
+}
+.contentArea > .contentInfo > ul > li dd {
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  font-family: gothamL, notokrL;
+}
+.contentArea > .contentTime {
+  margin-bottom: 92px;
+}
+.contentArea > .contentTime > h2 {
+  font-weight: 500;
+  font: 500 30px gothamB, notokrR;
+}
+.contentArea > .contentTime > p {
+  margin: 15px 0 11px;
+  font-size: 18px;
+  font-family: gothamL, notokrL;
+}
+.contentArea > .contentTime > table {
+  width: 100%;
+  border-top: solid 1px #000;
+  color: #333;
+  font-size: 17px;
+  vertical-align: middle;
+  text-align: center;
+}
+.contentArea > .contentTime > table th {
+  width: 486px;
+  padding: 15px 20px;
+  border-right: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  font-family: gothamM, notokrM;
+}
+.contentArea > .contentTime > table td {
+  padding: 15px 20px;
+  border-bottom: solid 1px #ccc;
+  font-family: gothamL, notokrL;
+}
+.contentArea > .swipeWrap {
+  width: 1400px;
+  height: 970px;
+}
+.contentArea > .swipeWrap button {
+  width: 40px;
+  height: 40px;
+  left: 40px;
+  z-index: 1;
+  opacity: 1;
+  background-image: url("../images/btn_swipe_40x40.png");
+}
+.contentArea > .swipeWrap button:before {
+  content: none;
+}
+.contentArea > .swipeWrap button:last-child {
+  left: initial;
+  right: 40px;
+  background-position: right;
+}
+.contentArea > .cautionArea {
+  width: 1400px;
+  margin-top: 120px;
+  padding: 34px 40px;
+  border: solid 1px #eee;
+}
+.contentArea > .cautionArea > .title {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font: 500 20px/1 notokrR;
+}
+.contentArea > .cautionArea .cautionContent {
+  color: #666;
+  font-size: 16px;
+  padding-left: 12px;
+  position: relative;
+  margin-top: 7px;
+}
+.contentArea > .cautionArea .cautionContent:first-child {
+  margin-top: 0;
+}
+.contentArea > .cautionArea .cautionContent::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  background-color: #666;
+}
+.contentArea > .btnArea {
+  margin-top: 80px;
+  text-align: center;
+}
+.contentArea > .btnArea > .btn {
+  width: 190px;
+  height: 60px;
+  margin: 0 10px;
+  padding: 0 25px;
+  display: inline-block;
+  border: solid 1px #000;
+  letter-spacing: -0.01em;
+  line-height: 58px;
+  font-family: gothamL, notokrL;
+  color: #000;
+}
+.otherContents {
+  width: 1400px;
+  margin: auto;
+  margin-top: 170px;
+  padding-bottom: 180px;
+}
+.otherContents > h2 {
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 30px;
+  font: 500 30px gothamB, notokrR;
+}
+.otherContents .swipItems {
+  width: 1460px;
+}
+.otherContents img {
+  width: 426px;
+  height: 295px;
+}
+.otherContents .textContents {
+  width: 426px;
+  color: #000;
+}
+.otherContents .textContents > .sort {
+  margin-top: 19px;
+}
+.otherContents .textContents > .sort > P {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  padding: 3px 10px 4px;
+  border: solid 1px black;
+  font: 400 14px/1.5 gothamL, notokrL;
+}
+.otherContents .textContents > .title > P {
+  margin-top: 17px;
+  font-size: 28px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: playfair, notokrR;
+}
+.otherContents .textContents > .date > P {
+  margin-top: 27px;
+  font-size: 14px;
+  color: #333;
+  font-family: gothamL, notokrL;
+}
+.otherContents .textContents > .info > p {
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.otherContents > .swipeWrap > .swipItems > button {
+  width: 18px;
+  height: 18px;
+  z-index: 1;
+  opacity: 1;
+  background-image: url("../images/btn_swipe_18x18.png");
+  top: -44px;
+  left: initial;
+  /* 버튼 위치 = 487-426+40-3 */
+  right: 98px;
+}
+.otherContents > .swipeWrap > .swipItems > button:before {
+  content: none;
+}
+.otherContents > .swipeWrap > .swipItems > :nth-child(3) {
+  background-position: right;
+  right: 58px;
+}
+.otherContents > .swipeWrap > .swipItems > :nth-child(3)::before {
+  content: "";
+  width: 1px;
+  height: 16px;
+  background-color: #ccc;
+  display: block;
+  position: absolute;
+  left: -12px;
+  top: 0;
+}
+.otherContents > .swipeWrap > .swipItems > ul {
+  margin-top: 60px;
+  position: relative;
+}
+.otherContents > .swipeWrap > .swipItems > ul > li {
+  margin: 0;
+}
+.otherContents > .swipeWrap > .swipItems > ul > li > button:before {
+  font-size: 12px;
+}
+/* 공유하기 모달창 */
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.modal__overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 200;
+  position: fixed;
+}
+.hidden {
+  display: none;
+}
+.modal__content {
+  width: 700px;
+  height: 300px;
+  background-color: white;
+  position: relative;
+  z-index: 300;
+}
+.modal__content a[href="#"] {
+  color: black;
+}
+.modal__content a[href="#"]::before {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 10px;
+}
+.modal__content li:nth-child(1) a::before {
+  background: url(../images/deluxe_img/ico_share.png) no-repeat;
+}
+.modal__content li:nth-child(2) a::before {
+  background: url(../images/deluxe_img/ico_share.png) no-repeat 50%;
+}
+.modal__content li:nth-child(3) a::before {
+  background: url(../images/deluxe_img/ico_share.png) no-repeat 100%;
+}
+.modal__content > h2 {
+  margin-top: 50px;
+  font-size: 1.5em;
+  margin-block-end: 0.83em;
+  font-weight: bold;
+}
+.modal__content > div > ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 0;
+}
+.modal_closeBtn {
+  background: url(../images/deluxe_img/btn_close_25x25.png) no-repeat;
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+.nav_modal_adj {
+  display: none;
+}
+/* header 조정부분 */
+header {
+  position: absolute;
+}
+nav {
+  background-color: #fff;
+}

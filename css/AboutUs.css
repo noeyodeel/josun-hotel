@@ -1,0 +1,588 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "NotoKrL";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Noto Sans Light"), local("NotoSans-Light"),
+    url(../fonts/NotoSans-Light.eot);
+  src: url(../fonts/NotoSans-Light.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Light.woff2) format("woff2"),
+    url(../fonts/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrR";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+    url(../fonts/NotoSans-Regular.eot);
+  src: url(../fonts/NotoSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Regular.woff2) format("woff2"),
+    url(../fonts/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrM";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+    url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Medium.woff2) format("woff2"),
+    url(../fonts/NotoSans-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "gothamL";
+  src: local(※), url("../fonts/Gotham-Light.otf") format("opentype"),
+    url("../fonts/GothamLight.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: gothamB;
+  font-weight: normal;
+  src: url("../fonts/GothamBook.ttf") format("truetype");
+}
+@font-face {
+  font-family: gothamM;
+  font-weight: normal;
+  src: url("../fonts/GothamMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: playfair;
+  font-weight: normal;
+  src: url("../fonts/PlayfairDisplaySC-Regular.otf") format("opentype");
+}
+
+html,
+body,
+.wrapper {
+  height: 100%;
+}
+
+body {
+  display: block;
+  margin: 8px;
+}
+body > .wrapper {
+  height: auto;
+  min-height: 100%;
+}
+.wrapper {
+  /* min-height: 100%; */
+  position: relative;
+  /* padding-bottom: 370px; */
+  min-width: 1500px;
+}
+.inner {
+  position: relative;
+  width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 180px;
+}
+.topArea {
+  display: table;
+  position: relative;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.topArea .topInner {
+  display: table-cell;
+  padding: 97px 0 90px;
+}
+.container {
+  min-height: 100%;
+  /* padding-top: 150px; */
+}
+body,
+input,
+textarea,
+select,
+button,
+table,
+th,
+td,
+pre {
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.8;
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-start: 0.67;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: bold;
+}
+.titDep1 {
+  font: 500 60px playfair;
+  font-feature-settings: "lnum", "pnum";
+}
+.hidden {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  position: absolute;
+  font: 0/0 notokrL;
+  /* ↑ font-size : 0 /line height : 0 font-family 가지고있으면 없어짐 */
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul:after,
+ol:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 제목 */
+
+.pageGuide {
+  margin-top: 18px;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+.about .pageGuide {
+  font-family: gothamL, notokrL;
+}
+.propertyIntro .tit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  font: 500 30px/1.5 gothamB, notokrM;
+  letter-spacing: -0.025em;
+}
+.propertyIntro {
+  position: relative;
+  display: block;
+  padding-left: 715px;
+}
+.em,
+adress {
+  font-style: normal;
+}
+img,
+fieldset,
+iframe {
+  border: 0;
+  vertical-align: top;
+}
+
+/* ----------------------------------------------------------------------- */
+
+/* About(공통) */
+.aboutus .pageGuide {
+  font-family: gothamL, notokrL;
+}
+
+.visualBox {
+  position: relative;
+  margin-bottom: 90px;
+  overflow: hidden;
+}
+
+.visualBox .inner {
+  padding-bottom: 0;
+}
+
+.visualBox .bg {
+  position: absolute;
+  left: 15%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+strong,
+b {
+  font-weight: 500;
+}
+
+/*.visualBox + .inner.tabArea{margin-top:100px}*/
+/* About(.propertyIntro.type02 소개) */
+.abHotelInner {
+  padding-bottom: 120px;
+}
+.propertyIntro.type02 {
+  padding-left: 745px;
+}
+
+.propertyIntro.type02 .txt {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.propertyIntro.type02 .txt dl {
+  display: table-cell;
+  position: relative;
+}
+
+.propertyIntro.type02 .txt dl:first-of-type {
+  width: 230px;
+}
+
+.propertyIntro.type02 .txt dl:nth-of-type(2) {
+  width: 180px;
+}
+
+.propertyIntro.type02 .txt dt {
+  position: absolute;
+  bottom: 0;
+  color: #666;
+  font: 400 16px/1.5 notokrL;
+  letter-spacing: -0.01em;
+}
+
+.propertyIntro.type02 .txt dd {
+  padding-bottom: 30px;
+  font: 36px/1.5 playfair, gothamM, notokrL;
+  font-feature-settings: "lnum", "pnum";
+  letter-spacing: 0.075em;
+}
+
+.propertyIntro.type02 .txt dd .unit {
+  font-weight: 600;
+}
+
+/* About(.businessRoomList 소개/ci) */
+.businessRoomList.type02 {
+  margin-top: 135px;
+}
+
+.businessRoomList.type02 > li:nth-child(odd) .info {
+  padding-right: 45px;
+}
+
+.businessRoomList.type02 > li:nth-child(even) .info {
+  padding-left: 45px;
+}
+
+.businessRoomList.type02 .tit {
+  font-size: 30px;
+}
+
+.businessRoomList.type02 .ciImg {
+  display: table-cell;
+  width: 655px;
+  height: 250px;
+  background: #f9f9f9;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.ciTit {
+  margin: 95px 0 23px;
+  font: 500 26px gothamB;
+  text-transform: uppercase;
+}
+
+.ciTit + .businessRoomList.type02 {
+  margin-top: 0;
+}
+.businessRoomList > li .tit {
+  display: block;
+  font-size: 24px;
+  padding-top: 21px;
+  font-family: gothamM, notokrR;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.propertyIntro .txt {
+  font: 400 18px/1.8 gothamL, notokrL;
+  letter-spacing: -0.025em;
+}
+
+/* --------type 03--------------- */
+.businessRoomList.type03 > li:first-child .info::before {
+  /* type02 - 03 사이의 구분선 */
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100px;
+  margin: -10px auto 40px;
+  background: #000;
+}
+.aboutHotel {
+  background: #f9f9f9;
+  padding: 120px 0;
+}
+/* type 03 타이틀, 설명 */
+.aboutHotel .businessRoomList {
+  margin: 0 auto;
+}
+.businessRoomList {
+  width: 1400px;
+  margin: 80px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.businessRoomList.type03 > li:first-child .info {
+  position: relative;
+  padding: 0 180px;
+  text-align: center;
+  margin: 0 auto;
+  width: auto;
+}
+/* 첫번째 사진 */
+.businessRoomList.type03 > li:nth-child(odd) .info {
+  padding-left: 55px;
+  padding-right: 0;
+}
+.businessRoomList.type03 > li:nth-child(even) .info {
+  padding-right: 45px;
+  padding-left: 0;
+}
+/* 두번째 사진 */
+.businessRoomList > li:nth-child(odd) .info {
+  padding-right: 20px;
+}
+.businessRoomList > li:nth-child(even) .info {
+  padding-left: 20px;
+}
+.businessRoomList > li .info {
+  display: block;
+  position: relative;
+  width: 700px;
+}
+.businessRoomList.type03 .tit {
+  font-size: 30px;
+}
+.businessRoomList.type03 p.txt {
+  font-weight: 600;
+}
+.businessRoomList > li {
+  float: left;
+  width: 100%;
+  flex: 1 1 50%;
+}
+.businessRoomList.type03 > li.info {
+  display: block;
+  position: relative;
+  width: 700px;
+}
+
+.businessRoomList > li:nth-child(even) .info {
+  padding-left: 20px;
+}
+.businessRoomList > li .txt {
+  display: block;
+  padding-top: 18px;
+  font-family: gothamL, notokrL;
+  margin: 0;
+}
+
+.thum {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  margin: 30px 0;
+}
+.thum > img:first-child {
+  margin-right: 90px;
+}
+
+/* 위치 */
+
+.topInner.type02 .infoTxt {
+  float: left;
+  font-size: 20px;
+  font-family: gothamL;
+  padding: 3px 0 0 28px;
+  letter-spacing: -0.5px;
+  line-height: 1.6;
+  margin-top: 0;
+}
+.topInner.type02 {
+  padding: 120px 0 50px;
+}
+
+.topArea .topInner {
+  padding: 97px 0 82px !important;
+}
+.topInner.type02 .titDep1 {
+  font-size: 30px;
+  font-family: gothamM;
+  float: left;
+}
+
+em,
+address {
+  font-style: normal;
+}
+.topInner.type02 .infoTxt span:before {
+  content: "";
+  display: inline-block;
+  vertical-align: -2px;
+  width: 1px;
+  height: 18px;
+  background: #aaa;
+  margin: 0 19px 0 13px;
+}
+caption {
+  overflow: hidden;
+  position: static;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  text-transform: uppercase;
+}
+/* 테이블 */
+.tblH thead tr th {
+  padding: 16px;
+  font-size: 17px;
+  border-top: 1px solid #000;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: gothamM, notokrM;
+  color: #333;
+}
+.tblH thead tr th:first-child, .tblH tbody tr td:first-child {
+  border-left: none;
+}
+.tblH thead tr th, .tblH tbody tr td {
+  font-family: gothamL, notokrL;
+  text-transform: uppercase;
+  background: #fff;
+}
+td, th {
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+.tblH tbody tr th {
+  background: #fff;
+  padding: 16px;
+  border-bottom: 1px solid #ccc;
+}
+.tcenter {
+  text-align: center !important;
+}
+.tblH tbody tr td {
+  padding: 16px;
+  font-size: 17px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.f18 {
+  font-size: 18px !important;
+  font-weight: 600;
+  color: #000 !important;
+  text-decoration: underline;
+}
+table + .txtGuide {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.btnM {
+  min-width: 162px;
+  height: 50px;
+  padding: 0 25px;
+  line-height: 48px;
+  font-size: 17px;
+  letter-spacing: -.01em;
+}
+.login .selectWrap .ui-selectmenu-button {
+  padding: 0 20px;
+  border-bottom: 0;
+  background: transparent;
+}
+.selectWrap .ui-selectmenu-button {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  line-height: 58px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid #000;
+  background: #fff;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  font-family: gothamL,notokrL;
+}
+.login .selectWrap {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 65px;
+  border: none;
+  background-color: #f9f9f9;
+}
+.selectWrap select {
+  display: none;
+}
+.login .selectWrap .ui-selectmenu-button::after {
+  right: 20px;
+}
+.selectWrap {
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  background: #fff;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>package</title>
+    <link rel="stylesheet" href="./css/package.css" />
+    <link rel="stylesheet" href="./css/headerfooter.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+  </head>
+  <body>
+    <header w3-include-html="header.html"></header>
+    <div w3-include-html="header_scroll.html"></div>
+    <div class="wrapper">
+      <div class="topArea">
+        <div class="inner">
+          <div class="title"><p>Package</p></div>
+          <div class="text">
+            <p>그랜드 조선 제주와 완벽한 시간을 가장 합리적으로 누리는 방법</p>
+          </div>
+        </div>
+      </div>
+      <div class="searchArea">
+        <div class="inner">
+          <div class="seachOp">
+            <div class="period">
+              <input
+                type="text"
+                class="startDay"
+                placeholder="YYYY-MM-DD"
+                id="datepickerFrom"
+              />
+              <span>-</span>
+              <input
+                type="text"
+                class="endDay"
+                placeholder="YYYY-MM-DD"
+                id="datepickerTo"
+              />
+            </div>
+            <div class="intWord">
+              <input
+                type="text"
+                placeholder="검색어를 입력해주세요."
+                id="seach"
+              />
+              <button type="button">검색</button>
+            </div>
+          </div>
+          <div class="keywordList">
+            <div class="btnArea">
+              <button type="button" id="keywordOnOff">KEYWORD</button>
+            </div>
+            <ul id="keywords">
+              <!-- li 반복 -->
+              <!-- <li class="keyword"> <input type="checkBox" id="keyword${i}" value="keyword${i}" /> <label for="keyword${i}">${keywords[i]}</label> </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="contentsArea">
+        <div class="inner">
+          <div class="searchSortArea">
+            <select name="searchSort" id="searchSort" hidden>
+              <option value="추천 순" selected>추천 순</option>
+              <option value="인기 순">인기 순</option>
+              <option value="최신 순">최신 순</option>
+              <option value="가격 낮은 순">가격 낮은 순</option>
+              <option value="가격 높은 순">가격 높은 순</option>
+            </select>
+            <button
+              class="searchSort"
+              id="searchSortBtn"
+              onclick="createMenu()"
+            >
+              추천 순
+            </button>
+            <div class="option" id="option">
+              <ul>
+                <li><a class="optionList">추천 순</a></li>
+                <li><a class="optionList">인기 순</a></li>
+                <li><a class="optionList">최신 순</a></li>
+                <li><a class="optionList">가격 낮은 순</a></li>
+                <li><a class="optionList">가격 높은 순</a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="contentsList" id="contents">
+            <!-- li 반복 -->
+            <!-- <li class="content">
+              <div class="thum">
+                <img src="./images/package_img/sample.jpg" alt="이미지없음" />
+              </div>
+              <div class="keyword">
+                <span>여름</span>
+                <span>EARLY BIRD</span>
+                <span>TIME SALE</span>
+              </div>
+              <div class="title"><p>[프로모션] SUMMER VOYAGE</p></div>
+              <div class="txt">
+                <p>
+                  출시기념 박 당 2만원 할인 프로모션 조식 2인 + 잇투오 풀사이드
+                  스낵세트 + 카바나 2시간
+                </p>
+              </div>
+              <div class="date">
+                <ul>
+                  <li>
+                    <p>예약기간</p>
+                    <p>2022.05.12 - 2022.08.31</p>
+                  </li>
+                  <li>
+                    <p>숙박기간</p>
+                    <p>2022.05.12 - 2022.08.31</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="pay">
+                <p><span>370,000</span>KRW ~</p>
+              </div>
+              <div class="btnArea">
+                <div>
+                  <input type="checkbox" name="bookmark" id="bookmark" />
+                  <label for="bookmark"></label>
+                </div>
+                <a href="" class="Btn">자세히 보기</a>
+              </div>
+            </li> -->
+          </ul>
+          <div class="btnArea" id="moreContents">
+            <!-- <a class="btnMore" id="moreBtn" onclick="clickMore()">MORE</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer w3-include-html="footer.html"></footer>
+  </body>
+  <script src="./js/headerfooter.js"></script>
+  <script>
+    w3.includeHTML();
+  </script>
+  <!-- datepicker -->
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script src="./js/packageList.js"></script>
+  <script src="./js/package.js"></script>
+</html>

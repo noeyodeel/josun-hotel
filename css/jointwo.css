@@ -1,0 +1,456 @@
+  /* 회원가입 2단계 */
+.stepWrap * {
+    vertical-align: top;
+}
+  .stepWrap ol li * {
+    vertical-align: top;
+}
+.stepWrap ol li:last-child.on:after {
+    position: absolute;
+    left: -12px;
+    top: 18px;
+}
+.stepWrap ol li.on:after {
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 1px;
+    background: #aaa;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+.stepWrap ol li.prev:before {
+    border: none;
+    text-indent: -9999px;
+    background: url(../images/bg_step.png) no-repeat;
+}
+.stepWrap ol li:before {
+    counter-reset: section 1;
+    content: counter(section);
+    counter-increment: section;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 37px;
+    color: #9b9fa8;
+    font-size: 20px;
+    border: 1px solid #9b9fa8;
+    border-radius: 40px;
+    text-align: center;
+    text-indent: 0;
+    box-sizing: border-box;
+    z-index: 2;
+    background: #fff;
+    font-family: gothamL;
+}
+.stepWrap {
+    margin-top: 50px;
+}
+.stepWrap ol li:last-child.on:before {
+    left: 80px;
+}
+.stepWrap ol li.on:before {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+.stepWrap ol li em {
+    text-indent: -9999px;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+    font-size: 22px;
+}
+
+.stepWrap ol li {
+    text-indent: -9999px;
+    position: relative;
+    display: inline-block;
+    padding: 0 0 1px 50px;
+    box-sizing: content-box;
+}
+
+.stepWrap ol li:last-child.on {
+    padding-left: 135px;
+}
+
+.stepWrap ol li.on {
+    margin-right: 20px;
+    text-indent: 0;
+    width: auto;
+}
+/* 회원가입 약관 제목 */
+.join .titDep2 {
+    margin-bottom: 18px;
+    letter-spacing: -.085em;
+}
+.titDep2:first-child {
+    margin-top: 0;
+}
+.titDep2 {
+    font: 500 30px gothamB, notokrR;
+    margin: 90px 0 15px;
+}
+/* 약관 박스 */
+.join .pageGuide {
+    line-height: 1.67;
+    letter-spacing: -.1em;
+}
+.join .agreeBox {
+    margin-top: 51px;
+    border-top: 1px solid #000;
+}
+.join .agreeBox .nonToggle {
+    padding: 18px;
+}
+.nonToggle + .toggleList.agreeCont {
+    border-top-color: #ccc;
+}
+.toggleList.agreeCont {
+    border-top: 1px solid #000;
+}
+.toggleList.agreeCont > li {
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
+.toggleList > li {
+    position: relative;
+}
+.toggleList.agreeCont .frm.type02 {
+    padding: 18px 20px 19px;
+}
+.frm.type02 {
+    display: block;
+}
+.frm.type02 label {
+    font-size: 18px;
+    padding-left: 33px;
+}
+.frm.type02 input[type=checkbox]+label:before {
+    background-position: 0 0;
+}
+.frm.type02 label:before {
+    left: 0;
+    top: 9px;
+    width: 18px;
+    height: 13px;
+}
+.toggleList.agreeCont .btnToggle {
+    position: absolute;
+    right: 20px;
+    top: 23px;
+    width: 18px;
+    height: 20px;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+.toggleList.agreeCont .btnToggle:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 10px;
+    padding: 5px 0;
+    background: url(../images/ico_toggle_18x10.png) no-repeat 0 5px;
+}
+button {
+    box-sizing: border-box;
+    border: none;
+    background: none;
+}
+/* 두번째 토글 바 */
+.toggleList.agreeCont .toggleCont .toggleInner {
+    padding: 25px;
+    background: #f9f9f9;
+}
+.toggleList > li .toggleCont .toggleInner {
+    padding: 40px 0;
+    padding: 33px 0;
+}
+.toggleList.agreeCont .notiTxt {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+.join .notiTxt {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.toggleList.agreeCont .notiTxt+.notiTxt {
+    margin-top: 20px;
+}
+.toggleList.agreeCont .notiTxt+table {
+    margin-top: 23px;
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+    empty-cells: show;
+    border-spacing: 0;
+}
+.toggleList.agreeCont .frmWrap .frm label {
+    color: #666;
+    font-size: 16px;
+}
+.toggleList.agreeCont .frmWrap .frm+.frm {
+    margin-left: 30px;
+}
+.toggleList.agreeCont .frmWrap+.tblH {
+    margin-top: 23px;
+}
+.join .frmWrap+.tblH {
+    margin-top: 23px;
+}
+.join .frmBox {
+    display: table;
+    width: 100%;
+    padding-top: 20px;
+}
+/* 회원정보 박스 */
+/* 이름 */
+.join .frmBox .userInfo dt {
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: -.01em;
+    vertical-align: top;
+}
+.join .frmBox {
+    display: table;
+    width: 100%;
+    padding-top: 20px;
+}
+.join .frmBox .userInfo {
+    display: table-cell;
+    width: 300px;
+    padding: 50px 35px;
+    background-color: #f9f9f9;
+    vertical-align: top;
+}
+.join .frmBox .frmInfo {
+    display: table-cell;
+    padding-left: 50px;
+}
+/* 정보 입력 */
+.intList > li .tit {
+    display: inline-block;
+    position: relative;
+}
+.intList > li .tit label {
+    display: inline-block;
+    font-family: gothamM,notokrM;
+    font-size: 14px;
+    line-height: 1;
+    color: #333;
+    text-transform: uppercase;
+}
+.intList > li.error label {
+    color: #b01414;
+}
+.intList > li .essential {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: relative;
+    padding-right: 4px;
+    vertical-align: 2px;
+}
+.intList > li.error .essential:after {
+    background-position: -6px 0;
+}
+.intList > li .essential:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -4px;
+    width: 6px;
+    height: 6px;
+    background: url(../images/ico_essential.png) no-repeat 0 0;
+}
+.intList > li .intWrap+.intInner {
+    margin-top: 3px;
+}
+.intList > li .intInner {
+    display: inline-block;
+    position: relative;
+}
+.intList > li .intInner > span {
+    position: relative;
+    display: inline-block;
+}
+.intList > li .duobuleInp span+span, .intList > li .duobuleSelect div+div {
+    margin-left: 14px;
+}
+.intList > li .intInner > span {
+    position: relative;
+    display: inline-block;
+}
+.intList > li .intInner .alertMessage {
+    display: none;
+    position: absolute;
+    top: -32px;
+    left: 0;
+    width: 600px;
+    background: #fff;
+    color: #b01414;
+    font: 500 14px/32px notokrR;
+    margin: 0;
+}
+/* id */
+.intList > li .intArea+button {
+    margin-left: 20px;
+}
+.intList > li .txtGuide {
+    margin-top: 14px;
+}
+.intList > li.intList-repwd {
+    position: absolute;
+    margin-top: -133px !important;
+    right: 0;
+}
+.intList > li+li+li {
+    margin-top: 30px;
+}
+.intBox {
+    padding: 16px 0 5px 0;
+}
+.btnArea a, .btnArea button {
+    margin: 0 10px;
+}
+/* .toggleCont .toggleInner {
+    display: block !important;
+} */
+/* 버튼 체크 */
+.frm input:checked+label:before {
+    background-position: -26px -13px;
+}
+.frm.type02 input:checked +label:before {
+    background-position: -18px 0px;
+}
+.frm.idSaveCheck input:checked +label:before {
+    background-position: -18px 0px;
+}
+/* select box */
+.selectWrap .ui-selectmenu-button:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -1px;
+    width: 11px;
+    height: 7px;
+    background: url(../images/spr_form.png) no-repeat 0 -39px;
+}
+#nationCode-button::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -1px;
+    width: 11px;
+    height: 7px;
+    background: url(../images/spr_form.png) no-repeat 0 -39px;
+}
+.selectArea .select::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -1px;
+    width: 11px;
+    height: 7px;
+    background: url(../images/spr_form.png) no-repeat 0 -39px;
+}
+ .selectArea .option {
+    width: 100%;
+    display: block;
+    z-index: 3;
+    height: 150px;
+    overflow-y: scroll;
+    position: absolute;
+    border: solid #333;
+    border-width: 0 1px 1px 1px;
+    background: #fff;
+    display: none;
+}
+.selectArea .select {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    height: 60px;
+    line-height: 58px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: solid #000;
+    border-width: 0 0 1px 0;
+    background: #fff;
+    color: #333;
+    text-align: left;
+    cursor: pointer;
+    font-family: gothamL, notokrL;
+    font-weight: 400;
+    font-size: 18px;
+}
+.openOption {
+    display: block !important;
+}
+.selectArea .option li > a {
+    height: 50px;
+    background: #fff;
+    padding: 0 20px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    position: relative;
+    display: block;
+    text-align: left;
+    line-height: 50px;
+}
+.selectArea .option {
+    width: 100%;
+    display: block;
+    z-index: 3;
+    height: 150px;
+    overflow-y: scroll;
+    position: absolute;
+    border: solid #333;
+    border-width: 0 1px 1px 1px;
+    background: #fff;
+    display: none;
+}
+/* 스크롤바 */
+.selectArea .option::-webkit-scrollbar {
+    width: 10px;
+    height: 200px;
+}
+.selectArea .option::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    background-clip: padding-box;
+    border-top: solid 10px #fff;
+    border-bottom: solid 10px #fff;
+    /* 수정 */
+    border: 3px solid transparent;
+    border-top-width: 10px;
+    /* 수정 */
+}
+.selectArea .option::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+.selectArea .option li > a:hover {
+    background: #f7f7f7;
+}
+

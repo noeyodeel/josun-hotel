@@ -1,0 +1,599 @@
+button,
+a,
+.btn,
+label {
+  cursor: pointer;
+}
+.titleOfInfo {
+  display: inline-block;
+  font-family: gothamM, notokrM;
+  font-size: 14px;
+  line-height: 1;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.essential {
+  text-indent: -9999px;
+  padding-right: 4px;
+  padding-left: 4px;
+  vertical-align: 2px;
+  font-size: 0;
+}
+.essential::after {
+  content: " ";
+  display: inline-block;
+  margin-top: -4px;
+  width: 6px;
+  height: 6px;
+  background: url(../images/mypage_changeInfo_img/ico_essential.png) no-repeat 0
+    0;
+}
+.btnM {
+  min-width: 162px;
+  height: 50px;
+  padding: 0 25px;
+  line-height: 48px;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+.btnL {
+  width: 190px;
+  height: 60px;
+  padding: 0 25px;
+  line-height: 58px;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  margin: 0 10px;
+  font-weight: 400;
+}
+.btnStyle1 {
+  text-align: center;
+  box-sizing: border-box;
+  color: #000;
+  border: 1px solid #000;
+  background: #fff;
+  font-family: gothamL, notokrL;
+}
+.btnStyle2 {
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: #fff;
+  border: 1px solid #000;
+  transition: color 0.5s ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+  font-family: gothamL, notokrL;
+  position: relative;
+  display: inline-block;
+  background-color: #000;
+}
+.btnStyle2::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  background: #fff;
+  width: 130%;
+  height: 100%;
+  transform: skewX(-16deg);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+}
+.btnStyle2:hover {
+  color: #000;
+}
+.btnStyle2:hover:before {
+  left: -10%;
+}
+
+.pageInfoArea {
+  margin-bottom: 15px;
+}
+.pageInfoArea .title {
+  font: 500 30px gothamB, notokrR;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.mainArea .defaultInfo {
+  color: #000;
+  font-family: gothamL, notokrL;
+  vertical-align: middle;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.mainArea .titleOfDefaultInfo {
+  color: #333;
+  font: 500 14px/1 gothamM, notokrR;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+.mainArea .informations > li + li {
+  margin-top: 30px;
+}
+.mainArea .informations input {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  padding: 8px 13px 8px 0;
+  color: #000;
+  border: solid #ccc;
+  border-width: 0 0 1px 0;
+  font-family: gothamL, notokrL;
+  height: 60px;
+}
+.mainArea .informations input:focus {
+  outline: none;
+}
+.mainArea .informations input:focus:focus-visible {
+  border-color: #000;
+}
+.mainArea .informations input + button,
+.mainArea .informations input + div + button {
+  margin-left: 20px;
+}
+.mainArea .informations .englishNameArea input {
+  width: 490px;
+}
+.mainArea .selectArea {
+  width: 490px;
+  position: relative;
+}
+.mainArea .selectArea .select {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  line-height: 58px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: solid #000;
+  border-width: 0 0 1px 0;
+  background: #fff;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  font-family: gothamL, notokrL;
+  font-weight: 400;
+  font-size: 18px;
+}
+.mainArea .selectArea .select::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -1px;
+  width: 11px;
+  height: 7px;
+  background: url(../images/mypage_changeInfo_img/spr_form.png) no-repeat 0 -39px;
+}
+.open:after {
+  background-position: -11px -39px !important;
+}
+.mainArea .selectArea .option {
+  width: 100%;
+  display: block;
+  z-index: 3;
+  height: 150px;
+  overflow-y: scroll;
+  position: absolute;
+  border: solid #333;
+  border-width: 0 1px 1px 1px;
+  background: #fff;
+  display: none;
+}
+.openOption {
+  display: block !important;
+}
+.mainArea .selectArea .option li > a {
+  height: 50px;
+  background: #fff;
+  padding: 0 20px;
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  position: relative;
+  display: block;
+  text-align: left;
+  line-height: 50px;
+}
+.mainArea .selectArea .option li > a:hover {
+  background: #f7f7f7;
+}
+.mainArea .selectArea .option::-webkit-scrollbar {
+  width: 10px;
+  height: 200px;
+}
+.mainArea .selectArea .option::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  background-clip: padding-box;
+  border-top: solid 10px #fff;
+  border-bottom: solid 10px #fff;
+  border: 3px solid transparent;
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+}
+.mainArea .selectArea .option::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.mainArea .phoneNumberArea input {
+  width: 165px;
+}
+.mainArea .phoneNumberArea .dash {
+  display: inline-block;
+  position: relative;
+  width: 49px;
+}
+.mainArea .phoneNumberArea .dash::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: inline-block;
+  width: 13px;
+  height: 1px;
+  margin-left: -7px;
+  background: #000;
+}
+.mainArea .addrArea .radioArea input {
+  display: none;
+}
+.mainArea .addrArea .radioArea {
+  padding: 16px 0 5px 0;
+}
+.mainArea .addrArea .radioArea > span {
+  display: inline-block;
+  position: relative;
+}
+.mainArea .addrArea .radioArea label {
+  display: inline-block;
+  position: relative;
+  font-size: 17px;
+  padding-left: 35px;
+  font-family: gothamL, notokrL;
+  text-transform: uppercase;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #000;
+}
+.mainArea .addrArea .radioArea > span:nth-child(n + 2) > label {
+  margin-left: 18px;
+}
+.mainArea .addrArea .radioArea label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 26px;
+  height: 26px;
+  background: url(../images/mypage_changeInfo_img/spr_form.png) no-repeat -52px -13px;
+}
+.mainArea .addrArea .radioArea input:checked + label:before {
+  background-position: -78px -13px !important;
+}
+.mainArea .addrArea #addrNum {
+  width: 305px;
+}
+.mainArea .addrArea .addr {
+  width: 490px;
+}
+.mainArea .emailArea input {
+  width: 244px;
+}
+.mainArea .emailArea .dash {
+  padding: 0 13px;
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.mainArea .emailArea .selectArea {
+  width: 244px;
+  display: inline-block;
+  margin-left: 18px;
+}
+
+.subArea {
+  margin-top: 74px;
+}
+.subArea .title {
+  margin-bottom: 24px;
+  font: 500 24px gothamB, notokrR;
+  letter-spacing: -0.025em;
+}
+.subArea .login {
+  margin-bottom: 12px;
+}
+.subArea .login li {
+  margin: 5px 0 8px 0;
+  display: inline-block;
+}
+.subArea .login li label {
+  display: block;
+  position: relative;
+  width: 194px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  color: #666;
+  background: #fff;
+  padding: 60px 52px 74px 52px;
+  font-size: 16px;
+  font-family: notokrL;
+  text-align: center;
+}
+#google + label {
+  background: url(../images/mypage_changeInfo_img/ico_sns-google.png) no-repeat
+    50% 34px;
+}
+#facebook + label {
+  background: url(../images/mypage_changeInfo_img/ico_sns-facebook.png)
+    no-repeat 50% 34px;
+}
+#naver + label {
+  background: url(../images/mypage_changeInfo_img/ico_sns-naver.png) no-repeat
+    50% 34px;
+}
+#kakao + label {
+  background: url(../images/mypage_changeInfo_img/ico_sns-kakao.png) no-repeat
+    50% 34px;
+}
+#apple + label {
+  background: url(../images/mypage_changeInfo_img/ico_sns-apple.png) no-repeat
+    50% 34px;
+}
+.subArea .login li label::after {
+  content: "연결하기";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 33px;
+  width: 56px;
+  height: 24px;
+  font: 14px notokrL;
+  letter-spacing: -0.025em;
+  background: transparent;
+}
+.subArea .login li label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: inherit;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 34px;
+  width: 54px;
+  height: 1px;
+  background: #000;
+}
+.subArea .guide li {
+  position: relative;
+  color: #888;
+  padding-left: 16px;
+  font: 16px gothamL, notokrL, playfair;
+  letter-spacing: -0.01em;
+}
+.subArea .guide li:nth-child(N + 2) {
+  margin-top: 6px;
+}
+.subArea .guide li::before {
+  content: "＊";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font: 600 15px gothamL;
+}
+.subArea .agreeContents {
+  border-top: solid 1px #000;
+}
+.subArea .agreeContents li {
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.subArea .agreeContents li label {
+  margin: 18px 20px 19px;
+  display: inline-block;
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.8;
+  position: relative;
+  padding-left: 33px;
+}
+.subArea .agreeContents li label::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 18px;
+  height: 13px;
+  background: url(../images/mypage_changeInfo_img/spr_form.png) no-repeat;
+}
+.subArea .agreeContents li input:checked + label:before {
+  background-position: -18px 0;
+}
+.subArea .agreeContents li button {
+  position: absolute;
+  right: 20px;
+  top: 23px;
+  width: 18px;
+  height: 20px;
+  overflow: hidden;
+  text-indent: -9999px;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+}
+.subArea .agreeContents li button::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 10px;
+  padding: 5px 0;
+  background: url(../images/mypage_changeInfo_img/ico_toggle_18x10.png)
+    no-repeat 0 5px;
+}
+.subArea .agreeContents li .openAgreeBtn::before {
+  background-position: -18px 5px;
+}
+.subArea .agreeContents li .detailArea {
+  padding: 25px;
+  display: none;
+}
+.openAgree {
+  display: block !important;
+}
+.subArea .agreeContents li .detailArea .notiTxt {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  line-height: 1.8;
+}
+.subArea .agreeContents li .detailArea .checkArea label {
+  color: #666;
+  font-size: 16px;
+  display: inline-block;
+  padding-left: 35px;
+  margin: 0;
+  font-family: gothamL, notokrL;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.8;
+}
+.subArea .agreeContents li .detailArea .checkArea span + span label {
+  margin-left: 30px;
+}
+.subArea .agreeContents li .detailArea .checkArea label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 26px;
+  height: 26px;
+  background: url(../images/mypage_changeInfo_img/spr_form.png) no-repeat 0 -13px;
+}
+.subArea
+  .agreeContents
+  li
+  .detailArea
+  .checkArea
+  input:checked
+  + label::before {
+  background-position: -26px -13px;
+}
+.subArea .agreeContents li .detailArea table {
+  margin-top: 23px;
+  width: 100%;
+  border-collapse: separate;
+  empty-cells: show;
+  border-spacing: 0;
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  line-height: 1.8;
+  font-size: 18px;
+}
+.subArea .agreeContents li .detailArea table thead th {
+  padding: 16px;
+  font-size: 17px;
+  border-top: 1px solid #000;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: gothamM, notokrM;
+  color: #333;
+  font-weight: 400;
+}
+.subArea .agreeContents li .detailArea table thead th:first-child {
+  border-left: 0;
+}
+.subArea .agreeContents li .detailArea table tbody th {
+  background: #fff;
+  padding: 16px;
+  border-bottom: 1px solid #ccc;
+  font-weight: 400;
+}
+.subArea .agreeContents li .detailArea table tbody td {
+  padding: 16px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  font-family: gothamL, notokrL;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.subArea .agreeContents li .detailArea .txtGuide {
+  margin-top: 15px;
+  color: #888;
+  padding-left: 16px;
+  font: 16px gothamL, notokrL, playfair;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+.subArea .agreeContents li .detailArea .txtGuide::before {
+  content: "＊";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font: 600 15px gothamL;
+}
+.subArea .interestContents li {
+  margin: 8px 0 0 2px;
+  display: inline-block;
+}
+.subArea .interestContents li label {
+  width: 327px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  z-index: 2;
+  box-sizing: border-box;
+  color: #666;
+  background: #fff;
+  padding: 9px 35px 11px 15px;
+  font-size: 16px;
+  font-family: gothamL;
+  font-weight: 400;
+  line-height: 1.8;
+  position: relative;
+}
+.subArea .interestContents li label::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  right: 12px;
+  top: 18px;
+  width: 18px;
+  height: 13px;
+  background: url(../images/mypage_changeInfo_img/spr_form.png) no-repeat 0 0;
+}
+.subArea .interestContents li input:checked + label:after {
+  background-position: -18px 0;
+}
+.subArea .interestContents li input:checked + label {
+  border: 1px solid #000;
+  color: #000;
+  background: #f9f9f9;
+}
+
+.btnArea {
+  text-align: center;
+  margin-top: 78px;
+}

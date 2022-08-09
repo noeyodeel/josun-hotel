@@ -1,0 +1,91 @@
+.stepWrap {
+      margin-top: 50px;
+}
+.stepWrap ol {
+      counter-reset: section;
+}
+  .stepWrap * {
+      vertical-align: top;
+}
+.stepWrap ol li.on {
+      margin-right: 20px;
+      text-indent: 0;
+      width: auto;
+}
+.stepWrap ol li {
+      text-indent: -9999px;
+      position: relative;
+      display: inline-block;
+      padding: 0 0 1px 50px;
+      box-sizing: content-box;
+}
+.stepWrap ol li.on:before {
+      background: #000;
+      color: #fff;
+      border-color: #000;
+}
+.stepWrap ol li:before {
+      content: counter(section);
+      counter-increment: section;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 40px;
+      line-height: 37px;
+      color: #9b9fa8;
+      font-size: 20px;
+      border: 1px solid #9b9fa8;
+      border-radius: 40px;
+      text-align: center;
+      text-indent: 0;
+      box-sizing: border-box;
+      z-index: 2;
+      background: #fff;
+      font-family: gothamL;
+}
+.stepWrap ol li.on:after {
+      content: '';
+      display: inline-block;
+      width: 50px;
+      height: 1px;
+      background: #aaa;
+      margin-left: 20px;
+      vertical-align: middle;
+}
+.join .txtBox {
+      padding: 63px 50px;
+}
+.join .txtBox .txtBoxTitle {
+      margin-bottom: 10px;
+}
+.txtBox .txtBoxTitle {
+      font-size: 24px;
+      line-height: 38px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      text-align: center;
+}
+.join .pageGuide {
+      line-height: 1.67;
+      letter-spacing: -.1em;
+}
+.txtBox .pageGuide {
+      font-size: 18px;
+      letter-spacing: -.025em;
+      text-align: center;
+}
+/* .join .txtBox .pageGuide + .btnArea {
+      margin: 44px 0 7px;
+}
+.join .txtBox .btnArea {
+      margin: 28px 0 25px;
+  }
+  .txtBox .btnArea {
+      margin-top: 20px;
+  } */
+  .btnArea {
+      text-align: center;
+      margin-top: 78px;
+  }
