@@ -1,0 +1,63 @@
+.withdrawal_txt {
+  margin: -15px 0 45px;
+  font-size: 18px;
+  font-family: notokrL, gothamL, playfair;
+}
+.withdrawal_txt_pw {
+  display: inline-block;
+  font-family: gothamM, notokrM;
+  font-size: 14px;
+  line-height: 1;
+  color: #333;
+  text-transform: uppercase;
+}
+.withdrawal_cf_pw {
+  height: 60px;
+  padding: 20px 13px 8px 0;
+  color: #ccc;
+  border: solid #ccc;
+  border-width: 0 0 1px 0;
+  vertical-align: middle;
+  font-size: 18px;
+  font-family: gothamL, notokrL;
+  font-weight: 900;
+}
+.withdrawal_btn {
+  min-width: 190px;
+  height: 60px;
+  font-size: 18px;
+  background: none;
+  font-family: gothamL, notokrL;
+  border: 1px solid #000;
+}
+.withdrawal_btn_wrap {
+  text-align: center;
+  padding: 100px 0 30px;
+}
+.shinsegae_wrap {
+  border: 1px solid #eee;
+  padding: 34px 40px;
+}
+.shinsegae_wrap_tit {
+  margin-bottom: 12px;
+  font: 500 20px/1 notokrR;
+}
+.shinsegae_wrap_txt li {
+  position: relative;
+  padding-left: 12px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.shinsegae_wrap_txt li a {
+  color: #008bd3;
+}
+.shinsegae_wrap_txt li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 2px;
+  height: 2px;
+  background: #000;
+}

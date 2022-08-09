@@ -1,0 +1,179 @@
+button,
+a,
+.btn {
+  cursor: pointer;
+}
+.essential {
+  text-indent: -9999px;
+  padding-right: 4px;
+  padding-left: 4px;
+  vertical-align: 2px;
+  font-size: 0;
+}
+.essential::after {
+  content: " ";
+  display: inline-block;
+  margin-top: -4px;
+  width: 6px;
+  height: 6px;
+  background: url(../images/mypage_removeAccount_img/ico_essential.png)
+    no-repeat 0 0;
+}
+.btnL {
+  width: 190px;
+  height: 60px;
+  padding: 0 25px;
+  line-height: 58px;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  margin: 0 10px;
+  font-weight: 400;
+}
+.btnStyle1 {
+  text-align: center;
+  box-sizing: border-box;
+  color: #000;
+  border: 1px solid #000;
+  background: #fff;
+  font-family: gothamL, notokrL;
+}
+.btnStyle2 {
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: #fff;
+  border: 1px solid #000;
+  transition: color 0.5s ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+  font-family: gothamL, notokrL;
+  position: relative;
+  display: inline-block;
+  background-color: #000;
+}
+.btnStyle2::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  background: #fff;
+  width: 130%;
+  height: 100%;
+  transform: skewX(-16deg);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+}
+.btnStyle2:hover {
+  color: #000;
+}
+.btnStyle2:hover:before {
+  left: -10%;
+}
+
+.pageInfoArea {
+  margin-bottom: 45px;
+}
+.pageInfoArea .title {
+  font: 500 30px gothamB, notokrR;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.pageInfoArea .guide {
+  letter-spacing: -0.01em;
+  font-size: 18px;
+}
+
+.mainArea {
+  margin-bottom: 40px;
+}
+.mainArea .inputArea {
+  margin-bottom: 78px;
+}
+.mainArea .inputArea label {
+  display: inline-block;
+  font-weight: 400;
+  font-family: gothamM, notokrM;
+  font-size: 14px;
+  line-height: 1;
+  color: #333;
+  text-transform: uppercase;
+}
+.mainArea .inputArea input {
+  width: 480px;
+  display: block;
+  margin: 11px 19px 8px 0;
+  height: 60px;
+  color: #000;
+  border: solid #ccc;
+  border-width: 0 0 1px 0;
+  font-size: 18px;
+  font-family: gothamL, notokrL;
+  font-weight: 400;
+  line-height: 1.8;
+}
+.mainArea input:focus {
+  outline: none;
+}
+.mainArea input:focus:focus-visible {
+  border-color: #000;
+}
+.mainArea .newPwArea,
+.mainArea .confirmPwArea {
+  margin-top: 30px;
+  display: inline-block;
+}
+.mainArea .txtGuide {
+  margin-top: 14px;
+  padding-left: 16px;
+  color: #888;
+  font: 16px gothamL, notokrL, playfair;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+.mainArea .txtGuide::before {
+  content: "＊";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font: 600 15px gothamL;
+}
+
+.mainArea .confirmPwArea input {
+  margin-right: 0;
+}
+.mainArea .btnArea {
+  text-align: center;
+}
+
+.subArea .cautionArea {
+  padding: 34px 40px;
+  border: 1px solid #eee;
+}
+.subArea .cautionArea .title {
+  margin-bottom: 12px;
+  font: 500 20px/1 notokrR;
+  letter-spacing: -0.01em;
+}
+.subArea .cautionArea .cautions > li {
+  padding-left: 12px;
+  font-size: 16px;
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  line-height: 1.8;
+  position: relative;
+}
+.subArea .cautionArea .cautions > li::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 2px;
+  height: 2px;
+  background: #000;
+  z-index: 5000000;
+}
+.subArea .cautionArea .cautions > li > a {
+  color: #008bd3;
+}

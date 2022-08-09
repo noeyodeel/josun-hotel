@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/room_1.css" />
+    <link rel="stylesheet" href="./css/res_calendar_single.css" />
+    <link rel="stylesheet" href="./css/headerfooter.css" />
+    <title>res_room1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/headerfooter.js"></script>
+    <script src="./js/res.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+    <header w3-include-html="header.html"></header>
+    <div w3-include-html="header_scroll.html"></div>
+    <div class="wrapper">
+      <div class="container" id="container">
+        <div class="top">
+          <div class="topInner">
+            <h2 class="Innertitle">Booking</h2>
+            <p class="pageGuide">
+              조선호텔앤리조트의 다이닝과 함께 차원이 다른 미식을 경험해 보세요.
+            </p>
+          </div>
+        </div>
+
+        <div class="Inner">
+          <div class="diningContainer">
+            <ul class="toggleList rsvList">
+              <li id="Step1" class="toggleOn">
+                <strong class="listTit">호텔 &amp; 다이닝 선택</strong>
+                <em class="infoValue">
+                  <span id="HotelInfo">그랜드 조선 제주</span>
+                  <span id="DiningInfo">ARIA</span>
+                </em>
+                <button
+                  type="button"
+                  id="step1btnToggle"
+                  class="btnToggle"
+                  onclick="toggleClass6()"
+                >
+                  <span class="hidden">상세내용 보기</span>
+                </button>
+                <div class="toggleCont" id="step1" style="display: block">
+                  <div class="toggleInner">
+                    <div class="diningCont">
+                      <div class="leftCont">
+                        <div class="infoInner">
+                          <div class="infoArea Select">
+                            <div
+                              class="infoArea selectWrap"
+                              style="width: 508px"
+                            >
+                              <select
+                                id="hotelSelect"
+                                name="searchCode"
+                                class="selectmenu"
+                              >
+                                <option value="JP">조선 팰리스</option>
+                                <option value="GJJ" selected="selected">
+                                  그랜드 조선 제주
+                                </option>
+                                <option value="GJB">그랜드 조선 부산</option>
+                                <option value="GSP">그래비티 서울 판교</option>
+                                <option value="LS">레스케이프</option>
+                                <option value="TJS">웨스틴 조선 서울</option>
+                                <option value="WJB">웨스틴 조선 부산</option>
+                                <option value="SJS">
+                                  포포인츠 바이 쉐라톤 조선 서울역
+                                </option>
+                                <option value="SJSM">
+                                  포포인츠 바이 쉐라톤 조선, 서울 명동
+                                </option>
+                                <option value="JH">조선호텔앤리조트</option>
+                              </select>
+                            </div>
+
+                            <div
+                              class="infoArea selectWrap"
+                              style="width: 508px"
+                            >
+                              <select
+                                id="diningSelect"
+                                name="searchDiningCode"
+                                class="selectmenu"
+                              >
+                                <option value="001" selected="selected">
+                                  ARIA
+                                </option>
+                                <option value="002">RUBRICA</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="swipeWrapper">
+                          <div class="swipeWrap images" style="height: 352px">
+                            <button
+                              type="button"
+                              class="btnSwipe btnPrev"
+                            ></button>
+                            <ul
+                              class="swipeCont"
+                              style="
+                                position: absolute;
+                                width: 508px;
+                                overflow: visible;
+                              "
+                            >
+                              <li class="swipeImages">
+                                <img
+                                  src="./images/res_Aria.jpeg"
+                                  alt="그랜드 조선 제주 아리아"
+                                />
+                              </li>
+
+                              <li class="swipeImages">
+                                <img
+                                  src="./images/res_Aria2.jpeg"
+                                  alt="그랜드 조선 제주 아리아"
+                                />
+                              </li>
+
+                              <li class="swipeImages">
+                                <img
+                                  src="./images/res_Aria3.jpeg"
+                                  alt="그랜드 조선 제주 아리아"
+                                />
+                              </li>
+
+                              <li class="swipeImages">
+                                <img
+                                  src="./images/res_Aria4.jpeg"
+                                  alt="그랜드 조선 제주 아리아"
+                                />
+                              </li>
+
+                              <li class="swipeImages">
+                                <img
+                                  src="./images/res_Aria5.jpeg"
+                                  alt="그랜드 조선 제주 아리아"
+                                />
+                              </li>
+                            </ul>
+                            <button
+                              type="button"
+                              class="btnSwipe btnNext"
+                            ></button>
+                          </div>
+                        </div>
+                        <!-- <div class="indicator">
+                          <button type="button" class="num on">01</button>
+                          <button type="button" class="num">02</button>
+                          <button type="button" class="num">03</button>
+                          <button type="button" class="num">04</button>
+                          <button type="button" class="num">05</button>
+                        </div> -->
+                      </div>
+
+                      <div class="rightCont">
+                        <div class="roomInfo">
+                          <dl>
+                            <dt class="name">ARIA</dt>
+                            <dd class="text" style="padding-bottom: 100px">
+                              창 밖으로 펼쳐지는 오름정원의 전망의 프리미엄 뷔페
+                              레스토랑, 아리아<br />
+                              조선호텔 아리아의 노하우가 담긴 시그니처 메뉴들과
+                              함께 제주의 맛과 향을 음미할 수 있는 로컬 메뉴가
+                              다양하게 준비되어 있습니다.<br /><br />
+                              <div class="mainDining">
+                                <p style="font-weight: bold">운영시간</p>
+                                <p>[아침]</p>
+                                <p>07:00 - 10:30</p>
+                                <p>[점심]</p>
+                                <p>12:00 - 14:30</p>
+                                <p>[저녁]</p>
+                                <p>18:00 - 21:30</p>
+                                <br />
+                                <p style="font-weight: bold">가격안내</p>
+                                <p>[아침]</p>
+                                <p>성인 55,000 KRW / 어린이 33,000 KRW</p>
+                                <p>[점심]</p>
+                                <p>성인 82,000 KRW / 어린이 45,000 KRW</p>
+                                <p>[저녁]</p>
+                                <p>성인 125,000 KRW / 어린이 65,000 KRW</p>
+                                <p>
+                                  *운영시간은 코로나19에 따른 사회적 거리두기
+                                  정부 지침에 따라 변경 될 수 있습니다.
+                                </p>
+                              </div>
+                            </dd>
+                            <dd class="info" style="position: relative">
+                              <ul>
+                                <li>
+                                  <em>위치</em>
+                                  <span>그랜드 조선 제주 1층</span>
+                                </li>
+                                <li>
+                                  <em>문의</em>
+                                  <span>064-735-8989</span>
+                                </li>
+                                <li>
+                                  <em>좌석수</em>
+                                  <span>총 278석(PDR 40석 포함)</span>
+                                </li>
+                              </ul>
+                            </dd>
+                          </dl>
+                          <a
+                            class="btnSC btnL"
+                            id="step1btn"
+                            style="text-decoration: none"
+                            onclick="daum()"
+                            >다음</a
+                          >
+                        </div>
+                      </div>
+                      <!-- //rightCont -->
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- step1 -->
+
+              <li id="Step2">
+                <strong class="listTit">날짜 &amp; 시간 &amp; 인원 선택</strong>
+                <button
+                  type="button"
+                  class="btnToggle"
+                  id="step2btnToggle"
+                  onclick="toggleClass7()"
+                >
+                  <span class="hidden">상세내용 보기</span>
+                </button>
+
+                <div class="toggleCont" id="step2">
+                  <div class="toggleInner">
+                    <div class="diningCont calCont">
+                      <div class="leftCont">
+                        <div
+                          class="calContainer calSingle"
+                          id="diningCal"
+                        ></div>
+                        <span class="calText"
+                          >표시된 해당일의 경우 예약금 발생</span
+                        >
+                      </div>
+                      <div class="rightCont alert" id="alert">
+                        <p class="alertText">
+                          예약하실 날짜를 먼저 선택해주세요
+                        </p>
+                        <strong class="tit">런치/디너 선택</strong>
+                        <div class="timeSelect">
+                          <ul class="formList">
+                            <li class="formRadio">
+                              <input
+                                type="radio"
+                                id="lunch"
+                                value="L"
+                                name="f_Rdo"
+                                checked
+                              />
+                              <label for="lunch">Lunch</label>
+                            </li>
+                            <li class="formRadio">
+                              <input
+                                type="radio"
+                                id="dinner"
+                                value="D"
+                                name="f_Rdo"
+                              />
+                              <label for="dinner">Dinner</label>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <strong class="tit">시간 선택</strong>
+                        <div class="infoArea selectWrap" style="width: 245px">
+                          <select id="timeSel" class="selectmenu">
+                            <option value="12:00" selected>12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                          </select>
+                        </div>
+                        <strong class="tit">인원 선택</strong>
+                        <div class="addCont">
+                          <ul>
+                            <li class="addOption">
+                              <span class="text">성인 및 어린이</span>
+                              <span class="price">KRW 0</span>
+                              <div class="numType type2">
+                                <button
+                                  type="button"
+                                  class="btnDown"
+                                  onclick='count1("minus")'
+                                >
+                                  인원 수 감소
+                                </button>
+
+                                <span id="result" class="adult">1</span>
+
+                                <button
+                                  type="button"
+                                  class="btnUp"
+                                  onclick="count1('plus')"
+                                >
+                                  인원 수 증가
+                                </button>
+                              </div>
+                            </li>
+
+                            <li class="addOption">
+                              <span id="babyTxtGuide" class="txt">
+                                유아(37개월 미만)
+                              </span>
+                              <span class="price">KRW 0</span>
+                              <div class="numType type2">
+                                <button
+                                  type="button"
+                                  class="btnDown"
+                                  onclick='count2("minus")'
+                                >
+                                  인원 수 감소
+                                </button>
+                                <span id="result" class="child">0</span>
+                                <button
+                                  type="button"
+                                  class="btnUp"
+                                  onclick="count2('plus')"
+                                >
+                                  인원 수 증가
+                                </button>
+                              </div>
+                            </li>
+                          </ul>
+                          <p id="overTextGuide" class="textGuide">
+                            5인 이상 또는 유아 3인 이상 예약 시 전화 문의 주시기
+                            바랍니다.
+                          </p>
+                          <p class="totalText">
+                            <span class="txt">총 예약금액</span>
+                            <span class="price" id="TotalCost">
+                              0
+                              <em>KRW</em>
+                            </span>
+                          </p>
+                        </div>
+                        <div class="btnArea" style="text-align: right">
+                          <a
+                            href="#"
+                            class="btnSC btnL"
+                            id="step1btn"
+                            style="text-decoration: none"
+                            onclick="daum2()"
+                            >다음</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- //step2 -->
+
+              <li id="Step3">
+                <strong class="listTit">예약자 정보 입력</strong>
+                <button
+                  type="button"
+                  class="btnToggle"
+                  id="step3btnToggle"
+                  onclick="toggleClass8()"
+                >
+                  <span class="hidden">상세내용 닫기</span>
+                </button>
+                <div class="toggleCont" id="step3">
+                  <div class="toggleInner">
+                    <ul class="infoList">
+                      <li id="nameArea">
+                        <div class="infoWrap">
+                          <span class="tit">
+                            <label for="lastName">KOREAN NAME</label>
+                            <span class="essential">필수</span>
+                          </span>
+                        </div>
+                        <div class="infoInner">
+                          <span class="infoArea">
+                            <input
+                              type="text"
+                              id="KorName"
+                              name="KorName"
+                              maxlength="10"
+                              value=""
+                              placeholder="이름을 입력해주세요."
+                              style="width: 440px"
+                            />
+                          </span>
+                          <span class="alertMsg">이름을 입력해주세요.</span>
+                        </div>
+                      </li>
+
+                      <li id="phoneArea">
+                        <div class="infoWrap">
+                          <span class="tit">
+                            <label for="phone">PHONE NUMBER</label>
+                            <span class="essential">필수</span>
+                          </span>
+                        </div>
+
+                        <div class="infoInner phone">
+                          <span class="infoArea">
+                            <input
+                              type="text"
+                              id="Tel1"
+                              name="Tel1"
+                              maxlength="3"
+                              style="width: 165px"
+                              value=""
+                            />
+                          </span>
+                          <span class="dash"></span>
+                          <span class="infoArea"
+                            ><input
+                              type="text"
+                              id="Tel2"
+                              name="Tel2"
+                              maxlength="4"
+                              style="width: 165px"
+                              value=""
+                            />
+                          </span>
+                          <span class="dash"></span>
+                          <span class="infoArea"
+                            ><input
+                              type="text"
+                              id="Tel3"
+                              name="Tel3"
+                              maxlength="4"
+                              style="width: 165px"
+                              value=""
+                            />
+                          </span>
+                          <span class="alertMsg"></span>
+                        </div>
+                        <p class="textGuide">
+                          휴대폰 번호는 예약번호 전송에 쓰입니다. 정확히 기입해
+                          주세요.
+                        </p>
+                      </li>
+
+                      <li id="emailArea">
+                        <div class="infoWrap">
+                          <span class="tit">
+                            <label for="eMail">E-MAIL</label>
+                            <span class="essential">필수</span>
+                          </span>
+                        </div>
+
+                        <div class="infoInner email">
+                          <span
+                            ><input
+                              type="text"
+                              id="Email1"
+                              style="width: 273px"
+                            />
+                          </span>
+                          <span class="dash">@</span>
+                          <span
+                            ><input
+                              type="text"
+                              id="Email2"
+                              style="width: 273px"
+                            />
+                          </span>
+                          <div
+                            class="selectWrap"
+                            style="width: 273px"
+                            first="true"
+                          >
+                            <select name="email" id="email" class="selectmenu">
+                              <option value="" selected>직접 입력</option>
+                              <option value="naver.com">naver.com</option>
+                              <option value="hanmail.net">hanmail.net</option>
+                              <option value="hotmail.com">hotmail.com</option>
+                              <option value="nate.com">nate.com</option>
+                              <option value="gmail.com">gmail.com</option>
+                            </select>
+                          </div>
+                          <span class="alertMsg">이메일을 입력해주세요.</span>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="infoWrap">
+                          <span class="tit">
+                            <label for="txtArea">REQUEST</label>
+                          </span>
+                        </div>
+                        <div class="infoInner">
+                          <textarea
+                            id="txtArea"
+                            placeholder="알레르기가 있다면, 예약 시 미리 말씀해 주십시오. 유아용품이 필요하신 경우 여기에 기재해 주십시오."
+                          ></textarea>
+                          <p class="textGuide">
+                            요청사항을 최대한 반영하도록 최선을 다하겠습니다.<br />
+                            다만, 호텔의 사정으로 부득이 반영되지 않을 수도
+                            있으니 이 점 양해 부탁드립니다.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <!-- //step3 -->
+            </ul>
+          </div>
+
+          <div class="notiContainer">
+            <div id="privacyArea">
+              <!--비회원일때만!-->
+              <h3 class="notiTit">개인 정보 수집 · 이용 동의</h3>
+              <ul class="toggleList agreeCont">
+                <li id="agreeCont">
+                  <span class="form type2">
+                    <input
+                      type="checkbox"
+                      class="Agree"
+                      id="Agree"
+                      name="policyAgree"
+                    />
+                    <label for="Agree"
+                      >[필수] 개인정보 수집 · 이용에 동의합니다.</label
+                    >
+                  </span>
+                  <button
+                    type="button"
+                    class="btnToggle"
+                    onclick="toggleClass5()"
+                  >
+                    <span class="hidden">상세내용 보기</span>
+                  </button>
+                  <div class="toggleCont" style="display: none">
+                    <div class="toggleInner">
+                      <table class="agreetable">
+                        <colgroup>
+                          <col style="width: auto" />
+                          <col style="width: 33%" />
+                          <col style="width: 33%" />
+                        </colgroup>
+                        <thead class="thead">
+                          <tr>
+                            <th scope="col">수집 항목</th>
+                            <th scope="col">수집 목적</th>
+                            <th scope="col">보유 기간</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>이름</td>
+                            <td>서비스 이용자 식별</td>
+                            <td rowspan="2" class="td1">예약 후 1년</td>
+                          </tr>
+                          <tr>
+                            <td>휴대폰번호, 이메일주소</td>
+                            <td>
+                              서비스 이행을 위한 연락 및 안내,<br />
+                              고지사항 전달, 불만처리 등의 의사소통
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <p class="textGuide">
+                상기 개인정보 수집 · 이용에 대한 동의를 거부할 수 있으나 동의
+                거부 시 다이닝 예약이 불가합니다.
+              </p>
+              <!-- 상기 개인정보 수집 · 이용에 대한 동의를 거부할 수 있으나 동의 거부 시 다이닝 예약이 불가합니다. -->
+            </div>
+
+            <div>
+              <h2 class="tit2">이용 규정</h2>
+              <ul class="listDep1" id="noticeCn">
+                · 홈페이지 예약 마감 시 영업장으로 유선 문의해 주시기 바랍니다.
+                <br />· 영업장 예약 상황에 따라 요청하신 좌석 배치가 어려울 수
+                있습니다.
+                <br />· 6인 이상 예약 관련 내용은 영업장으로 연락 바랍니다.
+                <br />· 회원 할인 및 제휴 카드 할인은 중복 적용 불가합니다.
+                <br />· 호텔 행사 관련 쿠폰 및 객실 청구 등과 관련하여 현장 결제
+                시 업장에 문의 바랍니다.
+                <br />· 모든 식사 비용은 당일 모든 결제가 진행되어야 하며,
+                후불처리가 진행되지 않음을 알려드립니다.
+                <br />· 특정일(5/5,12/24~25,12/30~31)이나 영업장 프로모션일에는
+                가격이 변경될 수 있습니다.
+              </ul>
+            </div>
+          </div>
+          <!-- //notiContainer -->
+          <div id="ResBtnArea" class="btnArea">
+            <a href="#" class="btnSearch" style="text-decoration: none"
+              >예약 완료</a
+            >
+          </div>
+        </div>
+        <!-- //Inner -->
+      </div>
+    </div>
+  </body>
+  <footer w3-include-html="footer.html"></footer>
+  <script src="./js/headerfooter.js"></script>
+  <script>
+    w3.includeHTML();
+  </script>
+</html>

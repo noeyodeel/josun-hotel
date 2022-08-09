@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/mypage.css" />
+    <link rel="stylesheet" href="./css/mypage_roomList.css" />
+    <title>MyPage</title>
+    <script src="./js/mypage_roomList.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/headerfooter.js"></script>
+  </head>
+  <body>
+    <header w3-include-html="header.html"></header>
+    <div w3-include-html="header_scroll.html"></div>
+    <div class="topArea">
+      <div class="topInner">
+        <h2 class="titDep1">My Page</h2>
+        <p class="pageGuide">
+          <!-- 멤버십 회원을 위한 다양한 혜택이 준비되어 있습니다. -->멤버십
+          회원을 위한 다양한 혜택이 준비되어 있습니다.
+        </p>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="leftSidebar">
+        <div class="myInfo">
+          <p class="name"><a href="#">이주형님</a></p>
+          <div class="info">
+            <a href="#">
+              <span class="tit">포인트</span>
+              <span class="txt"
+                ><em id="usefulPointSpan">0</em
+                ><abbr title="Josun Point">J</abbr></span
+              >
+            </a>
+            <a href="#">
+              <span class="tit">쿠폰</span>
+              <span class="txt">11</span></a
+            >
+          </div>
+        </div>
+        <ul class="list">
+          <li>
+            멤버십확인
+            <p><a href="#">CLUB JOSUN VIP 내역</a></p>
+          </li>
+          <li>
+            예약확인
+            <p><a href="#">객실 · 패키지 예약 내역</a></p>
+            <p><a href="#">다이닝 예약 내역</a></p>
+            <p><a href="#">액티비티 예약 내역</a></p>
+            <p><a href="#">멤버십 예약 내역</a></p>
+          </li>
+          <li>
+            관심 리스트
+            <p><a href="./mypage_roomList.html">객실 리스트</a></p>
+            <p><a href="./mypage_roomList.html">패키지 리스트</a></p>
+          </li>
+          <li>
+            개인정보관리
+            <p><a href="./mypage_changeInfo.html">회원 정보 수정</a></p>
+            <p><a href="./mypage_pwChng.html">비밀번호 변경</a></p>
+            <p><a href="./mypage_ withdrawal.html">회원 탈퇴</a></p>
+          </li>
+        </ul>
+      </div>
+      <div class="myContents">
+        <h3 class="roomList_tit">관심리스트</h3>
+        <ul class="tabWrap">
+          <li class="tabWrap_list1" onclick="return false">
+            <a href="#">객실</a>
+          </li>
+          <li class="tabWrap_list2" onclick="return false">
+            <a href="#">패키지</a>
+          </li>
+        </ul>
+        <div class="main_Allcheck" id="lb">
+          <label for="lb" class="label_check">
+            <span>전체 선택</span>
+          </label>
+          <button class="allcheck_btn">선택 삭제</button>
+        </div>
+        <div class="roomList_wrap_content">
+          <p class="roomList_main_content">등록된 관심 상품이 없습니다.</p>
+        </div>
+      </div>
+    </div>
+    <footer w3-include-html="footer.html"></footer>
+  </body>
+  <script>
+    w3.includeHTML();
+  </script>
+</html>

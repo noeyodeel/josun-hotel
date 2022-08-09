@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/mypage.css" />
+    <title>MyPage</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/headerfooter.js"></script>
+  </head>
+  <body>
+    <header w3-include-html="header.html"></header>
+    <div w3-include-html="header_scroll.html"></div>
+    <div class="topArea">
+      <div class="topInner">
+        <h2 class="titDep1">My Page</h2>
+        <p class="pageGuide">
+          <!-- 멤버십 회원을 위한 다양한 혜택이 준비되어 있습니다. -->멤버십
+          회원을 위한 다양한 혜택이 준비되어 있습니다.
+        </p>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="leftSidebar">
+        <div class="myInfo">
+          <p class="name"><a href="#">이주형님</a></p>
+          <div class="info">
+            <a href="#">
+              <span class="tit">포인트</span>
+              <span class="txt"
+                ><em id="usefulPointSpan">0</em
+                ><abbr title="Josun Point">J</abbr></span
+              >
+            </a>
+            <a href="#">
+              <span class="tit">쿠폰</span>
+              <span class="txt">11</span></a
+            >
+          </div>
+        </div>
+        <ul class="list">
+          <li>
+            멤버십확인
+            <p><a href="#">CLUB JOSUN VIP 내역</a></p>
+          </li>
+          <li>
+            예약확인
+            <p><a href="#">객실 · 패키지 예약 내역</a></p>
+            <p><a href="#">다이닝 예약 내역</a></p>
+            <p><a href="#">액티비티 예약 내역</a></p>
+            <p><a href="#">멤버십 예약 내역</a></p>
+          </li>
+          <li>
+            관심 리스트
+            <p><a href="#">객실 리스트</a></p>
+            <p><a href="#">패키지 리스트</a></p>
+          </li>
+          <li>
+            개인정보관리
+            <p><a href="#">회원 정보 수정</a></p>
+            <p><a href="#">비밀번호 변경</a></p>
+            <p><a href="#">회원 탈퇴</a></p>
+          </li>
+        </ul>
+      </div>
+      <div class="myContents">
+        <div class="myAccountBox">
+          <dl>
+            <dt>리워드번호<a href="#">리워드 혜택</a></dt>
+            <dd><span class="accountNum">7333-0100-0171-4077</span></dd>
+          </dl>
+          <dl>
+            <dt>리워드번호<a href="#">리워드 혜택</a></dt>
+            <dd><span class="accountNum">7333-0100-0171-4077</span></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <footer w3-include-html="footer.html"></footer>
+  </body>
+  <script>
+    w3.includeHTML();
+  </script>
+</html>

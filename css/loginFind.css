@@ -1,0 +1,117 @@
+.findingBox .inner {
+      width: 600px;
+}
+
+.container {
+      padding-top: 100px;
+}
+
+.findingBox .titDep2 {
+      margin-bottom: 10px;
+      font: 500 40px/1.5 gothamB, notokrR;
+      letter-spacing: -.03em;
+      text-align: center;
+}
+
+.findingBox .topArea {
+      width: auto;
+      height: auto;
+      padding: 0 0 53px;
+      min-height: auto;
+      max-height: none;
+}
+
+.findingBox .tabCont .txtBox .txtBoxTitle {
+      margin-top: 30px;
+}
+
+.topArea {
+      display: table;
+      position: relative;
+      width: 1400px;
+      margin: 0 auto;
+}
+
+.findingBox .txtBox .txtBoxTitle {
+      font-family: notokrR;
+}
+
+.txtBox .txtBoxTitle {
+      width: 500px;
+      font-size: 24px;
+      line-height: 38px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      text-align: center;
+      margin-bottom: 0;
+      margin-top: 30px;
+}
+
+.findingBox .txtBox {
+      margin-bottom: 20px;
+      padding: 63px 50px 70px;
+}
+
+.txtBox .txtBoxDescription {
+      margin: 5px 0 42px;
+      color: #333;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: -.025em;
+      text-align: center;
+}
+
+.txtBox .btnArea {
+      margin-top: 20px;
+}
+
+.btnArea {
+      text-align: center;
+      margin-top: 78px;
+}
+
+.btnSC {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      box-sizing: border-box;
+      color: #000;
+      border: 1px solid #000;
+      background: #fff;
+      transition: color 0.5s ease-in-out;
+      overflow: hidden;
+      z-index: 1;
+      font-family: gothamL, notokrL;
+}
+/* 아이디 찾기 */
+/* .findingBox .tabCont .txtBox .txtBoxTitle {
+      margin-top: 30px;
+}
+.findingBox .txtBox .txtBoxTitle {
+      font-family: notokrR;
+  }
+  .txtBox .txtBoxTitle{
+      font-size: 24px;
+      line-height: 38px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      text-align: center;
+  }
+  .txtBoxTitle{
+      font-size: 24px;
+      line-height: 38px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      text-align: center;
+      font-family: notokrR;
+      margin-top: 30px;
+  }
+  .txtBoxDescription {
+      margin: 5px 0 42px;
+      color: #333;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: -.025em;
+      text-align: center;
+  } */

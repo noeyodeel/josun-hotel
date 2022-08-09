@@ -1,0 +1,579 @@
+@font-face {
+  font-family: "NotoKrL";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Noto Sans Light"), local("NotoSans-Light"),
+    url(../fonts/NotoSans-Light.eot);
+  src: url(../fonts/NotoSans-Light.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Light.woff2) format("woff2"),
+    url(../fonts/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrR";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+    url(../fonts/NotoSans-Regular.eot);
+  src: url(../fonts/NotoSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Regular.woff2) format("woff2"),
+    url(../fonts/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrM";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+    url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Medium.woff2) format("woff2"),
+    url(../fonts/NotoSans-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "gothamL";
+  src: local(※), url("../fonts/Gotham-Light.otf") format("opentype"),
+    url("../fonts/GothamLight.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: gothamB;
+  font-weight: normal;
+  src: url("../fonts/GothamBook.ttf") format("truetype");
+}
+@font-face {
+  font-family: gothamM;
+  font-weight: normal;
+  src: url("../fonts/GothamMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: playfair;
+  font-weight: normal;
+  src: url("../fonts/PlayfairDisplaySC-Regular.otf") format("opentype");
+}
+div,
+input,
+button,
+label,
+img,
+span {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+}
+.wrapper {
+  font-style: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+  font-weight: 400;
+  line-height: 1.8;
+  list-style: none;
+  font-family: notokrL, gothamL, playfair;
+}
+a,
+button,
+label {
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+}
+
+.wrapper .inner {
+  width: 1400px;
+  margin: 0 auto;
+}
+/* topArea start */
+.topArea {
+  width: 100%;
+  padding: 97px 0 82px;
+}
+.topArea .title > p {
+  font: 500 60px playfair;
+}
+.topArea .text {
+  margin-top: 6px;
+}
+.topArea .text > p {
+  font-size: 20px;
+}
+/* topArea end */
+/* searchArea start */
+.searchArea {
+  padding: 38px 0 46px;
+  background-color: #f9f9f9;
+}
+.searchArea .seachOp > div {
+  display: inline-block;
+}
+.searchArea .seachOp > div > input {
+  width: 200px;
+  height: 60px;
+  padding: 8px 13px 8px 0;
+  border: solid #000;
+  border-width: 0 0 1px 0;
+  font-size: 18px;
+  font-family: gothamL, notokrL;
+  vertical-align: middle;
+  color: #ccc;
+}
+.searchArea .seachOp > .period > input {
+  cursor: pointer;
+  background: url("../images/package_img/ico_diary.png") no-repeat right 50%;
+}
+.searchArea .seachOp > .period > span {
+  margin: 0 20px;
+  font-size: 30px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.searchArea .seachOp > .intWord {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.searchArea .seachOp > .intWord > input {
+  width: 710px;
+}
+.searchArea .seachOp > .intWord > button {
+  width: 162px;
+  height: 50px;
+  margin-left: 35px;
+  padding: 0 25px;
+  text-align: center;
+  border: solid 1px #000;
+  font-size: 17px;
+  line-height: 48px;
+  letter-spacing: -0.1em;
+  font-family: gothamL, notokrL;
+  vertical-align: bottom;
+}
+.searchArea .keywordList {
+  margin-top: 30px;
+}
+.searchArea .keywordList button {
+  font: 400 14px gothamM;
+}
+.on {
+  display: inline-block !important;
+}
+.searchArea .keywordList button::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  width: 14px;
+  height: 8px;
+  background: url(../images/package_img/ico_toggle_14x8.png);
+}
+.keywordBtnOn:after {
+  background-position: -14px 0 !important;
+}
+.searchArea .keywordList > ul {
+  margin-top: 8px;
+}
+.searchArea .keywordList li {
+  margin: 8px 0 0 3px;
+  display: inline-block;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  text-decoration: none;
+}
+.searchArea .keywordList li:nth-child(6n + 1) {
+  margin-left: 0;
+}
+.searchArea .keywordList li:nth-child(n + 7) {
+  display: none;
+}
+.searchArea .keywordList li > input {
+  display: none;
+}
+.searchArea .keywordList li > label {
+  width: 227px;
+  height: 50px;
+  padding: 0 35px 0 15px;
+  border: solid 1px #ccc;
+  display: inline-block;
+  font-size: 16px;
+  color: #666;
+  line-height: 50px;
+  font-family: gothamL;
+  overflow: hidden;
+}
+.searchArea .keywordList li > label::before {
+  content: "";
+  width: 18px;
+  height: 13px;
+  display: block;
+  position: absolute;
+  right: 12px;
+  top: 18px;
+  background: url(../images/package_img/spr_form.png) no-repeat 0 0;
+}
+.searchArea .keywordList li > input[type="checkbox"]:checked + label {
+  border: 1px solid #000;
+  color: #000;
+}
+.searchArea .keywordList li > input[type="checkbox"]:checked + label:before {
+  background-position: -18px 0;
+}
+/* searchArea end */
+/* datepicker start*/
+.ui-datepicker {
+  margin-top: -1px;
+  padding: 28px 24px 27px;
+  border: solid 1px #000;
+  background: #fff;
+}
+.ui-datepicker > .ui-datepicker-header {
+  width: 294px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.ui-datepicker > .ui-datepicker-header > a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  text-indent: -99999px;
+  width: 10px;
+  height: 18px;
+  background: url(../images/package_img/ico_calendar_single.png);
+  z-index: 1;
+}
+.ui-datepicker > .ui-datepicker-header > .ui-datepicker-prev {
+  margin-left: -92px;
+}
+.ui-datepicker > .ui-datepicker-header > .ui-datepicker-next {
+  margin-left: 92px;
+  background-position: -10px 0;
+}
+.ui-datepicker > .ui-datepicker-header > .ui-datepicker-title {
+  font: 500 21px/1 gothamM, notokrM;
+  letter-spacing: -0.05em;
+}
+.ui-datepicker > .ui-datepicker-header .ui-state-disabled {
+  opacity: 0.3;
+}
+.ui-datepicker > .ui-datepicker-calendar {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  width: 294px;
+  empty-cells: show;
+  border-spacing: 0;
+}
+.ui-datepicker > .ui-datepicker-calendar th,
+.ui-datepicker > .ui-datepicker-calendar td {
+  height: 35px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.8;
+  font-size: 14px;
+  font-family: gothamL;
+  text-align: center;
+}
+.ui-datepicker > .ui-datepicker-calendar th:first-child,
+.ui-datepicker > .ui-datepicker-calendar td:first-child > .ui-state-default {
+  color: red;
+}
+.ui-datepicker > .ui-datepicker-calendar .ui-state-disabled {
+  color: #bbb;
+}
+#ui-datepicker-div {
+  display: none;
+}
+/* datepicker end*/
+/* contentsArea start */
+.contentsArea {
+  margin-top: 120px;
+}
+.contentsArea .inner {
+  padding-bottom: 180px;
+}
+.searchSortArea {
+  text-align: right;
+  z-index: 5;
+}
+.contentsArea .searchSort {
+  width: 150px;
+  height: 60px;
+  z-index: 1;
+  background: #fff;
+  font-size: 16px;
+  line-height: 58px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  font-family: gothamL, notokrL;
+  color: #333;
+  vertical-align: middle;
+}
+.contentsArea .searchSort::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -1px;
+  width: 11px;
+  height: 7px;
+  background: url(../images/package_img/spr_form.png) no-repeat 0 -39px;
+}
+.open:after {
+  background-position: -11px -39px !important;
+}
+.contentsArea .option {
+  width: 150px;
+  height: 200px;
+  overflow: auto;
+  border: solid 1px #000;
+  position: absolute;
+  right: 0;
+  display: none;
+  background: #fff;
+}
+.contentsArea .option::-webkit-scrollbar {
+  width: 10px;
+  height: 200px;
+}
+.contentsArea .option::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  background-clip: padding-box;
+  border-top: solid 10px #fff;
+  border-bottom: solid 10px #fff;
+  border: 3px solid transparent;
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+}
+.contentsArea .option::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.openOption {
+  display: block !important;
+}
+.contentsArea .option li > a {
+  height: 50px;
+  background: #fff;
+  padding: 0 20px;
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 16px;
+  position: relative;
+  display: block;
+  text-align: left;
+  line-height: 50px;
+}
+.contentsArea .option li > a:hover {
+  background: #f7f7f7;
+}
+.contentsArea .contentsList > .content {
+  width: 680px;
+  height: 855px;
+  margin-bottom: 80px;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  text-decoration: none;
+  display: inline-block;
+  transform: matrix(1, 0, 0, 1, 0, 50);
+  opacity: 0;
+  transition: 3s ease;
+}
+.contentsArea .contentsList > .content p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.contentsArea .contentsList > .content:nth-child(2n + 2) {
+  margin-left: 34px;
+}
+.contentsArea .contentsList > .content img {
+  width: 100%;
+}
+.contentsArea .contentsList > .content > .keyword {
+  position: absolute;
+  top: 505px;
+  left: 0;
+}
+.contentsArea .contentsList > .content > .keyword > span {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  padding: 3px 10px 4px;
+  font: 400 14px/1.5 gothamL, notokrL;
+  border: solid 1px #000;
+}
+.contentsArea .contentsList > .content > .title {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  top: 550px;
+  left: 0;
+}
+.contentsArea .contentsList > .content > .title > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: 500 40px playfair, notokrR;
+  padding-bottom: 250px;
+}
+.contentsArea .contentsList > .content > .txt {
+  position: absolute;
+  top: 615px;
+  left: 0;
+}
+.contentsArea .contentsList > .content > .txt > p {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.contentsArea .contentsList > .content > .date {
+  position: absolute;
+  top: 720px;
+  left: 0;
+}
+.contentsArea .contentsList > .content > .date p {
+  color: #333;
+  display: inline-block;
+  font-size: 17px;
+  font-family: gothamL;
+}
+.contentsArea .contentsList > .content > .date p:first-child {
+  width: 82px;
+}
+.contentsArea .contentsList > .content > .pay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.contentsArea .contentsList > .content > .pay > p {
+  font-size: 24px;
+  font-family: gothamL;
+}
+.contentsArea .contentsList > .content > .pay > p > span {
+  font-size: 40px;
+  font-family: playfair;
+  margin-right: 3px;
+  vertical-align: -5px;
+  font-feature-settings: "lnum", "pnum";
+}
+.contentsArea .contentsList > .content > .btnArea {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.contentsArea .contentsList > .content > .btnArea > div {
+  position: absolute;
+  right: 172px;
+  bottom: -8px;
+}
+.contentsArea .contentsList > .content > .btnArea input {
+  display: none;
+}
+.contentsArea .contentsList > .content > .btnArea label {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+}
+.contentsArea .contentsList > .content > .btnArea label::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 20px;
+  position: absolute;
+  background-image: url(../images/package_img/ico_bookmark.png);
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contentsArea .contentsList > .content > .btnArea input:checked + label:before {
+  background-position: -24px 0;
+}
+.contentsArea .contentsList > .content > .btnArea > a {
+  border: 1px solid #000;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color: #fff;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  width: 110px;
+  height: 48px;
+  padding: 0 25px;
+  display: inline-block;
+  letter-spacing: -0.01em;
+  font-size: 17px;
+  line-height: 48px;
+  text-align: center;
+  font-family: gothamL, notokrL;
+}
+.contentsArea .contentsList > .content > .btnArea > a::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  position: absolute;
+  background-color: #000;
+}
+.contentsArea .contentsList > .content > .btnArea > a::before {
+  content: "";
+  width: 130%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  z-index: -1;
+  background-color: #fff;
+  transform: skewX(-16deg);
+  transition: 0.5s ease-in-out;
+}
+.contentsArea .contentsList > .content > .btnArea > a:hover {
+  color: black;
+}
+.contentsArea .contentsList > .content > .btnArea > a:hover:before {
+  left: -10%;
+}
+/* more btn start */
+#moreContents {
+  width: 100%;
+  text-align: center;
+  margin-top: 78px;
+}
+#moreContents > .btnMore {
+  display: inline-block;
+  box-sizing: content-box;
+  border-bottom: solid 1px #000;
+  font-size: 17px;
+  color: #000;
+  text-align: center;
+  font-family: gothamL, notokrL;
+}
+.off {
+  display: none !important;
+}
+/* more btn end */
+.loadEvent {
+  transform: matrix(1, 0, 0, 1, 0, 0) !important;
+  opacity: 1 !important;
+}
+/* contentsArea end */

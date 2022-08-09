@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비밀번호 변경</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/headerfooter.js"></script>
+    <script src="./js/mypage_pwChng.js"></script>
+    <link rel="stylesheet" href="./css/mypage.css" />
+    <link rel="stylesheet" href="./css/mypage_pwChng.css" />
+  </head>
+  <body>
+    <header w3-include-html="header.html"></header>
+    <div w3-include-html="header_scroll.html"></div>
+    <div class="topArea">
+      <div class="topInner">
+        <h2 class="titDep1">My Page</h2>
+        <p class="pageGuide">
+          <!-- 멤버십 회원을 위한 다양한 혜택이 준비되어 있습니다. -->
+          멤버십 회원을 위한 다양한 혜택이 준비되어 있습니다.
+        </p>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="leftSidebar">
+        <div class="myInfo">
+          <p class="name"><a href="#">이주형님</a></p>
+          <div class="info">
+            <a href="#">
+              <span class="tit">포인트</span>
+              <span class="txt"
+                ><em id="usefulPointSpan">0</em
+                ><abbr title="Josun Point">J</abbr></span
+              >
+            </a>
+            <a href="#">
+              <span class="tit">쿠폰</span>
+              <span class="txt">11</span></a
+            >
+          </div>
+        </div>
+        <ul class="list">
+          <li>
+            멤버십확인
+            <p><a href="#">CLUB JOSUN VIP 내역</a></p>
+          </li>
+          <li>
+            예약확인
+            <p><a href="#">객실 · 패키지 예약 내역</a></p>
+            <p><a href="#">다이닝 예약 내역</a></p>
+            <p><a href="#">액티비티 예약 내역</a></p>
+            <p><a href="#">멤버십 예약 내역</a></p>
+          </li>
+          <li>
+            관심 리스트
+            <p><a href="./mypage_roomList.html">객실 리스트</a></p>
+            <p><a href="#">패키지 리스트</a></p>
+          </li>
+          <li>
+            개인정보관리
+            <p><a href="./mypage_changeInfo.html">회원 정보 수정</a></p>
+            <p><a href="./mypage_pwChng.html">비밀번호 변경</a></p>
+            <p><a href="./mypage_ withdrawal.html">회원 탈퇴</a></p>
+          </li>
+        </ul>
+      </div>
+      <div class="myContents">
+        <!-- 비밀번호 변경 시작 -->
+        <div class="pageInfoArea">
+          <h3 class="title">비밀번호 변경</h3>
+          <p class="guide">
+            현재 비밀번호를 올바르게 입력해야만 비밀번호 변경이 가능합니다.
+          </p>
+        </div>
+        <div class="mainArea">
+          <div class="pwCheckArea">
+            <form action="#비밀번호변경" method="post">
+              <div class="inputArea">
+                <div>
+                  <label>CURRENT PASSWORD</label
+                  ><span class="essential">필수</span>
+                  <input
+                    type="password"
+                    name="nowPw"
+                    id="nowPw"
+                    placeholder="현재 비밀번호를 입력해주세요."
+                  />
+                </div>
+                <div class="newPwArea">
+                  <label>NEW PASSWORD</label><span class="essential">필수</span>
+                  <input
+                    type="password"
+                    name="newPw"
+                    id="newPw"
+                    placeholder="영문, 숫자, 특수문자 조합 8~12자리를 입력해주세요."
+                  />
+                </div>
+                <div class="confirmPwArea">
+                  <label>CONFIRM PASSWORD</label
+                  ><span class="essential">필수</span>
+                  <input
+                    type="password"
+                    name="confirmPw"
+                    id="confirmPw"
+                    placeholder="동일한 비밀번호를 입력해주세요."
+                  />
+                </div>
+                <p class="txtGuide">
+                  비밀번호 내 ID가 포함되거나, 연속되는 문자 또는 숫자는 3자리
+                  이상 사용할 수 없습니다.
+                </p>
+              </div>
+              <div class="btnArea">
+                <button type="submit" class="btnL btnStyle2">확인</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- 비밀번호 변경 끝 -->
+      </div>
+    </div>
+    <footer w3-include-html="footer.html"></footer>
+  </body>
+  <script>
+    w3.includeHTML();
+  </script>
+</html>

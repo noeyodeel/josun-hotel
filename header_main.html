@@ -1,0 +1,290 @@
+<link rel="stylesheet" href="./css/header_main.css">
+      <!-- header 시작 -->
+        <div class="header_area box_inner clear">
+          <div class="header_cont">
+            <ul class="top_bar clear">
+                <div class="left_topbar">
+                    <li><a href="https://josunhotel.com/intro.do">JOSUN HOTELS & RESORTS</a></li>
+                    <li>
+                      <!-- Content -->
+                      <section class="hotelcontent">
+                          <div class="container">
+                              <!-- 팝업용 임시 버튼입니다. -->
+                              <div class="btn-box">
+                                <a class="hotel_search btn-open"  onclick="javascript:popOpen();"><span>호텔찾기</span></a>
+                              </div>
+                              <!-- //팝업용 임시 버튼입니다. -->
+                          </div>
+                      </section>
+                      <!-- //Content -->       
+                          <!-- modal 영역 -->
+                        <div class="modal-bg"></div>
+                        <div class="modal-wrap">
+                          <div class="hotelFindPop">
+                            <button class="modal-close" onClick="javascript:popClose();">닫기</button>
+                            <h2 class="modal-title">호텔찾기</h2>
+                            <ul class="hotelSelect">
+                              <li class="no_change">
+                                <a href="https://jpg.josunhotel.com/main.do" target="_blank" title="새창열림" >		
+                                <span class="hotelLogo palace" ></span>
+                                <span class="hotelTit">조선 팰리스</span>
+                                </a>
+                              </li>
+                              <li class="change">
+                                <a href="https://www.marriott.co.kr/hotels/travel/selwi-the-westin-chosun-seoul" target="_blank"title="새창열림">
+                                <span class="hotelLogo westinSeoul"></span>
+                                <span class="hotelTit">웨스틴 조선 서울</span>
+                                <span class="hotelTit_hover">메리어트 사이트로 이동</span>
+                                </a>
+                              </li>
+                              <li class="change">
+                                <a href="https://www.marriott.co.kr/hotels/travel/puswi-the-westin-chosun-busan" target="_blank"title="새창열림">
+                                  <span class="hotelLogo westinBusan"></span>
+                                  <span class="hotelTit">웨스틴 조선 부산</span>
+                                  <span class="hotelTit_hover">메리어트 사이트로 이동</span>
+                                </a>
+                              </li>
+                              <li class="no_change">
+                                <a href="https://gjb.josunhotel.com/main.do" target="_blank" title="새창열림" data-gtm-vis-has-fired-36519946_61="1">
+                                  <span class="hotelLogo grandBusan"></span>
+                                  <span class="hotelTit">그랜드 조선 부산</span>
+                                </a>
+                              </li>
+                              <li class="no_change">
+                                <a href="https://gjj.josunhotel.com/main.do" target="_blank" title="새창열림">
+                                  <span class="hotelLogo grandJeju"></span>
+                                  <span class="hotelTit">그랜드 조선 제주</span>
+                                </a>
+                              </li>
+                              <li class="no_change">
+                                <a href="https://lescapehotel.com/main" target="_blank" title="새창열림">
+                                  <span class="hotelLogo lescape"></span>
+                                  <span class="hotelTit">레스케이프 호텔</span>
+                                </a>
+                              </li>
+                              <li class="no_change">
+                                <a href="https://grp.josunhotel.com/main.do" target="_blank" title="새창열림">
+                                  <span class="hotelLogo gravityPangyo">
+                                  </span>
+                                  <span class="hotelTit">그래비티 서울 판교</span>
+                                </a>
+                              </li>
+                              <li class="change">
+                                <a href="https://www.marriott.co.kr/hotels/travel/selfp-four-points-seoul-namsan" target="_blank"title="새창열림">
+                                <span class="hotelLogo sheratonSeoulstation"></span>
+                                <span class="hotelTit">포포인츠 바이 쉐라톤 조선 서울역</span>
+                                <span class="hotelTit_hover">메리어트 사이트로 이동</span>
+                                </a>
+                              </li>
+                              <li class="change">
+                                <a href="https://www.marriott.co.kr/hotels/travel/selfd-four-points-seoul-myeongdong" target="_blank"title="새창열림">
+                                <span class="hotelLogo sheratonMyeongdong"></span>
+                                <span class="hotelTit">포포인츠 바이 쉐라톤 조선, 서울 명동</span>
+                                <span class="hotelTit_hover">메리어트 사이트로 이동</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                          <!-- //modal 영역 -->                      
+                    </li>
+                    <!-- 팝업창 끝 -->
+ 
+                        <li><button class="language_select" onclick="en_on();">KR</button></li>
+                        <li><div class="en" href="언어 선택" hidden>EN</div></li>
+                    </div>
+                    <div class="right_topbar">
+                        <li><a href="./login.html">로그인</a></li>
+                        <li><a href="./joinIntro.html">회원가입</a></li>
+                        <li><a href="./mypage_roomList.html">예약확인</a></li>
+                        <li><a href="./mypage.html">멤버십</a></li>
+            </ul>
+            <!-- 네비게이션 바 -->
+            <nav>
+              <ul class="gnb clear">
+                <li class="logo dropdown">
+                  <a class="logo-image" href="./main.html">그랜드조선 로고</a>
+                </li>
+                <!-- RESERVATION -->
+                <li class="dropdown res">
+                  <div class="reservation">
+                    <a href="./res_room0.html" class="dropdown-menu"><b>RESERVATION</b></a>
+                    <a href="#" class="res_img"></a>
+                  </div>
+                  <ul class="dropdown-content">
+                    <div class="nav_list">
+                      <strong>RESERVATIONS</strong>
+                    </div>
+                    <div class="reservation_list">
+                      <li><a href="./rooms.html">ROOM</a></li>
+                      <li><a href="#">DINING</a></li>
+                      <li><a href="#">MEMBERSHIP</a></li>
+                    </div>
+                  </ul>
+                </li>
+                <p class="nav_bar">|</p>
+
+                <!-- ROOMS -->
+                <li class="dropdown">
+                  <div class="rooms">
+                    <a href="#" class="dropdown-menu"><b>ROOMS</b></a>
+                  </div>
+                    <ul class="dropdown-content">
+                      <div class="nav_list">
+                        <strong>ROOMS</strong>
+                        <a href="./rooms.html"><span>한눈에 보기</span></a>
+                      </div>
+                      <div class="mainbuilding_list">
+                        <li>
+                            <a href="./deluxe.html">MAIN BUILDING</a>
+                            <ul class="main_roomlist">
+                                <li>
+                                    <li><a href="./deluxe.html">DELUXE</a></li>
+                                    <li><a href="#">KIDS DELUXE</a></li> 
+                                    <li><a href="#">KIDS PREMIER SUITE</a></li> 
+                                    <li><a href="#">STUDIO SUITE</a></li> 
+                                    <li><a href="#">PREMIER SUITE</a></li> 
+                                    <li><a href="#">LUXURY SUITE</a></li> 
+                                    <li><a href="#">ROYAL SUITE</a></li> 
+                                    <li><a href="#">THE SUITE</a></li> 
+                                </li>
+                            </ul>
+                        </li>
+                      </div>
+                      <div class="hillbuilding_list">
+                        <li>
+                            <a href="hill suite building 링크">HILL SUITE BUILDING</a>
+                            <ul class="hill_roomlist">
+                                <li>
+                                    <li><a href="#">HILL STUDIO SUITE</a></li>
+                                    <li><a href="#">HILL SUITE</a></li> 
+                                    <li><a href="#">PRESTIGE HILL SUITE</a></li> 
+                                </li>
+                            </ul>
+                        </li>
+                      </div>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                  <!-- DINING -->
+                  <div class="dining__">
+                    <a href="#" class="dropdown-menu"><b>DINING</b></a>
+                  </div>
+                    <ul class="dropdown-content dining">
+                      <div class="nav_list">
+                          <strong>DINING</strong>  
+                          <a href="한눈에보기 링크"><span>한눈에 보기</span></a>
+                      </div>
+                      <div class="dining_list one">
+                        <li><a href="#">ARIA</a></li>
+                        <li><a href="#">RUBRICA</a></li>
+                        <li><a href="#">LOUNGE & BAR</a></li>
+                        <li><a href="#">PEAK.</a></li>
+                        <li><a href="#">JOSUN DELI</a></li>
+                      </div>
+                      <div class="dining_list two">
+                        <li><a href="#">EAT 20</a></li>
+                        <li><a href="#">GRAN J</a></li>
+                        <li><a href="#">HEAVENLY LOUNGE</a></li>
+                      </div>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                  <!-- OFFERS -->
+                  <div class="offers">
+                    <a href="./package.html" class="dropdown-menu"><b>OFFERS</b></a>
+                  </div>
+                    <ul class="dropdown-content">
+                      <div class="nav_list">
+                        <strong>OFFERS</strong> 
+                      </div>
+                      <div class="offers_list">
+                        <li><a href="./package.html">PACKAGE</a></li>
+                        <li><a href="#">EVENT</a></li>
+                      </div>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                  <!-- MEETING & WEDDING -->
+                  <div class="mw">
+                    <a href="#" class="dropdown-menu"><b>MEETING & WEDDING</b></a>
+                  </div>
+                    <ul class="dropdown-content">
+                      <div class="nav_list">
+                          <strong>MEETING & WEDDING</strong>
+                          <a href="한눈에보기 링크"><span>한눈에 보기</span></a>
+                      </div>
+                      <div class="MW_list">
+                        <li><a href="#">MEETING</a></li>
+                        <li><a href="#">WEDDING</a></li>
+                      </div>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                  <!-- ACTIVITY -->
+                  <div class="activity">
+                    <a href="./activity.html" class="dropdown-menu"><b>ACTIVITY</b></a>
+                  </div>
+                </li>
+                <li class="dropdown">
+                  <!-- FACILITIES -->
+                  <div class="facilities">
+                    <a href="#" class="dropdown-menu"><b>FACILITIES</b></a>
+                  </div>
+                    <ul class="dropdown-content">
+                      <div class="nav_list">
+                          <strong>FACILITIES</strong>
+                          <a href="한눈에보기 링크"><span>한눈에 보기</span></a>
+                      </div>
+                      <div class="fmb_list">
+                        <li>
+                            <a href="main building 링크">MAIN BUILDING</a>
+                            <ul class="main_roomlist">
+                                <li>
+                                    <li><a href="#">GARDEN POOL & CABANA</a></li>
+                                    <li><a href="#">PEAK. POOL & CABANA</a></li> 
+                                    <li><a href="#">FITNESS CENTER & SAUNA</a></li> 
+                                    <li><a href="#">LENDING LIBRARY</a></li> 
+                                    <li><a href="#">ENTERTAINMENT</a></li> 
+                                    <li><a href="#">AQUA SHOP</a></li> 
+                                    <li><a href="#">JOSUN JUNIOR KIDS CLUB</a></li> 
+                                </li>
+                            </ul>
+                        </li>
+                      </div>
+                      <div class="fhb_list">
+                        <li>
+                            <a href="hill suite building 링크">HILL SUITE BUILDING</a>
+                            <ul class="hill_roomlist">
+                                <li>
+                                    <li><a href="#">HEAVENLY POOL</a></li>
+                                    <li><a href="#">GX ROOM & SAUNA</a></li> 
+                                </li>
+                            </ul>
+                        </li>
+                      </div>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                  <!-- ABOUT -->
+                  <div class="about">
+                    <a href="./aboutus.html" class="dropdown-menu"><b>ABOUT</b></a>
+                  </div>
+                    <ul class="dropdown-content">
+                      <div class="nav_list">
+                        <strong>ABOUT</strong>
+                      </div>
+                      <div class="about_list">
+                        <li><a href="./aboutus.html">ABOUT US</a></li>
+                        <li><a href="#">JOSUN JUNIOR</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="./q&a.html">Q & A</a></li>
+                      </div>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+    </div>

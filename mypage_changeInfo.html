@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원정보수정</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/headerfooter.js"></script>
+    <link rel="stylesheet" href="./css/mypage.css" />
+    <link rel="stylesheet" href="./css/mypage_changeInfo.css" />
+  </head>
+  <body>
+    <header w3-include-html="header.html"></header>
+    <div w3-include-html="header_scroll.html"></div>
+    <div class="topArea">
+      <div class="topInner">
+        <h2 class="titDep1">My Page</h2>
+        <p class="pageGuide">
+          <!-- 멤버십 회원을 위한 다양한 혜택이 준비되어 있습니다. -->
+          멤버십 회원을 위한 다양한 혜택이 준비되어 있습니다.
+        </p>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="leftSidebar">
+        <div class="myInfo">
+          <p class="name"><a href="#">이주형님</a></p>
+          <div class="info">
+            <a href="#">
+              <span class="tit">포인트</span>
+              <span class="txt"
+                ><em id="usefulPointSpan">0</em
+                ><abbr title="Josun Point">J</abbr></span
+              >
+            </a>
+            <a href="#">
+              <span class="tit">쿠폰</span>
+              <span class="txt">11</span></a
+            >
+          </div>
+        </div>
+        <ul class="list">
+          <li>
+            멤버십확인
+            <p><a href="#">CLUB JOSUN VIP 내역</a></p>
+          </li>
+          <li>
+            예약확인
+            <p><a href="#">객실 · 패키지 예약 내역</a></p>
+            <p><a href="#">다이닝 예약 내역</a></p>
+            <p><a href="#">액티비티 예약 내역</a></p>
+            <p><a href="#">멤버십 예약 내역</a></p>
+          </li>
+          <li>
+            관심 리스트
+            <p><a href="./mypage_roomList.html">객실 리스트</a></p>
+            <p><a href="#">패키지 리스트</a></p>
+          </li>
+          <li>
+            개인정보관리
+            <p><a href="./mypage_changeInfo.html">회원 정보 수정</a></p>
+            <p><a href="./mypage_pwChng.html">비밀번호 변경</a></p>
+            <p><a href="./mypage_ withdrawal.html">회원 탈퇴</a></p>
+          </li>
+        </ul>
+      </div>
+      <div class="myContents">
+        <!-- 회원정보수정 시작 -->
+        <div class="pageInfoArea">
+          <h3 class="title">회원 정보 수정</h3>
+        </div>
+        <div class="mainArea">
+          <div class="inputInfoArea">
+            <form action="#회원정보수정" method="post">
+              <div class="inputArea">
+                <ul class="informations">
+                  <li>
+                    <p class="titleOfDefaultInfo">MY INFORMATION</p>
+                    <p class="defaultInfo">김사과/2000.10.10/남자</p>
+                  </li>
+                  <li class="englishNameArea">
+                    <div>
+                      <label class="titleOfInfo">ENGLISH NAME</label>
+                      <span class="essential">필수</span>
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        name="eName1"
+                        id="eName1"
+                        value="KIM"
+                        readonly
+                      />
+                      <input
+                        type="text"
+                        name="eName2"
+                        id="eName2"
+                        value="SAGWA"
+                        readonly
+                      />
+                    </div>
+                  </li>
+                  <li class="nationalityArea">
+                    <div>
+                      <label class="titleOfInfo">NATIONALITY</label>
+                      <span class="essential">필수</span>
+                    </div>
+                    <div class="selectArea">
+                      <select name="select" id="select" hidden>
+                        <option value="01">가나[GH]</option>
+                        <option value="02">가봉[GA]</option>
+                        <option value="03">가이아나[GY]</option>
+                        <option value="04">감비아[GM]</option>
+                        <option value="05">과들루프[GP]</option>
+                        <option value="00" selected>대한민국[KR]</option>
+                      </select>
+                      <button type="button" id="selectBtn" class="select">
+                        대한민국[KR]
+                      </button>
+                      <div class="option" id="option">
+                        <ul>
+                          <li><a class="optionList">가나[GH]</a></li>
+                          <li><a class="optionList">가봉[GA]</a></li>
+                          <li><a class="optionList">가이아나[GY]</a></li>
+                          <li><a class="optionList">감비아[GM]</a></li>
+                          <li><a class="optionList">과들루프[GP]</a></li>
+                          <li><a class="optionList">대한민국[KR]</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="phoneNumberArea">
+                    <div>
+                      <label class="titleOfInfo">PHONE NUMBER</label>
+                      <span class="essential">필수</span>
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        name="tel1"
+                        id="tel1"
+                        value="010"
+                        readonly
+                      />
+                      <span class="dash"></span>
+                      <input
+                        type="text"
+                        name="tel1"
+                        id="tel1"
+                        value="0000"
+                        readonly
+                      />
+                      <span class="dash"></span>
+                      <input
+                        type="text"
+                        name="tel1"
+                        id="tel1"
+                        value="0000"
+                        readonly
+                      />
+                      <button type="button" class="btnM btnStyle1">
+                        연락처 수정
+                      </button>
+                    </div>
+                  </li>
+                  <li class="addrArea">
+                    <div>
+                      <label class="titleOfInfo">ADDRESS</label>
+                      <span class="essential">필수</span>
+                    </div>
+                    <div class="radioArea">
+                      <span>
+                        <input
+                          type="radio"
+                          name="addressType"
+                          id="addrType1"
+                          checked
+                        />
+                        <label for="addrType1">자택</label>
+                      </span>
+                      <span>
+                        <input type="radio" name="addressType" id="addrType2" />
+                        <label for="addrType2">회사</label>
+                      </span>
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        name="addrNum"
+                        id="addrNum"
+                        value="?우편번호"
+                      />
+                      <button type="button" class="btnM btnStyle1">
+                        우편번호 검색
+                      </button>
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        name="addr1"
+                        id="addr1"
+                        value="?주소"
+                        class="addr"
+                      />
+                      <input
+                        type="text"
+                        name="addr2"
+                        id="addr2"
+                        value="?상세주소"
+                        class="addr"
+                      />
+                    </div>
+                  </li>
+                  <li class="emailArea">
+                    <div>
+                      <label class="titleOfInfo">E-MAIL</label>
+                      <span class="essential">필수</span>
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        name="email1"
+                        id="email1"
+                        value="email1"
+                      />
+                      <span class="dash">@</span>
+                      <input
+                        type="text"
+                        name="email2"
+                        id="email2"
+                        value="email2.com"
+                      />
+                      <div class="selectArea">
+                        <select name="select" id="selectEmail" hidden>
+                          <option value="01" selected>직접 입력</option>
+                          <option value="02">naver.com</option>
+                          <option value="03">hanmail.net</option>
+                          <option value="04">hotmailcom</option>
+                          <option value="05">nate.com</option>
+                          <option value="06">gmail.com</option>
+                        </select>
+                        <button
+                          type="button"
+                          class="select"
+                          id="selectEmailBtn"
+                        >
+                          직접 입력
+                        </button>
+                        <div class="option" id="optionEmail">
+                          <ul>
+                            <li><a class="optionList">직접 입력</a></li>
+                            <li><a class="optionList">naver.com</a></li>
+                            <li><a class="optionList">hanmail.net</a></li>
+                            <li><a class="optionList">hotmailcom</a></li>
+                            <li><a class="optionList">nate.com</a></li>
+                            <li><a class="optionList">gmail.com</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <button type="button" class="btnM btnStyle1">
+                        중복 확인
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="subArea">
+                <h4 class="title">SNS 연동 로그인</h4>
+                <ul class="login">
+                  <li>
+                    <input type="checkbox" name="google" id="google" hidden />
+                    <label for="google">구글</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="google" id="facebook" hidden />
+                    <label for="facebook">페이스북</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="google" id="naver" hidden />
+                    <label for="naver">네이버</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="google" id="kakao" hidden />
+                    <label for="kakao">카카오톡</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="google" id="apple" hidden />
+                    <label for="apple">애플</label>
+                  </li>
+                </ul>
+                <ul class="guide">
+                  <li>
+                    SNS 계정을 연동하시면, 로그인 시 해당 채널로 소셜 로그인
+                    하실 수 있습니다. (소셜 로그인)
+                  </li>
+                  <li>
+                    로그인 연동은 Google, Facebook, Naver, Kakao Talk, Apple에
+                    복수 연결이 가능합니다.
+                  </li>
+                  <li>
+                    SNS 계정 연결을 끊으시려면, 위에 연결된 채널의 버튼을
+                    클릭하시면 연동이 해제됩니다.
+                  </li>
+                </ul>
+              </div>
+              <div class="subArea">
+                <h4 class="title">약관동의</h4>
+                <ul class="agreeContents">
+                  <li class="agree1">
+                    <div>
+                      <input type="checkbox" name="agree1" id="agree1" hidden />
+                      <label for="agree1"
+                        >[선택] 마케팅 활용을 위한 개인정보 이용 동의</label
+                      >
+                      <button type="button">상세내용 열기</button>
+                    </div>
+                    <div class="detailArea">
+                      <p class="notiTxt">
+                        조선호텔앤리조트의 회원서비스 관련 정보, 할인상품 및
+                        신상품 안내, 이벤트 및 맞춤 서비스 정보 수신을 위해
+                        개인정보를 수집 및 이용하는 것에 동의 합니다.
+                      </p>
+                      <div class="checkArea">
+                        <span>
+                          <input type="checkbox" name="4-1" id="4-1" hidden />
+                          <label for="4-1">SMS 수신동의</label>
+                        </span>
+                        <span>
+                          <input type="checkbox" name="4-2" id="4-2" hidden />
+                          <label for="4-2">E-MAIL 수신동의</label>
+                        </span>
+                        <span>
+                          <input type="checkbox" name="4-3" id="4-3" hidden />
+                          <label for="4-3">전화 수신동의</label>
+                        </span>
+                        <span>
+                          <input type="checkbox" name="4-4" id="4-4" hidden />
+                          <label for="4-4">우편물 수신동의</label>
+                        </span>
+                      </div>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">수집 항목</th>
+                            <th scope="col">수집 목적</th>
+                            <th scope="col">보유 기간</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row" rowspan="2">휴대폰번호</th>
+                            <td>SMS 마케팅/홍보</td>
+                            <td rowspan="2">
+                              회원탈퇴 또는 5년간 이용실적 없을 시
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>전화 마케팅/홍보</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">이메일주소</th>
+                            <td>E-MAIL 마케팅/홍보</td>
+                            <td>회원탈퇴 또는 5년간 이용실적 없을 시</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">주소</th>
+                            <td>우편물 마케팅/홍보</td>
+                            <td>회원탈퇴 또는 5년간 이용실적 없을 시</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <p class="txtGuide">
+                        위 개인정보 수집·이용에 대한 동의를 거부할 수 있으나
+                        동의 거부 시 할인 및 이벤트 정보 안내 등의 서비스가
+                        제한됩니다.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="subArea">
+                <h4 class="title">관심 정보 선택</h4>
+                <ul class="interestContents">
+                  <ul>
+                    <li>
+                      <input
+                        type="checkbox"
+                        id="interestContent1"
+                        value="interestContent1"
+                        hidden
+                      />
+                      <label for="interestContent1">호텔패키지</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        id="interestContent2"
+                        value="interestContent2"
+                        hidden
+                      />
+                      <label for="interestContent2">이벤트/프로모션</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        id="interestContent3"
+                        value="interestContent3"
+                        hidden
+                      />
+                      <label for="interestContent3">객실</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        id="interestContent4"
+                        value="interestContent4"
+                        hidden
+                      />
+                      <label for="interestContent4">레스토랑</label>
+                    </li>
+                    <li>
+                      <input
+                        type="checkbox"
+                        id="interestContent5"
+                        value="interestContent5"
+                        hidden
+                      />
+                      <label for="interestContent5">연회</label>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div class="btnArea">
+                <button type="submit" class="btnL btnStyle2">저장</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- 회원정보수정 끝 -->
+      </div>
+    </div>
+    <footer w3-include-html="footer.html"></footer>
+  </body>
+  <script>
+    w3.includeHTML();
+  </script>
+  <script src="./js/mypage_changeInfo.js"></script>
+</html>

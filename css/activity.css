@@ -1,0 +1,235 @@
+@font-face {
+  font-family: "NotoKrL";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Noto Sans Light"), local("NotoSans-Light"),
+    url(../fonts/NotoSans-Light.eot);
+  src: url(../fonts/NotoSans-Light.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Light.woff2) format("woff2"),
+    url(../fonts/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrR";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+    url(../fonts/NotoSans-Regular.eot);
+  src: url(../fonts/NotoSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Regular.woff2) format("woff2"),
+    url(../fonts/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrM";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+    url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Medium.woff2) format("woff2"),
+    url(../fonts/NotoSans-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "gothamL";
+  src: local(※), url("../fonts/Gotham-Light.otf") format("opentype"),
+    url("../fonts/GothamLight.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: gothamB;
+  font-weight: normal;
+  src: url("../fonts/GothamBook.ttf") format("truetype");
+}
+@font-face {
+  font-family: gothamM;
+  font-weight: normal;
+  src: url("../fonts/GothamMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: playfair;
+  font-weight: normal;
+  src: url("../fonts/PlayfairDisplaySC-Regular.otf") format("opentype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-style: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+  list-style: none;
+}
+a,
+button {
+  cursor: pointer;
+}
+.wrapper {
+  line-height: 1.8;
+  font-family: notokrL, gothamL, playfair;
+}
+/* activity contents start */
+.container {
+  width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 180px;
+}
+/* activity top area start */
+.topArea {
+  width: 100%;
+  margin-top: 97px;
+  margin-bottom: 82px;
+}
+.topArea .title {
+  width: 100%;
+  height: 80px;
+  font-size: 60px;
+  font: 500 60px playfair;
+}
+.topArea .pageGuide {
+  width: 100%;
+  height: 72px;
+  margin-top: 6px;
+  font-size: 20px;
+}
+/* activity top area end */
+.contentsArea .sortBtnArea {
+  width: 100%;
+  margin-bottom: 39px;
+  display: flex;
+}
+.contentsArea .sortBtnArea > li {
+  font-size: 0;
+}
+.contentsArea .sortBtnArea > li + li::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  margin: 0 20px;
+  background-color: #ccc;
+}
+.contentsArea .sortBtnArea .sortBtn {
+  font-size: 20px;
+  color: #ccc;
+  font-family: gothamM;
+}
+.contentsArea .activityLists {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contentsArea .activityLists > li {
+  width: 430px;
+  margin-bottom: 120px;
+  transform: matrix(1, 0, 0, 1, 0, 50);
+  opacity: 0;
+  transition: 3s ease;
+}
+.contentsArea .activityLists > li:nth-child(3n + 2) {
+  margin: 100px 55px 120px;
+}
+.contentsArea .activityLists > li > .thum {
+  width: 100%;
+  height: 580px;
+  position: relative;
+}
+.contentsArea .activityLists > li > .thum > img {
+  width: 100%;
+  height: 100%;
+  float: left;
+  z-index: -1;
+}
+.contentsArea .activityLists > li > .thum > .hoverContents {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+.contentsArea .activityLists > li > .thum > .hoverContents:hover {
+  position: absolute;
+  background-color: rgb(44, 76, 66);
+  opacity: 0.8;
+}
+.contentsArea .activityLists > li > .thum > .hoverContents > .btnContents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contentsArea .activityLists > li > .thum > .hoverContents > .btnContents > a {
+  display: inline-block;
+  width: 190px;
+  height: 60px;
+  border: solid 1px #e7c2a3;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: #e7c2a3;
+  text-align: center;
+  line-height: 58px;
+  font-family: gothamL, notokrL;
+}
+.contentsArea
+  .activityLists
+  > li
+  > .thum
+  > .hoverContents
+  > .btnContents
+  > a:nth-child(n + 2) {
+  margin-top: 12px;
+}
+.contentsArea .activityLists > li .sort > P {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 1px 9px 2px 9px;
+  border: solid 1px black;
+  font-size: 14px;
+  font-family: gothamL, notokrL;
+}
+.contentsArea .activityLists > li .title > P {
+  margin-top: 8px;
+  font-size: 36px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.contentsArea .activityLists > li .date > P {
+  font-size: 18px;
+  font-family: gothamL;
+}
+/* onScrollEvent start*/
+.scrollEvent {
+  transform: matrix(1, 0, 0, 1, 0, 0) !important;
+  opacity: 1 !important;
+}
+/* onScrollEvent end*/
+
+/* onClickEvent start */
+.sortBtnOn {
+  color: #000 !important;
+}
+/* onClickEvent end */
+
+/* more btn start */
+.bottomArea {
+  width: 100%;
+  text-align: center;
+}
+.bottomArea > .btnMore {
+  display: inline-block;
+  box-sizing: content-box;
+  border-bottom: solid 1px #000;
+  font-size: 17px;
+  color: #000;
+  text-align: center;
+  font-family: gothamL, notokrL;
+}
+.off {
+  display: none !important;
+}

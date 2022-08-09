@@ -1,0 +1,1939 @@
+@font-face {
+  font-family: "NotoKrL";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Noto Sans Light"), local("NotoSans-Light"),
+    url(../fonts/NotoSans-Light.eot);
+  src: url(../fonts/NotoSans-Light.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Light.woff2) format("woff2"),
+    url(../fonts/NotoSans-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrR";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+    url(../fonts/NotoSans-Regular.eot);
+  src: url(../fonts/NotoSans-Regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Regular.woff2) format("woff2"),
+    url(../fonts/NotoSans-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "NotoKrM";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+    url(../fonts/NotoSans-Medium.eot);
+  src: url(../fonts/NotoSans-Medium.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSans-Medium.woff2) format("woff2"),
+    url(../fonts/NotoSans-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "gothamL";
+  src: local(※), url("../fonts/Gotham-Light.otf") format("opentype"),
+    url("../fonts/GothamLight.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: gothamB;
+  font-weight: normal;
+  src: url("../fonts/GothamBook.ttf") format("truetype");
+}
+@font-face {
+  font-family: gothamM;
+  font-weight: normal;
+  src: url("../fonts/GothamMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: playfair;
+  font-weight: normal;
+  src: url("../fonts/PlayfairDisplaySC-Regular.otf") format("opentype");
+}
+#hms {
+  display: none;
+}
+
+body {
+  font-family: notokrL, gothamL, playfair;
+}
+html {
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 100vh; /* 페이지별로 화면 꽉차게 조정해야 함 */
+  position: relative;
+}
+
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.selectWrap {
+  border-right: 1px solid #ccc;
+  display: flex;
+  cursor: pointer;
+}
+.res_bar {
+  position: fixed;
+  width: 1400px;
+  height: 64px;
+  top: 58%;
+  left: 12%;
+  display: flex;
+  background-color: white;
+  z-index: 400;
+}
+/* 216 652 364 168 */
+.chkInout {
+  width: 621px;
+  height: 64px;
+  line-height: 64px;
+  /* padding-left: 30px; */
+  border-right: 1px solid #ccc;
+}
+.calContainer {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* .mainCalendar,
+.mainRoom {
+  position: relative;
+} */
+.mainCalendar {
+  position: absolute;
+  left: 0%;
+  bottom: 64px;
+  background: #fff;
+  width: 1400px;
+  height: 0px;
+  overflow-y: hidden;
+  transition: 0.4s;
+  border-bottom: 1px solid #ccc;
+}
+.mainRoom {
+  position: absolute;
+  left: 0%;
+  bottom: 64px;
+  background: #fff;
+  width: 1400px;
+  height: 0px;
+  overflow-y: hidden;
+  transition: 0.4s;
+  border-bottom: 1px solid #ccc;
+}
+.mainRoom .roomContainer {
+  padding: 0px 220px;
+}
+.roomInner {
+  position: relative;
+  padding-left: 220px;
+  display: block;
+  width: 400px;
+}
+.roomContainer {
+  margin-top: 50px;
+}
+.roomSel {
+  display: flex;
+  margin-bottom: 40px;
+  width: 600px;
+  display: flex;
+  margin-right: 0;
+}
+.roomWrap {
+  display: flex;
+  float: left;
+}
+/* .roomWrap2 {
+  width: 600px;
+  margin-right: 0;
+} */
+.numPeople {
+  display: flex;
+  width: 230px;
+  display: flex;
+}
+.numPeople {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.numPeople {
+  float: left;
+  position: relative;
+  width: 190px;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+.roomSel.on span {
+  color: #000;
+}
+.numPeople span {
+  display: block;
+  text-align: center;
+  padding: 0 35px;
+  width: 124px;
+  color: #000;
+  margin: 0 auto;
+  font-family: gothamL;
+}
+.numPeople .btnDown {
+  background: url(../images/main_img/ico_down.png) no-repeat 50% 50%;
+}
+.numPeople input {
+  content: "";
+  display: block;
+  width: 33px;
+  height: 33px;
+  border: none;
+}
+.numPeople .btnUp {
+  background: url(../images/main_img/ico_up.png) no-repeat 50% 50%;
+}
+
+.mainRoom .roomTit {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -18px;
+  width: 130px;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+}
+.txtGuide {
+  position: absolute;
+  right: 220px;
+  width: 250px;
+  height: 54px;
+  float: right;
+  top: 40%;
+}
+p.txtGuide,
+.txtGuide li {
+  display: block;
+  position: relative;
+  color: #888;
+  padding-left: 16px;
+  font: 16px gothamL, notokrL, playfair;
+  letter-spacing: -0.01em;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+p.txtGuide:before,
+.txtGuide li:before {
+  content: "*";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font: 600 15px gothamL;
+}
+
+.roomWrap > a > dl > dt {
+  display: inline-block;
+  padding: 21px 0 21px;
+  font: 400 14px gothamM;
+}
+.roomWrap > a > dl > dd {
+  font: 600 20px gothamM;
+  margin: 0 15px 0 5px;
+}
+
+.mainResveForm {
+  display: flex;
+}
+.tit {
+  color: #888888;
+  font-size: 14px;
+  font: 400 14px/1 gothamM;
+  position: absolute;
+  top: 41%;
+  z-index: 500;
+  left: 260px;
+  pointer-events: none; /* 클릭안되게 */
+}
+
+.date > span:before {
+  content: "|";
+  padding: 0 10px;
+  color: gray;
+  font-weight: normal;
+}
+
+.indicator-item {
+  height: 40px;
+}
+
+.indicator-item .page-navigator {
+  display: inline-block;
+  height: 40px;
+}
+
+#type_box {
+  margin: 0px;
+  width: 216px;
+  border: none;
+  height: 64px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 20px;
+  line-height: 64px;
+  color: #333333;
+  appearance: none;
+  cursor: pointer;
+}
+
+#arrow__ {
+  width: 11px;
+  height: 7px;
+  background: url(../images/main_img/spr_form.png) no-repeat 0 -39px;
+  border: none;
+  margin-top: 31px;
+  margin-right: 20px;
+}
+
+/* #calendar {
+  display: none;
+} */
+
+.selectRoom {
+  display: flex;
+}
+dl {
+  display: flex;
+  color: #888888;
+  line-height: 64px;
+  font-size: 14px;
+}
+#roomCntText {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 18px 15px 0 5px;
+}
+#adultCntText {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 18px 15px 0 5px;
+}
+#childCntText {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 18px 15px 0 5px;
+}
+.roomWrap {
+  width: 334px;
+  border: solid #ccc;
+  border-width: 0 1px 0 1px;
+  padding-left: 30px;
+  height: 64px;
+}
+
+.promSel {
+  position: absolute;
+}
+.promCode {
+  float: right;
+  display: block;
+}
+
+.btnPromo {
+  position: absolute;
+  right: 0;
+  border: none;
+  background: none;
+  font-size: 16px;
+  color: white;
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: gothamM, notokrM;
+}
+.video_btn_area {
+  width: 50px;
+  height: 130px;
+  position: absolute;
+  top: 40%;
+  right: 3%;
+  z-index: 1;
+}
+.roomWrap {
+  border-right: 1px solid lightgray;
+}
+
+.btnSearch {
+  font: 500 20px gothamB;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  z-index: 1;
+  color: #fff;
+  overflow: hidden;
+  width: 118px;
+  height: 64px;
+  padding: 0 25px;
+  line-height: 64px;
+  text-align: center;
+}
+.btnSearch::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: #000;
+}
+.btnSearch::before {
+  content: "";
+  width: 130%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  z-index: -1;
+  background-color: #fff;
+  transform: skewX(-16deg);
+  transition: 0.5s ease-in-out;
+}
+.btnSearch:hover {
+  color: black;
+  border-left: 1px solid lightgray;
+}
+.btnSearch:hover:before {
+  left: -10%;
+}
+
+#btn-play {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-image: url(../images/main_img/spr_controls.png);
+  background-repeat: no-repeat;
+  background-position: -27px 0;
+  background-size: auto;
+  background-color: transparent;
+  z-index: 10;
+  width: 26px;
+  height: 31px;
+  transform: translate(-40%, -50%);
+  border: none;
+  cursor: pointer;
+  /* margin-bottom: 10px; */
+}
+#btn-sound {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 44px;
+  height: 44px;
+  background-image: url(../images/main_img/spr_controls.png);
+  background-position: -44px -32px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+}
+
+.promInt {
+  display: flex;
+  position: absolute;
+  right: 0;
+  background: white;
+  width: 0px;
+  height: 60px;
+  transition: 0.5s;
+  margin-top: 3px;
+}
+
+.promSel {
+  cursor: pointer;
+  border: none;
+}
+
+#promoType {
+  width: 215px;
+  border: none;
+  padding-left: 20px;
+}
+
+.promSel:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 215px;
+  top: 50%;
+  margin-top: -7px;
+  margin-right: 10px;
+  width: 1px;
+  height: 14px;
+  background: #ccc;
+}
+#promoCode {
+  /* input */
+  width: 227px;
+  border-bottom: 0;
+  outline: none;
+  padding: 8px 13px 8px 0;
+  margin-left: 14px;
+  color: #000;
+  border-width: 0;
+  font-family: gothamL, notokrL;
+  font-size: 16px;
+}
+.btnLine {
+  width: 65px;
+  border: none;
+  line-height: 52px;
+  background: #fff;
+}
+
+/*----------------------------------- room 페이지 -----------------------------------*/
+.room_area {
+  background: linear-gradient(90deg, #f0eeed 50%, #fff 50%);
+  inset: auto;
+  margin: 0px;
+  display: block;
+  position: relative;
+  box-sizing: content-box;
+  min-height: 925px;
+  /* object-fit: cover; */
+}
+
+.room_roll {
+  position: absolute;
+  width: 1050px;
+  height: 760px;
+}
+
+.room__ {
+  position: absolute;
+  transition: 0.7s;
+  top: 16%;
+  right: 5%;
+  /* float: right; */
+  /* display: table-cell; */
+  /* position: relative; */
+  /* vertical-align: top; */
+  width: 300px;
+  height: 760px;
+  padding-left: 60px;
+}
+
+.room_event {
+  margin-top: 70px;
+}
+.room_event > a > p:first-child {
+  width: 59%;
+  font: 14px gothamL;
+  color: #000;
+  border: 1px solid #000;
+  padding: 5px 10px 6px;
+}
+.room_event img {
+  width: 290px;
+  height: 150px;
+}
+
+.room_txt > h3,
+.dining_txt > h3,
+.facility_txt > h3 {
+  font: 500 40px playfair;
+  margin-bottom: 8px;
+}
+.room_txt > h5,
+.dining_txt > h5 {
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.room_txt > h6,
+.dining_txt > h6,
+.facility_txt > h6 {
+  margin-top: 20px;
+  font: 500 14px / 1.8 gothamM;
+  color: #ba998c;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.txt {
+  padding-top: 18px;
+  margin-bottom: 8px;
+  color: #000;
+}
+.date {
+  margin-bottom: 17px;
+}
+
+.arrow_btn {
+  display: block;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  text-indent: -9999px;
+  background: url(../images/main_img/btn_view.png) no-repeat 0 0;
+  margin-top: 35px;
+}
+
+.arrow_btn:hover {
+  background-position: -42px 0;
+  cursor: pointer;
+}
+
+#left_swipe {
+  position: absolute;
+  width: 10px;
+  height: 18px;
+  background: url(../images/main_img/btn_swipe_10x18.png) no-repeat;
+  background-position: 0 0;
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+}
+#right_swipe {
+  position: absolute;
+  width: 10px;
+  height: 18px;
+  background: url(../images/main_img/btn_swipe_10x18.png) no-repeat;
+  background-position: -10px 0;
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+}
+#img_play_btn {
+  display: inline-block;
+  width: 12px;
+  height: 21px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(../images/main_img/btn_auto2.png) no-repeat;
+  background-position: -12px 0;
+  border: none;
+  cursor: pointer;
+}
+.room_area {
+  display: flex;
+}
+
+#room_slide {
+  width: 1050px;
+  height: 760px;
+  transition: 0.7s;
+}
+.swiper-wrapper {
+  /* 메인2페이지 슬라이드 이미지 담겨있는 div */
+  width: 1050px;
+  top: 16%;
+  left: 16%;
+  /* float: left; */
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-wrapper > li {
+  float: left;
+}
+.roll_btn_Area {
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  display: flex;
+  bottom: 6%;
+  right: 37%;
+  z-index: 200;
+}
+
+.rolling_btn {
+  display: flex;
+}
+
+.rolling_btn > li > button {
+  margin-right: 10px;
+}
+
+#img_play_btn {
+  margin-left: 20px;
+}
+
+/*------------------ dining 페이지 ----------------*/
+.dining_area {
+  width: 1900px;
+  height: 100vh;
+  background: url(../images/main_img/bg_dining.jpg) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.dining_txt_area {
+  display: block;
+  float: right;
+  z-index: 1;
+  width: 600px;
+  height: 100%;
+  background-color: white;
+}
+.dining_txt {
+  transition: 0.7s;
+  margin-left: 15%;
+  margin-top: 18%;
+}
+
+.dining_txt > h3 {
+  margin-top: 21%;
+  margin-left: 10%;
+}
+.dining_txt > h5 {
+  margin-top: 1.5%;
+  margin-left: 10%;
+}
+.dining_txt > h6 {
+  margin-top: 3%;
+  margin-left: 10%;
+}
+.dining_txt > .arrow_btn {
+  margin-left: 10%;
+}
+/*-------------------------- facility 페이지 ----------------------------- */
+.facility_area {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  background-color: white;
+}
+.facility_type {
+  position: relative;
+}
+.facility_cast {
+  position: relative;
+  height: 90vh;
+  width: 90%;
+  overflow: hidden;
+}
+.facility_img {
+  transition: 0.4s;
+  width: 1400px;
+}
+
+.facility_txt {
+  /* float: left; */
+  margin-top: 8%;
+  margin-left: 15%;
+  display: flex;
+  margin-bottom: 1%;
+}
+.facility_txt > h3 {
+  margin-right: 15px;
+  font: 500 40px playfair;
+}
+
+.facility_txt > h5 {
+  margin-top: 10px;
+  font: 500 14px / 1.8 gothamM;
+  color: #ba998c;
+  font-weight: bold;
+}
+.facility_txt > .arrow_btn {
+  position: absolute;
+  right: 3%;
+  margin-bottom: 10px;
+  margin-top: 1%;
+}
+.img_hover {
+  display: flex;
+  position: absolute;
+}
+.img_hover > img {
+  display: block;
+  width: 700px;
+  height: 640px;
+}
+
+.pool {
+  position: absolute;
+  margin-left: 10%;
+  z-index: 5;
+}
+#gx_room {
+  position: absolute;
+  margin-left: 60%;
+  z-index: 10;
+}
+.kids_club {
+  position: absolute;
+  margin-left: 90%;
+  z-index: 15;
+}
+
+.pool > div > h5,
+.pool > div > h6 {
+  position: absolute;
+  right: 12%;
+  bottom: 9%;
+  opacity: 0;
+  color: white;
+}
+.pool > div > h6 {
+  bottom: 5%;
+}
+
+#gx_room > div > h5,
+#gx_room > div > h6 {
+  position: absolute;
+  right: 20%;
+  bottom: 9%;
+  opacity: 0;
+  color: white;
+}
+
+#gx_room > div > h6 {
+  bottom: 5%;
+}
+
+.kids_club > div > h5,
+.kids_club > div > h6 {
+  position: absolute;
+  right: 12%;
+  bottom: 9%;
+  opacity: 0;
+  color: white;
+}
+.kids_club > div > h6 {
+  bottom: 5%;
+}
+.facility_type > li > div > h5 {
+  font: 400 18px/1 gothamM;
+  font-size: 14px;
+}
+.facility_type > li > div > h6 {
+  font: 400 18px/1 gothamM;
+  font-size: 18px;
+}
+
+.pool:hover .img_explain {
+  opacity: 1;
+}
+
+#gx_room:hover .img_explain {
+  opacity: 1;
+}
+
+.kids_club:hover .img_explain {
+  opacity: 1;
+}
+
+/* ----------------------------activity 페이지-------------------------- */
+.activity_area {
+  position: relative;
+  background: url(../images/main_img/bg_activity.jpg) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+}
+.white_area {
+  display: block;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 50;
+  background-color: white;
+}
+
+.activity_txt {
+  float: left;
+  width: 500px;
+  margin-top: 5%;
+  margin-left: 14%;
+}
+.activity_txt > h3 {
+  font: 500 40px playfair;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.activity_txt > h5 {
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.activity_txt > h6 {
+  font: 500 14px/1.8 gothamM;
+  text-transform: uppercase;
+  color: #fff;
+}
+.activity_box {
+  margin-top: 6%;
+  margin-right: 4%;
+  display: block;
+  float: right;
+  z-index: 100;
+  width: 270px;
+  height: 522px;
+  background-color: white;
+  padding: 58px 40px 60px;
+  transition: 0.7s;
+}
+.activity_box > h4 {
+  font: 400 22px gothamM;
+}
+.activity_txt > .arrow_btn {
+  display: block;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  text-indent: -9999px;
+  background: url(../images/main_img/btn_view.png) no-repeat 0 0;
+  background-position: -84px 0;
+  margin-top: 35px;
+}
+.activity_txt > .arrow_btn:hover {
+  background-position: -126px 0;
+  cursor: pointer;
+}
+/* -------------------------membership 페이지------------------------ */
+.membership_area {
+  position: relative;
+  background: url(../images/main_img/bg_membership.jpg) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+}
+.membership_txt {
+  width: 1400px;
+  margin: 10% 0 0 14%;
+  z-index: 1;
+  background: #fff;
+  height: 610px;
+}
+.text_area {
+  margin-top: 165px;
+  width: 1240px;
+  height: 360px;
+  opacity: 1;
+  position: relative;
+  padding: 200px 60px 0 100px;
+  transition: 0.7s;
+}
+.text_area > h3 {
+  font: 500 40px playfair;
+  color: black;
+}
+.text_area > h6 {
+  margin: 10px 0 25px;
+  font: 500 14px/1.8 gothamM;
+  color: #ba998c;
+}
+.text_area > h5 {
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  color: black;
+}
+.membership_btn {
+  margin-top: 58px;
+  border: 1px solid black;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  overflow: hidden;
+  min-width: 162px;
+  height: 50px;
+  padding: 0 25px;
+  line-height: 48px;
+  font-size: 17px;
+  font-family: gothamL, notokrL;
+  letter-spacing: -0.01em;
+}
+.membership_btn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: #000;
+}
+.membership_btn::before {
+  content: "";
+  width: 130%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  z-index: -1;
+  background-color: #fff;
+  transform: skewX(-16deg);
+  transition: 0.5s ease-in-out;
+}
+.membership_btn:hover {
+  color: black;
+}
+.membership_btn:hover:before {
+  left: -10%;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+.meeting_area {
+  position: relative;
+  background: url(../images/main_img/bg_wedding.jpg) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.meeting_txt {
+  margin: 20% 0 0 0;
+  width: 100%;
+  height: 300px;
+  transition: 0.7s;
+}
+
+.meeting_txt > h3 {
+  margin: 0 0 8px !important;
+  font: 500 40px playfair;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  height: 53px;
+}
+.meeting_txt > p {
+  color: #fff;
+  text-align: center;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.meeting_btn {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  border: 1px solid white;
+  overflow: hidden;
+  height: 50px;
+  padding: 0 25px;
+  line-height: 48px;
+  font-size: 17px;
+  font-family: gothamL, notokrL;
+}
+.meeting_btn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  box-sizing: border-box;
+  position: absolute;
+}
+.meeting_btn::before {
+  content: "";
+  width: 130%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  z-index: -1;
+  background-color: #fff;
+  transform: skewX(-16deg);
+  transition: 0.5s ease-in-out;
+}
+.meeting_btn:hover {
+  color: black;
+}
+.meeting_btn:hover:before {
+  left: -10%;
+}
+/*------------------사이드 바 --------------------------*/
+.side_bar {
+  /* transform: translateX(45px); */
+  position: fixed;
+  top: 7%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
+  overflow-y: hidden;
+  background-color: #b29d95;
+  z-index: 150;
+  transition: 0.5s;
+}
+.side_bar:hover {
+  width: 60px;
+  height: 210px;
+  transition: 0.5s;
+}
+.open {
+  display: inline-block;
+  transform: rotate(90deg);
+  width: 10px;
+  height: 5px;
+  margin-top: 63px;
+  margin-left: 29px;
+
+  color: #fff;
+  font: 400 14px gothamM;
+}
+.offers_ {
+  display: inline-block;
+  transform: rotate(90deg);
+  width: 10px;
+  height: 5px;
+  margin-top: 38px;
+  margin-left: 29px;
+  color: #fff;
+  font: 400 14px gothamM;
+}
+
+.side_img {
+  display: inline-block;
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 22px;
+  width: 21px;
+  height: 10px;
+  background: url(../images/main_img/ico_rsv.png) no-repeat 0 0px;
+}
+
+.black_background {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: #484747;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  filter: alpha(opacity=60);
+}
+
+#sub_menu {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 0px; /* width를 0,overflow-x를 hidden으로 주고 js에서 width조정해주면 슬라이드 효과까지 가능! + transition */
+  height: 100%;
+  overflow-y: auto;
+  background-color: white;
+  overflow-x: hidden; /* 이래야 처음에 안보임 */
+  z-index: 1002;
+  transition: 0.4s;
+}
+
+#sub_menu > a:first-child {
+  position: absolute;
+  top: 12px;
+  right: 30px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+  background: url(../images/main_img/btn_close_25x25.png) no-repeat 50% 50%;
+}
+.sub_menu_title {
+  font: 600 22px gothamM;
+  margin: 13px 0 14px;
+}
+.sub_menu_package {
+  padding-bottom: 55px;
+}
+.sub_menu_package > h3 {
+  margin-top: 22px;
+}
+#close_offers {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 0px;
+  height: 210px;
+  z-index: 1003;
+  transition: 0.4s;
+  background-color: #b29d95;
+  display: hidden;
+  cursor: pointer;
+}
+
+.hidden {
+  /* 메뉴바 클릭 시 다른부분 스크롤 안되게 하는 함수 */
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+.sub_menu_margin {
+  vertical-align: middle;
+  height: 840px;
+  padding: 70px 40px 90px 0;
+}
+.gotoOffers {
+  color: black;
+  padding: 70px 0 50px 0;
+  font: 500 16px gothamM;
+}
+.gotoOffers:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 7px;
+  width: 50px;
+  height: 13px;
+  background: url(../images/main_img/ico_arr_7x13.png) no-repeat 0 0;
+  z-index: 10000;
+}
+.sub_menu_left {
+  position: relative;
+  float: left;
+  width: 680px;
+  padding: 0px 60px 0 80px;
+  overflow: hidden;
+}
+
+.package_slide > img {
+  width: 680px;
+  height: 470px;
+}
+.sub_menu_events img {
+  width: 360px;
+  height: 250px;
+}
+.package_slide > strong {
+  display: block;
+  margin: 20px 0 0;
+  font: 26px playfair;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.package_slide > p {
+  margin-top: 7px;
+  font-size: 16px;
+  color: #333;
+}
+.package_slide > span {
+  display: block;
+  margin-top: 5px;
+  font: 16px gothamL;
+  color: #333;
+  padding-bottom: 80px;
+}
+
+.slick-prev {
+  background: url("../images/main_img/btn_swipe_18x18.png") no-repeat 0 0;
+  display: block;
+  width: 18px;
+  height: 18px;
+  top: -25px;
+  border: none;
+  text-indent: -99999px;
+  overflow: hidden;
+  position: absolute;
+  right: 30px;
+}
+.slick-prev::after {
+  margin-left: 17px;
+  content: "";
+  display: block;
+  position: absolute;
+  /* left: 17px; */
+  top: 1px;
+  width: 2px;
+  height: 16px;
+  background: #ccc;
+  z-index: 200;
+}
+.slick-next {
+  /* 기본 slick 버튼 사용 안하는 법: html에서 slick_theme 주석, 여기서 before지우기 */
+  background: url("../images/main_img/btn_swipe_18x18.png") no-repeat;
+  background-position: -18px 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -25px;
+  width: 18px;
+  height: 18px;
+  border: none;
+  text-indent: -99999px;
+  overflow: hidden;
+}
+.sub_menu_membership {
+  border-top: 1px solid #ccc;
+  /* height: 300px; */
+  padding-bottom: 80px;
+}
+.sub_menu_membership > .sub_menu_title {
+  margin: 45px 0 10px;
+}
+.txt_mem {
+  display: flex;
+  margin: 0;
+}
+.joinBtn {
+  margin: 15px 0 0 520px;
+  border: 1px solid black;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+  overflow: hidden;
+  min-width: 110px;
+  height: 48px;
+  padding: 0 25px;
+  line-height: 48px;
+  font-size: 17px;
+}
+.joinBtn::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: #000;
+}
+.joinBtn::before {
+  content: "";
+  width: 130%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  z-index: -1;
+  background-color: #fff;
+  transform: skewX(-16deg);
+  transition: 0.5s ease-in-out;
+}
+.joinBtn:hover {
+  color: black;
+}
+.joinBtn:hover:before {
+  left: -10%;
+}
+
+.sub_menu_right {
+  position: relative;
+  float: left;
+  width: 420px;
+  padding: 32px 0 0 60px;
+  overflow: hidden;
+  margin-left: -1px;
+}
+.sub_menu_right::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 85px;
+  width: 1px;
+  height: 100%;
+  background: #ccc;
+}
+.sub_menu_events strong {
+  display: block;
+  margin: 20px 0 0;
+  font: 26px playfair;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.sub_menu_events p {
+  display: -webkit-box;
+  max-height: 57px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 7px;
+  font-size: 16px;
+  color: #333;
+}
+.sub_menu_events span {
+  display: block;
+  margin-top: 7px;
+  font: 16px gothamL;
+  color: #333;
+}
+.thum_p {
+  padding-bottom: 20px;
+}
+.item > strong {
+  font: 26px playfair;
+  display: block;
+  padding-bottom: 10px;
+}
+.item > p {
+  padding-bottom: 5px;
+}
+.events_first {
+  display: block;
+  height: 390px;
+}
+.events_second {
+  margin-top: 40px;
+  display: block;
+}
+.thum:hover .hoverCont {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #2c4942;
+  opacity: 0.8;
+  z-index: 1;
+}
+.thum_p:hover .hoverCont_p {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #2c4942;
+  opacity: 0.8;
+  z-index: 1;
+}
+.hoverCont {
+  height: 250px;
+}
+.hoverCont_p {
+  height: 470px;
+}
+.thum {
+  width: 360px;
+  height: 250px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+.thum_p {
+  width: 680x;
+  height: 470px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.hoverCont > a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -25px 0 0 -81px;
+  color: #e7c2a3;
+  border: 1px solid #ba998c;
+  background: transparent;
+  z-index: -1;
+  min-width: 162px;
+  height: 50px;
+  padding: 0 25px;
+  line-height: 48px;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  transition: color 0.5s ease-in-out;
+  overflow: hidden;
+}
+.hoverCont_p > a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -25px 0 0 -81px;
+  color: #e7c2a3;
+  border: 1px solid #ba998c;
+  background: transparent;
+  z-index: -1;
+  min-width: 162px;
+  height: 50px;
+  padding: 0 25px;
+  line-height: 48px;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  transition: color 0.5s ease-in-out;
+  overflow: hidden;
+}
+/* .slick-prev{
+  position: absolute;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  left: 0;
+  z-index: 1000;
+  opacity: 1;
+  background-image: url("../images/btn_swipe_18x18.png");
+}
+.slick-next{
+
+} */
+/*------------------------------------ 왼쪽 사이드바 ----------------------------*/
+/* 긴사이드바 선 */
+.side_bar_left > ul::before {
+  content: "";
+  display: block;
+  float: left;
+  margin-right: 12px;
+  background: #fff;
+  opacity: 0.3;
+  width: 2px;
+  height: 280px;
+}
+
+.side_bar_left > ul.colorToGray::before {
+  background: #333;
+  opacity: 0.3;
+}
+.side_bar_left > ul.colorToLightgray::before {
+  background: #fff;
+  opacity: 0.3;
+}
+
+.side_bar_left > ul {
+  height: 280px;
+  width: 150px;
+}
+.side_bar_left {
+  font: 600 12px/38px gothamM;
+  opacity: 1;
+  position: fixed;
+  width: 80px;
+  z-index: 8;
+  top: 40%;
+  left: 2%;
+}
+
+.side_bar_left > ul > li {
+  height: 38px;
+}
+
+/* 짧은 사이드바 선 */
+.side_bar_left ul li.current:before {
+  content: "";
+  display: block;
+  float: left;
+  width: 2px;
+  height: 40px;
+  background: #fff;
+  margin-left: -14px;
+}
+/* before css바꾸기 위해 만든 함수 */
+.side_bar_left ul li.current.colorToWhite:before {
+  background: white;
+}
+.side_bar_left ul li.current.colorToBlack::before {
+  background: black;
+}
+
+.side_bar_left ul li {
+  opacity: 0;
+}
+.side_bar_left ul li.current {
+  opacity: 1;
+}
+
+/*----------------호버 시------------------------*/
+.side_bar_left > ul:hover li {
+  transition: 0.3s;
+  opacity: 0.5;
+}
+.side_bar_left > ul:hover li.current {
+  transition: 0.3s;
+  opacity: 1;
+}
+
+/*-------------------*/
+.slide_RtoL {
+  transform: translateX(-80px);
+}
+.slide_LtoR_rooms {
+  transform: translateX(80px);
+}
+.slide_LtoR_facility {
+  transform: translateX(105px);
+}
+.slide_BtoT {
+  transform: translateY(-80px);
+}
+.hidden_main {
+  /* 메뉴바 클릭 시 다른부분 스크롤 안되게 하는 함수 */
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden !important;
+  touch-action: none;
+}
+.top58 {
+  top: 58%;
+}
+.top73 {
+  top: 73%;
+}
+.custom-select1 > span {
+  font: 600 20px gothamM;
+  padding-left: 20px;
+}
+.promInt > .promSel > .option {
+  width: 100%;
+  z-index: 50;
+  /* height: 150px; */
+  overflow-y: scroll;
+  position: absolute;
+  top: 60.7px;
+  border: solid #333;
+  border-width: 0 1px 1px 1px;
+  background: #fff;
+  display: none;
+}
+.selectArea {
+  width: 490px;
+  position: relative;
+}
+.selectArea .select {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  line-height: 58px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #fff;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  font-family: gothamL, notokrL;
+  font-weight: 400;
+  font-size: 18px;
+}
+.select::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -1px;
+  width: 11px;
+  height: 7px;
+  background: url(../images/mypage_changeInfo_img/spr_form.png) no-repeat 0 -39px;
+}
+
+.selectArea .option li > a {
+  height: 50px;
+  background: #fff;
+  padding: 0 20px;
+  color: #000;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+  position: relative;
+  display: block;
+  text-align: left;
+  line-height: 50px;
+}
+.selectArea .option li > a:hover {
+  background: #f7f7f7;
+}
+.selectArea .option::-webkit-scrollbar {
+  width: 10px;
+  height: 200px;
+}
+.selectArea .option::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  background-clip: padding-box;
+  border-top: solid 10px #fff;
+  border-bottom: solid 10px #fff;
+}
+.selectArea .option::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.selectArea {
+  width: 244px;
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.scroll_body {
+  overflow: "hidden";
+  height: "100%";
+}
+
+/*----------------------- daterangepicker start -----------------------------*/
+.startDay {
+  /* 체크인/아웃 옆의 날짜  */
+  outline: none;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font: 600 20px/1 gothamM, notokrM;
+  width: 621px;
+  z-index: 550;
+  height: 64px;
+}
+.daterangepicker {
+  width: 1400px !important;
+  height: 524px !important;
+  left: 12% !important;
+  top: 17.6% !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid #999 !important;
+}
+.drp-selected,
+.applyBtn {
+  display: none !important;
+}
+.daterangepicker.show-calendar .drp-buttons {
+  /* display: none; */
+  position: absolute;
+  border: none;
+  right: 0;
+}
+
+.cancelBtn {
+  position: absolute;
+  display: block !important;
+  top: 12px;
+  right: 13px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+  background: url(../images/main_img/btn_close_25x25.png) no-repeat 50% 50%;
+  border: none;
+  cursor: pointer;
+}
+.daterangepicker .drp-calendar {
+  margin-top: 70px;
+  width: 378px !important;
+  height: 336.2px;
+}
+.daterangepicker .drp-calendar.right {
+  width: 378px !important;
+  margin-right: 250px;
+  float: right;
+}
+.daterangepicker .drp-calendar.left {
+  width: 378px !important;
+  margin-left: 250px;
+  margin-right: 200px;
+}
+/* daterangepicker end*/
+.drop-up::after {
+  display: none !important;
+}
+.drop-up::before {
+  display: none !important;
+}
+/*--------------- 가져온 코드 ------------------*/
+.numWrap {
+  display: inline-block;
+  vertical-align: middle;
+}
+.numWrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* .daterangepicker .calendar-table table {
+  margin-top: 50px;
+} */
+
+.daterangepicker .left .calendar-table table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 378px;
+  height: 366px;
+  margin: 70px 0 0 245px;
+  /* margin-left: 245px; */
+}
+.daterangepicker .drp-calendar.left {
+  clear: none !important;
+}
+.daterangepicker .right .calendar-table table {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 378px;
+  height: 366px;
+  margin: 70px 245px 0 0;
+}
+.calInner .calendar .fRed,
+.calInner .calendar .fRed a {
+  color: #de3636 !important;
+}
+.calendarS .btnMonth {
+  display: block;
+  position: absolute;
+  top: 7px;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 12px;
+  height: 21px;
+  background: url(../images/main_img/btn_swipe_12x21_black.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+.btnClose {
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+  background: url(../images/main_img/btn_close_25x25.png) no-repeat 50% 50%;
+  border: none;
+  cursor: pointer;
+}
+/* .mainCalendar .calendarS .calInner .calendar td a  */
+
+.daterangepicker .calendar-table th,
+.daterangepicker .calendar-table td {
+  /* display: block; */
+  /* position: inherit; */
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  padding: 0 7px !important;
+  font-size: 18px !important;
+  text-align: center !important;
+  font-family: gothamL !important;
+  z-index: 1;
+}
+.daterangepicker th.month {
+  padding-bottom: 15px !important;
+  font: 500 26px/1.2 gothamM !important;
+}
+/* 달력 넘기는 화살표 */
+.daterangepicker .calendar-table .prev span {
+  border-color: #999 !important;
+}
+.daterangepicker .calendar-table tr > td:first-child {
+  color: red;
+}
+.daterangepicker .calendar-table tr > th:first-child {
+  color: red;
+}
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: #ba998c !important;
+  /* border-radius: 100% !important; */
+  border-color: transparent;
+  color: #fff;
+}
+
+.daterangepicker td.in-range {
+  background-color: #d6c2ba !important;
+  border-color: transparent;
+  border-radius: 0;
+  color: #fff !important;
+}
+.daterangepicker td.start-date {
+  color: #fff !important;
+}
+.daterangepicker td.end-date {
+  background-color: #ba998c !important;
+  /* border-radius: 100% !important; */
+  border-color: transparent;
+  /* border-radius: 0 4px 4px 0; */
+}
+.daterangepicker td.off,
+.daterangepicker td.off.in-range,
+.daterangepicker td.off.start-date,
+.daterangepicker td.off.end-date {
+  background-color: #fff;
+  border-color: transparent;
+  color: white;
+}
+.daterangepicker td.off,
+.daterangepicker td.off.in-range,
+.daterangepicker td.off.start-date,
+.daterangepicker td.off.end-date:hover {
+  visibility: hidden; /* 레이아웃은 차지하지만 보이지않음 */
+}
+
+.mainCalendar .calendarS .calWrap {
+  margin: 0 auto;
+  width: 910px;
+}
+.calContainer .calWrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.mainCalendar .calendarS .calWrap .calMonth {
+  margin-bottom: 15px;
+  font: 500 26px/1.2 gothamM;
+  display: block;
+  text-align: center;
+  color: #000;
+}
+
+.date {
+  color: black;
+  font-size: 20px;
+}
+.date > b {
+  font: 600 20px/1 gothamM, notokrM;
+}
+
+.open_select::after {
+  background-position: -11px -39px !important;
+}

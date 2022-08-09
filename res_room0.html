@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>res_room0</title>
+    <link rel="stylesheet" href="./css/room_1.css" />
+    <link rel="stylesheet" href="./css/res_calendar_double.css" />
+    <link rel="stylesheet" href="./css/headerfooter.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/headerfooter.js"></script>
+    <script src="./js/res.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    ></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header w3-include-html="header.html"></header>
+      <div w3-include-html="header_scroll.html"></div>
+      <div id="container" class="container">
+        <div class="top">
+          <div class="topInner">
+            <h2 class="Innertitle">Booking</h2>
+            <p class="pageGuide">
+              조선호텔앤리조트의 다양하고 감각적인 인테리어와 특별한 여유를<br />
+              느낄 수 있는 객실에서 잊을 수 없는 여행의 경험을 선사합니다.
+            </p>
+          </div>
+          <!-- //topInner -->
+        </div>
+        <!-- //top -->
+
+        <div class="Inner">
+          <div class="promCode">
+            <button
+              type="button"
+              class="btnSC btnProm"
+              id="prom1"
+              function
+              onclick="toggleBtn1()"
+            >
+              프로모션 코드
+            </button>
+            <div
+              class="promInfo"
+              style="width: 450px; display: none"
+              id="prom2"
+            >
+              <div class="selectWrap" style="width: 160px">
+                <select name="promType" id="promType" class="selectmenu">
+                  <option value="codetype" hidden selected>Code Type</option>
+                  <option value="promotionCode">Promotion</option>
+                  <option value="companyCode">Company</option>
+                </select>
+              </div>
+              <input
+                type="text"
+                id="promCode"
+                placeholder="프로모션 코드 입력"
+                style="width: 210px"
+                onkeyup="this.value=this.value.replace(/[^a-z]/gi, '').toUpperCase();"
+              />
+              <button type="button" class="btnLine" onclick="closeBtn()">
+                닫기
+              </button>
+            </div>
+          </div>
+
+          <ul class="toggleList rsvList checkDate">
+            <li class="toggleOn" id="toggle1" style="display: block">
+              <strong class="listTit">투숙기간 선택</strong>
+              <em class="infoValue">
+                <input type="text" id="roomCal">
+                <span>1 박</span>
+              </em>
+              <button
+                type="button"
+                class="btnToggle"
+                onclick="toggleClass1()"
+              ></button>
+              <div class="toggleCont" style="display: block" id="cal">
+                <div class="toggleInner">
+                  <div class="calContainer">
+                    
+                    <div style="height:500px"></div>
+                   
+                  </div>
+                </div>
+              </div>
+              <!-- //togglecont -->
+            </li>
+            <!-- //toggleOn -->
+
+            <!-- 객실 인원 선택 -->
+            <li id="toggle2">
+              <strong class="listTit">객실 및 인원 선택</strong>
+              <em class="infoValue" id="roomText"
+                >객실 1개
+                <span>성인 2명</span>
+              </em>
+              <button
+                type="button"
+                class="btnToggle"
+                onclick="toggleClass2()"
+              ></button>
+              <div class="toggleCont" style="display: none" id="people">
+                <div class="toggleInner">
+                  <div class="roomContainer">
+                    <div class="roomWrap">
+                      <div class="roomCol on">
+                        <div class="roomInner">
+                          <strong class="roomTit">객실1</strong>
+                          <div class="numWrap">
+                            <div class="numType">
+                              <button
+                                type="button"
+                                class="btnDown"
+                                onclick='count1("minus")'
+                              >
+                                인원 감소
+                              </button>
+                              <span>성인</span>
+                              <span id="result" class="adult">0</span>
+
+                              <button
+                                type="button"
+                                class="btnUp"
+                                onclick="count1('plus')"
+                              >
+                                인원 증가
+                              </button>
+                            </div>
+
+                            <div class="numType">
+                              <button
+                                type="button"
+                                class="btnDown"
+                                onclick='count2("minus")'
+                              >
+                                인원 감소
+                              </button>
+                              <span>어린이</span>
+                              <span id="result" class="child">0</span>
+                              <button
+                                type="button"
+                                class="btnUp"
+                                onclick="count2('plus')"
+                              >
+                                인원 증가
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="roomCol">
+                        <div class="roomInner">
+                          <strong class="roomTit">객실2</strong>
+                          <div class="numWrap">
+                            <div class="numType">
+                              <button
+                                type="button"
+                                class="btnDown"
+                                onclick='count1("minus")'
+                              >
+                                인원 감소
+                              </button>
+                              <span>성인 0</span>
+                              <button
+                                type="button"
+                                class="btnUp"
+                                onclick="count1('plus')"
+                              >
+                                인원 증가
+                              </button>
+                            </div>
+
+                            <div class="numType">
+                              <button type="button" class="btnDown">
+                                인원 감소
+                              </button>
+                              <span>어린이 0</span>
+                              <button type="button" class="btnUp">
+                                인원 증가
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="roomCol">
+                        <div class="roomInner">
+                          <strong class="roomTit">객실3</strong>
+                          <div class="numWrap">
+                            <div class="numType">
+                              <button type="button" class="btnDown">
+                                인원 감소
+                              </button>
+                              <span>성인 0</span>
+                              <button type="button" class="btnUp">
+                                인원 증가
+                              </button>
+                            </div>
+
+                            <div class="numType">
+                              <button type="button" class="btnDown">
+                                인원 감소
+                              </button>
+                              <span>어린이 0</span>
+                              <button type="button" class="btnUp">
+                                인원 증가
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //roomWrap -->
+                    <ul class="textGuide">
+                      <li>최대 3개 객실 예약 가능</li>
+                      <li>어린이 기준 : 37개월 ~ 만 12세</li>
+                    </ul>
+                  </div>
+                  <!-- roomContainer -->
+
+                  <div class="btnArea">
+                    <a href="res_room1.html" class="btnSearch"> 객실 검색 </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- toggleOn -->
+          </ul>
+        </div>
+        <!-- Inner -->
+      </div>
+      <!-- //container -->
+    </div>
+    <!-- //Wrapper -->
+    <footer w3-include-html="footer.html"></footer>
+  </body>
+  <script src="./js/headerfooter.js"></script>
+  <script>
+    w3.includeHTML();
+  </script>
+</html>

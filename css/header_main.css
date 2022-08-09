@@ -1,0 +1,665 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* 스타일을 주기위해서 초기화(처음으로 되돌리는 작업) */
+  font-weight: normal;
+  font-size: inherit;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+img {
+  border: none;
+  vertical-align: middle;
+} /* 수직정렬 가운데로 */
+
+.clear::after {
+  /* 가상으로 요소를 만들고 걔를 clear시켜 다음것부터는 정상적으로 배치되도록 해줌 */
+  content: "";
+  display: block;
+  clear: both;
+}
+#container {
+  width: 100%;
+  height: 1500px;
+  /* background-color: rgb(205, 194, 206); */
+}
+
+/* ---------------------- 헤더 시작 ---------------------- */
+.header_area {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  background: none;
+  z-index: 100;
+}
+nav:hover {
+  background-color: white;
+}
+nav:hover .dropdown-menu {
+  color: black;
+}
+
+.header_area > .header_cont > .top_bar > .left_topbar {
+  float: left;
+}
+
+.header_area > .header_cont > .top_bar > .right_topbar {
+  float: right;
+}
+.header_area .header_cont .top_bar .right_topbar li:nth-child(-n + 3)::after {
+  content: "|";
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 10px;
+  color: white;
+  line-height: 1;
+}
+.top_bar {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+  line-height: 50px; /* height와 line-height에 똑같은 값을 주면 세로 중앙 정렬 됨! */
+  font-size: 12px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.top_bar > div > li {
+  display: inline-block; /* 텍스트 내용들 한줄에 배치됨! */
+}
+.top_bar > div > li > a {
+  color: #bbbbbb;
+}
+.left_topbar > li > a {
+  margin: 0;
+  padding: 15px;
+}
+.hotel_search > span {
+  font-size: 12px;
+  color: #bbbbbb;
+}
+.hotel_search:after {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-left: 5px;
+  background: url(../images/main_img/ico_search_11x11.png) no-repeat 0 0;
+}
+.language_select:after {
+  content: "";
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 0px;
+  width: 4px;
+  height: 8px;
+  background: url(../images/main_img/ico_lang.png) no-repeat 0 0;
+}
+
+.en {
+  padding-left: 10px;
+  font-size: 14px;
+  margin: 0;
+  color: #bbbbbb;
+  line-height: 50px;
+}
+
+.language_select {
+  background-color: black;
+  color: #bbbbbb;
+  border: none;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.left_topbar {
+  padding-left: 50px;
+  height: 50px;
+}
+.right_topbar {
+  padding-right: 50px;
+}
+
+.gnb {
+  /* 메인 헤더 */
+  position: relative;
+  background: transparent;
+  padding: 30px 50px;
+  height: 30px;
+  display: flex; /*네비게이션 바 전부 다 한줄에 배치 */
+}
+.nav_bar {
+  color: white;
+}
+.gnb:hover .nav_bar {
+  color: black;
+}
+
+.dropdown {
+  margin-top: 8px;
+  font-size: 15px;
+}
+.reservation {
+  padding-left: 20px;
+  padding-right: 65px;
+  margin-right: 0px;
+}
+.rooms {
+  padding-left: 20px;
+}
+.dropdown-menu {
+  font: 600 15px gothamM;
+  padding-left: 35px;
+  padding-right: 15px;
+  margin: 0;
+}
+
+.logo {
+  z-index: 100;
+}
+
+.logo .logo-image {
+  display: block;
+  left: 50px;
+  width: 118px;
+  height: 42px;
+  text-indent: -9999px;
+  background: url(../images/main_img/bg_logo_grand.png) no-repeat 0 0;
+  background-position: 0 0;
+}
+.logo .logo-image.setLogoColorToBlack {
+  background: url(../images/main_img/bg_logo_grand.png) no-repeat 0 -42px;
+}
+.logo .logo-image.setLogoColorToWhite {
+  background: url(../images/main_img/bg_logo_grand.png) no-repeat 0 0;
+}
+.logo {
+  margin: 0;
+}
+.logo .logo-image::after {
+  background-position: 0 0;
+}
+
+.res_img {
+  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 10px;
+  margin-top: 6px;
+  margin-left: 8px;
+  background: url(../images/main_img/ico_rsv.png) no-repeat 0 0;
+  cursor: pointer;
+}
+/* reservation로고 색 변환 */
+.res_img:hover {
+  background-position: 0 -10px !important;
+}
+.reservation {
+  margin-left: 50px;
+}
+
+/* TODO: GooNey Back = .gnb */
+.gnb > p {
+  margin-top: 11px;
+  font-size: 11px;
+}
+
+.dropdown:nth-child(n + 2) {
+  padding-left: 2px;
+}
+
+.header > .header_area > .header_cont > nav > ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+/* .dropdown {
+  position: relative;
+}  네비게이션바 세부메뉴 가로 배치 -> 세로배치 됨 */
+.dropdown-content > div {
+  display: inline-flex;
+}
+.main_roomlist > li {
+  display: flex;
+  flex-direction: column;
+}
+.hill_roomlist > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  background-color: white;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.reservation,
+.rooms,
+.dining__,
+.offers,
+.mw,
+.activity,
+.facilities,
+.about {
+  height: 50px;
+}
+
+.hill_roomlist > li > a,
+.main_roomlist > li > a {
+  font: 400 15px gothamL;
+}
+
+/*----------  마우스 올리면 네비게이션 바 변경 시작 ----------*/
+.dropdown-menu > b:hover {
+  border-bottom: 2px solid #ba998c;
+  padding-bottom: 1.5px;
+  color: #ba998c;
+}
+
+/*----------  마우스 올리면 네비게이션 바 변경 끝 ----------*/
+.gnb > .dropdown:hover .dropdown-content {
+  /*네비게이션 바 메뉴에 마우스 올리면 안의 세부 내용들 보여줌 */
+  display: block;
+  width: 100%;
+  left: 0;
+  padding-top: 0px; /*네비게이션 바 서브메뉴 높이 조정 */
+  z-index: 100;
+}
+.gnb:hover .logo > a {
+  background: url(../images/main_img/bg_logo_grand.png) no-repeat 0 -42px;
+}
+.gnb:hover .res_img {
+  background: url(../images/main_img/ico_rsv.png) no-repeat 0 -10px;
+}
+.reservation > .dropdown-menu > b:hover {
+  border: none;
+}
+
+.nav_list {
+  display: flex;
+  flex-direction: column; /* 한눈에 보기가 내려감 */
+}
+
+.dropdown-content > strong {
+  font-size: 24px;
+  padding-left: 100px;
+  margin-left: 120px;
+}
+.nav_list > strong {
+  font-size: 24px;
+  padding-left: 100px;
+  margin-left: 120px;
+  font-weight: 900;
+  font: 600 24px gothamM;
+}
+.nav_list > a {
+  margin-left: 120px;
+  padding-left: 100px;
+}
+.nav_list > a > span {
+  font-size: 14px;
+  border-bottom: 1px solid black;
+  padding-bottom: 2px;
+}
+
+.dropdown-content > div > li > a {
+  /*세부 굵은 글씨*/
+  font-size: 15px;
+  font-weight: bold;
+  font: 600 15px/30px gothamM;
+}
+
+.dropdown-content > div {
+  margin: 10px 0 10px 50px;
+}
+.dropdown-content > div > li {
+  margin-left: 70px;
+  padding-left: 15px;
+}
+
+.nav_list {
+  float: left;
+}
+.dining > .two {
+  display: flex;
+  margin-left: 410px;
+}
+.main_roomlist > li > a {
+  color: #666;
+}
+.hill_roomlist > li > a {
+  color: #666;
+}
+
+/* ---------------------- 푸터 시작 ---------------------- */
+.foot_area {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -50%;
+  bottom: -3%;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.foot_list1 {
+  display: flex;
+  padding-block-start: 2em;
+  padding-block-end: 1em;
+  padding-inline-start: 0px;
+  padding-inline-end: 0px;
+  padding-inline-start: 220px; /*외부 사이트 로고 가운데 정렬*/
+}
+.foot_list1 > li {
+  margin-left: 20px;
+  padding-left: 30px;
+}
+.social {
+  display: flex;
+}
+/* 
+.foot_list1 > li :first-child {
+  margin-left: 20px;
+} */
+
+.foot_bottom {
+  display: flex;
+  padding: 30px 5px 100px 100px;
+}
+
+.official_website > a {
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 150px;
+  height: 70px;
+  background: url(../images/main_img/bg_logo_footer.png) no-repeat 0 0px;
+  margin-left: 130px;
+  margin-top: 30px;
+}
+
+.foot_list2 > li > a {
+  color: white;
+  margin-right: 28px;
+  font-size: 14px;
+}
+.foot_list2 {
+  display: flex;
+  margin-left: 130px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.info__ {
+  margin-left: 130px;
+  padding-top: 5px;
+}
+.info__ > span {
+  font-size: 14px;
+  color: gray;
+}
+
+.foot_list2 > li:nth-child(5n) > a {
+  color: #989442;
+}
+.external_site2 > select {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  width: 230px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: black;
+  color: lightgray;
+  font-size: 18px;
+  cursor: pointer;
+}
+select option {
+  font-size: 12px;
+}
+select:focus {
+  outline: none;
+}
+
+.social {
+  display: flex;
+}
+
+.external_site2 {
+  margin-left: 130px;
+}
+.social > li {
+  margin: 5%;
+}
+
+/* 헤더 색 바꾸는 함수 */
+.setColorToWhite {
+  color: white;
+}
+.setColorToBlack {
+  color: black;
+}
+.setResImgColorToBlack {
+  background: url(../images/main_img/ico_rsv.png) no-repeat 0 -10px;
+}
+.setResImgColorToWhite {
+  background: url(../images/main_img/ico_rsv.png) no-repeat 0 0;
+}
+
+/* 팝업_인터넷 */
+/* 팝업 스타일 */
+.modal-bg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  opacity: 0.85;
+  z-index: 999;
+}
+.modal-wrap {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 603px;
+  background: #fff;
+  z-index: 1000;
+}
+.modal-title {
+  margin-top: 50px;
+  text-align: center;
+  font: 400 34px notokrR;
+  margin-bottom: 35px;
+}
+.hotelSelect > li > a {
+  display: block;
+  border: 1px solid #ccc;
+  margin: 10px 5px 0;
+  text-align: center;
+  padding: 14px 5px 20px;
+  width: 330px;
+  height: 92px;
+}
+.hotelSelect > li > a:hover {
+  background: #999;
+}
+.hotelSelect > li > a:hover span {
+  color: #fff;
+}
+.hotelTit_hover {
+  display: none;
+}
+
+.hotelSelect > .change > a:hover .hotelTit_hover {
+  display: block;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+}
+.hotelSelect > .change > a:hover .hotelTit_hover::after {
+  content: "";
+  display: inline-block;
+  margin-left: 8px;
+  margin-bottom: 2px;
+  width: 8px;
+  height: 8px;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 1px 1px 0 0;
+  transform: rotate(45deg);
+}
+.hotelSelect > .change > a:hover .hotelTit {
+  display: none;
+}
+
+.hotelFindPop {
+  width: 1060px;
+  padding: 0px 70px 0px;
+}
+.hotelFindPop .hotelSelect {
+  margin-top: -10px;
+}
+ul:after,
+ol:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.hotelSelect > li {
+  float: left;
+  width: 33.3%;
+}
+.modal-close {
+  background: url(../images/main_img/btn_close_25x25.png) no-repeat;
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  text-indent: -9999px;
+  z-index: 999;
+  box-sizing: border-box;
+  border: none;
+}
+.hotelTit {
+  color: black;
+  font-family: notokrL, gothamL, playfair;
+  font-weight: 400;
+  font-size: 18px;
+}
+/* 팝업창 안에 이미지 */
+.hotelLogo {
+  display: block;
+  width: 282px;
+  height: 60px;
+  margin: 0 auto;
+  background-color: transparent;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.palace {
+  background-image: url(../images/main_img/img_logo_hotel_palace.png);
+}
+.hotelSelect > li a:hover .hotelLogo.palace {
+  background-image: url(../images/main_img/img_logo_hotel_palace_active.png);
+}
+
+.westinSeoul {
+  background-image: url(../images/main_img/logo_wchosunseoul.png);
+  width: 200px;
+  height: 50px;
+  margin-top: 5px;
+}
+.hotelSelect > li a:hover .hotelLogo.westinSeoul {
+  background-image: url(../images/main_img/img_logo_hotel_westin_seoul_active.png);
+  width: 282px;
+  height: 60px;
+  margin-top: 0px;
+}
+
+.westinBusan {
+  background-image: url(../images/main_img/img_logo_hotel_westin_busan.png);
+}
+.hotelSelect > li a:hover .hotelLogo.westinBusan {
+  background-image: url(../images/main_img/img_logo_hotel_westin_busan_active.png);
+}
+
+.grandBusan {
+  background-image: url(../images/main_img/img_logo_hotel_grand_busan.png);
+}
+.hotelSelect > li a:hover .hotelLogo.grandBusan {
+  background-image: url(../images/main_img/img_logo_hotel_grand_busan_active.png);
+}
+
+.grandJeju {
+  background-image: url(../images/main_img/img_logo_hotel_grand_jeju.png);
+}
+.hotelSelect > li a:hover .hotelLogo.grandJeju {
+  background-image: url(../images/main_img/img_logo_hotel_grand_jeju_active.png);
+}
+
+.lescape {
+  background-image: url(../images/main_img/img_logo_hotel_lescape.png);
+}
+.hotelSelect > li a:hover .hotelLogo.lescape {
+  background-image: url(../images/main_img/img_logo_hotel_lescape_active.png);
+}
+
+.gravityPangyo {
+  background-image: url(../images/main_img/img_logo_hotel_gravity_pangyo.png);
+}
+.hotelSelect > li a:hover .hotelLogo.gravityPangyo {
+  background-image: url(../images/main_img/img_logo_hotel_gravity_pangyo_active.png);
+}
+
+.sheratonSeoulstation {
+  background-image: url(../images/main_img/img_logo_hotel_sheraton_seoulstation.png);
+}
+.hotelSelect > li a:hover .hotelLogo.sheratonSeoulstation {
+  background-image: url(../images/main_img/img_logo_hotel_sheraton_seoulstation_active.png);
+}
+
+.sheratonMyeongdong {
+  background-image: url(../images/main_img/img_logo_hotel_sheraton_seoulmyeongdong.png);
+}
+.hotelSelect > li a:hover .hotelLogo.sheratonMyeongdong {
+  background-image: url(../images/main_img/img_logo_hotel_sheraton_seoulmyeongdong_active.png);
+}

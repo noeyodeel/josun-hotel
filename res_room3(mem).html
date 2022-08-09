@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/room_1.css" />
+    <title>res_room3(non_member)</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="./js/headerfooter.js"></script>
+    <script src="./js/res.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header w3-include-html="header.html"></header>
+      <div w3-include-html="header_scroll.html"></div>
+      <div id="container" class="container">
+        <div class="top">
+          <div class="topInner">
+            <h2 class="Innertitle">Booking</h2>
+            <div class="stepWrap">
+              <ol>
+                <li class="prev">
+                  <em>객실, 요금 선택</em>
+                </li>
+                <li class="prev">
+                  <em>옵션 선택</em>
+                </li>
+                <li class="on">
+                  <em>예약자 정보 입력</em>
+                </li>
+              </ol>
+            </div>
+            <!-- //stepwrap -->
+          </div>
+          <!-- //topInner -->
+        </div>
+        <!-- //top -->
+
+        <div class="result">
+          <div class="Inner">
+            <div class="resultInfo">
+              <dl class="dl01">
+                <dt>HOTEL</dt>
+                <dd>그랜드 조선 제주</dd>
+              </dl>
+              <dl class="dl02">
+                <dt>DATE</dt>
+                <dd id="dateText">
+                  2022.12.24&nbsp;토&nbsp;-&nbsp;2022.12.25&nbsp;일
+                  <span>1&nbsp;박</span>
+                </dd>
+              </dl>
+              <dl class="dl03">
+                <dt>ROOMS</dt>
+                <dd>1</dd>
+              </dl>
+              <dl class="dl03">
+                <dt>ADULTS</dt>
+                <dd>2</dd>
+              </dl>
+              <dl class="dl03">
+                <dt>CHILDREN</dt>
+                <dd>0</dd>
+              </dl>
+            </div>
+            <!-- //resultinfo -->
+            <a href="res_room0.html" class="btn">객실 다시 검색</a>
+          </div>
+          <!-- //Inner -->
+        </div>
+        <!-- //result -->
+
+        <div class="Inner">
+          <div class="resRoomWrap">
+            <div class="leftCont">
+              <h2 class="Conttitle">SMART CHOICE</h2>
+              <p class="Conttext">DELUX / 2DOUBLE / STANDARD VIEW</p>
+              <ul class="infoList">
+                
+                <li>
+                  <div class="infoWrap">
+                    <span class="tit">
+                      <label for="KorName">Reservation Name</label>
+                      <span class="essential">필수</span>
+                    </span>
+                  </div>
+                  <div class="infoInner">
+                    <div class="infoArea">
+                      <input type="text" id="KorName" class="member" name="KorName" value="서정연 (JUNGYEON SEO) / FEMALE / 대한민국" style="width: 440px;" aria-required="true" readonly>
+                    </div>
+                    <span class="alertMsg">성함(국문)을 입력해주세요.</span>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="infoWrap">
+                    <span class="tit">
+                      <label for="phoneNum">Phone Number</label>
+                      <span class="essential"> 필수</span>
+                    </span>
+                  </div>
+                  <div class="infoInner phone">
+                    <div class="infoArea selectWrap" first="true">
+                      <select name="PhoneNbr" id="PhoneNbr" class="selectmenu" style=" border-width: 0 0 1px 0; width: 319px;">
+                        <option value="GN">가나(233)</option>
+                        <option value="KR" selected="selected">대한민국(82)</option>
+                        <option value="MX">멕시코(52)</option>
+                        <option value="BO">볼리비아(591)</option>
+                        <option value="FR">프랑스(33)</option>
+                      </select>
+                    </div>
+                    <span class="infoArea">
+                      <input type="text" id="PNum" name="Pnum" style="width: 145px;" value="010">
+                    </span>
+                    <span class="dash"></span>
+                    <span class="infoArea">
+                      <input type="text" id="PNum1" name="Pnum1" style="width: 145px;" value="6317">
+                    </span>
+                    <span class="dash"></span>
+                    <span class="infoArea">
+                      <input type="text" id="PNum2" name="Pnum2" style="width: 145px;" value="9662">
+                    </span>
+                    <span class="alertMsg">휴대폰 번호를 입력해주세요.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="infoWrap">
+                    <span class="tit">
+                      <label for="email">E-mail</label>
+                      <span class="essential">필수</span>
+                    </span>
+                  </div>
+                  <div class="infoInner email">
+                    <span class="infoArea">
+                      <input type="text" id="email1" name="email1" style="width: 273px;" value="seocindy2002">
+                    </span>
+                    <span class="dash">@</span>
+                    <span class="infoArea">
+                      <input type="text" id="email2" name="email2" style="width: 273px;" value="gmail.com">
+                    </span>
+                    <div class="infoArea selectWrap" style="width:273px" first="true">
+                      <select name="emailType" id="emailType" 
+                      class="selectmenu" style=" border-width: 0 0 1px 0; width: 319px">
+                        <option value>직접 입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="hotmail.com">hotmail.com</option>
+                        <option value="nate.com">nate.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                      </select>
+                    <span class="alertMsg">이메일을 입력해주세요.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="infoWrap">
+                    <span class="tit">
+                      <label for="card">Credit Card Type</label>
+                      <span class="essential"> 필수</span>
+                    </span>
+                  </div>
+                  <div class="infoArea infoInner">
+                    <div class="selectWrap" style="width: 900px;" first="true">
+                      <select name="card" id="card" class="selectmenu" style=" border-width: 0 0 1px 0;">
+                        <option value=>카드 선택</option>
+                        <option value="01">비씨</option>
+                        <option value="02">국민</option>
+                        <option value="03">하나(외환)</option>
+                        <option value="04">삼성</option>
+                      </select>
+                    </div>
+                    <span class="alertMsg">신용카드 종류를 선택해주세요.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="infoWrap">
+                    <span class="tit">
+                      <label for="cardNum">Card Number</label>
+                      <span class="essential"> 필수</span>
+                    </span>
+                  </div>
+                  <div class="infoInner number">
+                    <span class="infoArea">
+                      <input type="text" id="cardNum1" name="cardNum1" style="width: 165px;" maxlength="4">
+                    </span>
+                    <span class="infoArea">
+                      <input type="text" id="cardNum2" name="cardNum2" style="width: 165px;" maxlength="4">
+                    </span>
+                    <span class="infoArea">
+                      <input type="text" id="cardNum3" name="cardNum3" style="width: 165px;" maxlength="4">
+                    </span>
+                    <span class="infoArea">
+                      <input type="text" id="cardNum4" name="cardNum4" style="width: 165px;" maxlength="4">
+                    </span>
+                    <span class="alertMsg">신용카드 번호를 입력해주세요.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="infoWrap">
+                    <span class="tit">
+                      <label for="Expiry">Expiry Date</label>
+                      <span class="essential"> 필수</span>
+                    </span>
+                  </div>
+                  <div class="infoInner numberSelect">
+                    <div class="infoArea selectWrap" style="width:440px" first="true">
+                      <select name="expMonth" id="expMonth" class="selectmenu" style=" border-width: 0 0 1px 0;">
+                        <option value>월</option>
+                        <option value="01">1월</option>
+                        <option value="02">2월</option>
+                        <option value="03">3월</option>
+                        <option value="04">4월</option>
+                        <option value="05">5월</option>
+                        <option value="06">6월</option>
+                        <option value="07">7월</option>
+                        <option value="08">8월</option>
+                        <option value="09">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                      </select>
+                     </div>
+                    <div class="infoArea selectWrap" style="width:440px" first="true">
+                      <select name="expYear" id="expYear" class="selectmenu" style=" border-width: 0 0 1px 0;">
+                        <option value>년</option>
+                        <option value="2022">2022년</option>
+                        <option value="2023">2023년</option>
+                        <option value="2024">2024년</option>
+                        <option value="2025">2025년</option>
+                        <option value="2026">2026년</option>
+                        <option value="2027">2027년</option>
+                        <option value="2028">2028년</option>
+                        <option value="2029">2029년</option>
+                        <option value="2030">2030년</option>
+                        <option value="2031">2031년</option>
+                        <option value="2032">2032년</option>
+                      </select>
+                     </div>
+                    <span class="alertMsg">신용카드 유효기간을 선택해주세요.</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="infoWrap">
+                    <span class="tit">
+                      <label for="cardPw">Card PASSWORD</label>
+                      <span class="essential"> 필수</span>
+                    </span>
+                  </div>
+                  <div class="infoInner">
+                    <span class="infoArea">
+                      <input type="password" id="cardPW" name="carsPw" placeholder="비밀번호 앞 2자리" style="width: 165px;" aria-required="true" maxlength="2">
+                    </span>
+                    <span class="alertMsg">카드 비밀번호를 입력해주세요. (비밀번호 앞 2자리)</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="infoWrap">
+                    <span class="tit">
+                      <label for="birth">Date of BIRTH</label>
+                      <span class="essential">필수</span>
+                    </span>
+                  </div>
+                  <div class="infoInner number">
+                    <span class="infoArea">
+                      <input type="text" id="birth1" name="birth1" placeholder="YYYY" style="width: 165px;" maxlength="4">
+                    </span>
+                    <span class="infoArea">
+                      <input type="text" id="birth2" name="birth2" placeholder="MM" style="width: 165px;" maxlength="2">
+                    </span>
+                    </span>
+                    <span class="infoArea">
+                      <input type="text" id="birth3" name="birth3" placeholder="DD" style="width: 165px;" maxlength="2">
+                    </span>
+                    </span>
+                    <span class="alertMsg">생년원일을 입력해주세요.</span>
+                  </div>
+                </li>
+              </ul>
+              <p class="textGuide">예약 접수 확인 용도이며, 온라인 예약 시 직접 결제가 이루어지지 않습니다.
+              </p>
+              <p class="textGuide">객실 재판매 행위는 법적 제재를 받을 수 있습니다.
+              </p>
+
+
+              <div class="notiContainer">
+                <h3 class="notiTit">개인정보 수집 · 이용 동의</h3>
+                <ul class="toggleList agreeCont">
+                  <li id="agree01" class="toggleOn">
+                    <span class="form type2">
+                      <input type="checkbox" id="Agree" name="Agree">
+                      <label for="Agree">[필수] 개인정보 수집 · 이용에 동의합니다.</label>
+                    </span>
+                    <button type="button" class="btnToggle" onclick="toggleClass10()">
+                      <span class="hidden">상세내용 보기</span>
+                    </button>
+                    <div class="toggleCont" style="display: block;">
+                      <div class="toggleInner">
+                        <table class="agreetable">
+                          <colgroup>
+                            <col style="width: auto">
+                            <col style="width: 33%">
+                            <col style="width: 33%">
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">수집 항목</th>
+                              <th scope="col">수집 목적</th>
+                              <th scope="col">보유 기간</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>이름(국문/영문),<br>
+                                휴대폰 번호, 이메일 주소
+                              </td>
+                              <td>서비스 이용자 식별 및 의사소통</td>
+                              <td rowspan="2" class="td1">객실예약 후 5년</td>
+                            </tr>
+                            <tr>
+                              <td>신용카드 종류, 번호, 유효기간, 비밀번호(앞2자리), 생년월일  
+                              </td>
+                              <td>객실 및 부대시설<br>
+                                이용요금에 대한 보증
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li id="agree02">
+                    <span class="form type2">
+                      <input type="checkbox" id="Agree2" name="Agree">
+                      <label for="Agree2">[필수] 만 14세 이상입니다.</label>
+                    </span>
+                  </li>
+
+                </ul>
+                <p class="textGuide">위 개인정보 수집 · 이용에 대한 동의를 거부할 수 있으나 동의 거부 시 객실 예약이 불가합니다.</p>
+
+                <h3 class="notiTit">취소 규정</h3>
+                <ul class="toggleList agreeCont">
+                  <li class="toggleOn" id="agree03">
+                    <span class="form type2">
+                      <input type="checkbox" id="cancelAgree" name="cancelAgree">
+                      <label for="cancelAgree">[필수] 취소 및 노쇼(NO-SHOW) 규정에 동의합니다.</label>
+                    </span>
+                    <button type="button" class="btnToggle" onclick="toggleClass11()">
+                      <span class="hidden">상세내용 보기</span>
+                    </button>
+                    <div class="toggleCont" style="display: block;">
+                      <div class="toggleInner">
+                        <div class="designScroll">
+                          <div class="scrollWrap">
+                            <div class="customScrollBox">
+                              <ul class="list1">
+                                <li>체크인 7일 전 오후 6시 이전 : 위약금 없이 변경 및 취소 가능</li>
+                                <li>체크인 7일 전 오후 6시 이후 ~ 1일 전 오후 6시 이전 : 최초 1박 요금의 20% 부과</li>
+                                <li>체크인 1일 전 오후 6시 이후 : 취소 및 No-show 위약금 발생
+                                  <ul class="list2">
+                                    <li>1박 투숙 : 객실료의 80% 위약금 부과</li>
+                                    <li>2박 이상 투숙 : 최초 1박 요금의 100% 부과</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- toggleCont -->
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="rightCont floating">
+              <ul class="rContList" id="roomInfo">
+                <li class="toggleOn">
+                  <strong class="ListTit"
+                    >객실1
+                    <span class="price"> <em>627,000</em>KRW </span>
+                  </strong>
+                  <button></button>
+                  <div class="toggleCont" style="display: block">
+                    <div class="toggleInner">
+                      <div class="designScroll">
+                        <div class="scrollWrap">
+                          <div class="ScrollBox">
+                            <ul class="infoData">
+                              <li>
+                                <span class="leftData">2022.12.24</span>
+                                <span class="rightData">570,000</span>
+                              </li>
+                            </ul>
+                            <ul class="infoData" style="display: none"></ul>
+                            <ul class="infoData">
+                              <li>
+                                <span class="leftData">세금</span>
+                                <span class="rightData">57,000</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="totalCont">
+                <div class="totalPrice">
+                  <span class="txt">총 예약금액</span>
+                  <span class="subTxt">+ 세금(10%)</span>
+                  <span class="price">
+                    <em id="totalCost">627,000</em>KRW
+                  </span>
+                </div>
+                <div class="btnArea">
+                  <div>
+                    <a href="#none" class="btnRsv">예약완료</a>
+                  </div>
+            </div>
+            <!-- //rightCont -->
+          </div>
+        </div>
+        <!-- //Inner -->
+
+      </div>
+      <!-- //Container -->
+    </div>
+    <!-- //Wrapper -->
+  
+  </body>
+  <footer w3-include-html="footer.html"></footer>
+  <script src="./js/headerfooter.js"></script>
+  <script>
+    w3.includeHTML();
+  </script>
+</html>
